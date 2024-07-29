@@ -22,7 +22,7 @@ const colorClasses: { [key in ButtonColor]: string } = {
 const variantClasses: { [key in ButtonVariant]: (color: string) => string } = {
   fill: (color) => `${color} px-4 py-2 rounded-full`,
   outline: (color) => `border ${color} text-${color.split(' ')[0]} bg-transparent hover:bg-${color.split(' ')[0].split('-')[1]}-100 px-4 py-2 rounded-full`,
-  text: (color) => `text-${color.split(' ')[0]} bg-transparent hover:bg-${color.split(' ')[0].split('-')[1]}-100 px-4 py-2 rounded-full`,
+  text: (color) => `text-${color.split(' ')[0]} bg-transparent hover:bg-${color.split(' ')[0].split('-')[1]}-100 rounded-full`,
 };
 
 const Button: React.FC<ButtonProps> = ({ variant = 'fill', color = 'primary', children, className, ...props }) => {
