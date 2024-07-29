@@ -20,7 +20,7 @@ const colorClasses: { [key in ButtonColor]: string } = {
 
 // Define a mapping of variants to Tailwind CSS classes
 const variantClasses: { [key in ButtonVariant]: (color: string) => string } = {
-  fill: (color) => `${color} px-4 py-2 rounded-full`,
+  fill: (color) => `${color} py-2 rounded-full`,
   outline: (color) => `border ${color} text-${color.split(' ')[0]} bg-transparent hover:bg-${color.split(' ')[0].split('-')[1]}-100 px-4 py-2 rounded-full`,
   text: (color) => `text-${color.split(' ')[0]} bg-transparent hover:bg-${color.split(' ')[0].split('-')[1]}-100 rounded-full`,
 };
