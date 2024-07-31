@@ -3,9 +3,16 @@
 import { useState } from "react";
 import Button from "./Button";
 import NavBarItem from "./NavBarItem";
+import { useTranslation } from "@/app/i18n";
 
-const NavBar = () => {
+interface NavBarProps {
+    lang: string;
+}
+
+const NavBar = async({ lang } : NavBarProps) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const { t } = await useTranslation(lang);
 
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900 mb-4 md:mb-12">
@@ -39,8 +46,11 @@ const NavBar = () => {
                 </div>
 
                 <Button
-                className="hidden md:block">
-                    Start Sharing
+                className="
+                p-4
+                hidden 
+                md:block">
+                    {t("nav-bar.start-sharing")}
                 </Button>
             </div>
         </nav>
