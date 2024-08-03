@@ -3,7 +3,12 @@ import Button from "./Button";
 import '../../styles/HeroSection.css';
 import heroImage from '../../../public/hero-image.png';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+    lang: string;
+}
+
+const HeroSection = ({ lang }: HeroSectionProps) => {
+
     return (
         <section>
             <div className="flex md:flex-row flex-col md:gap-48 gap-4">
@@ -21,7 +26,7 @@ const HeroSection = () => {
                     <p 
                     className="
                     md:w-56
-                    font-semibold
+                    font-medium
                     text-gray-500
                     md:pt-12
                     ">

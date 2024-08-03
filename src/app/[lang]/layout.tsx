@@ -34,7 +34,7 @@ export default async function RootLayout({
     <html lang={lang}>
       <body 
         className={cn(
-          "min-h-screen bg-background font-sans antialiased p-8",
+          "min-h-screen bg-background font-sans antialiased p-4",
           fontSans.variable
         )}
       >

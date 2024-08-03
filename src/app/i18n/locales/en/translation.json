@@ -1,5 +1,9 @@
 {
     "nav-bar": {
         "start-sharing": "Start Sharing"
+    },
+    "about": {
+        "about-us": "About us",
+        "message": "We are a community-driven platform that connects people who want to share gently used clothes, books, and more with those in need. Our mission is to make giving easy and impactful, fostering generosity and sustainability. By listing items you no longer need, you can help others, reduce waste, and support a more sustainable future. Join us in building a supportive community where everyone has access to essential resources. Let's make a difference, one item at a time."
     }
 }
