@@ -12,8 +12,8 @@ const About = async ({ lang } : WelcomeProps) => {
 
     return (
         <section className="mt-8 md:mt-16">
-            <div className="flex ">
-                <div className="w-1/2 mr-16">
+            <div className="flex flex-col md:flex-row">
+                <div className="md:w-1/2 mr-16">
                     <h2 className="text-xl md:text-4xl font-semibold mb-4 uppercase">{t("about.about-us")}</h2>
                     <p 
                     className="
@@ -24,7 +24,7 @@ const About = async ({ lang } : WelcomeProps) => {
                     {t("about.message")}
                     </p>
                 </div>
-                <div className="w-1/2">
+                <div className="md:w-1/2 pt-12 md:pt-0">
                     <div className="mb-12">
                         <div className="border-solid border border-black p-4 rounded-full flex w-16 h-16 mb-4">
                             <img src={giveLoveIcon.src}/>
