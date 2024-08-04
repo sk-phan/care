@@ -1,6 +1,7 @@
 import HeroSection from '@/components/ui/HeroSection';
 import About from '@/components/ui/About';
 import Roller from '@/components/ui/Roller';
+import ItemsSection from '@/components/ui/ItemsSection';
 
 export default async function Home({ params } : {params: { lang: string };}) {
   const lang = params.lang;
@@ -12,6 +13,7 @@ export default async function Home({ params } : {params: { lang: string };}) {
       <About 
       lang={lang}/>
       <Roller />
+      <ItemsSection />
     </main>
   )
 }

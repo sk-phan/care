@@ -1,7 +1,8 @@
 import { useTranslation } from "@/app/i18n";
-import giveLoveIcon from "../../images/icons/give_love.svg";
 import donateDollIcon from "../../images/icons/donate_doll.svg";
 import donateBoxIcon from "../../images/icons/donate_box.svg";
+import globalHeartIcon from "../../images/icons/global_heart.svg";
+import Button from "./Button";
 
 interface WelcomeProps {
     lang: string;
@@ -14,43 +15,49 @@ const About = async ({ lang } : WelcomeProps) => {
         <section className="mt-8 md:mt-16">
             <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 mr-16">
-                    <h2 className="text-xl md:text-4xl font-semibold mb-4 uppercase">{t("about.about-us")}</h2>
+                    <h2 className="text-xl md:text-5xl font-semibold mb-4">{t("about.about-us")}</h2>
                     <p 
                     className="
                         text-xl
-                        font-medium
                         text-gray-500
                     "> 
                     {t("about.message")}
                     </p>
+                    <Button
+                        className="
+                        p-4
+                        hidden 
+                        md:block
+                        mt-8">
+                    {t("nav-bar.start-sharing")}
+                    </Button>
                 </div>
                 <div className="md:w-1/2 pt-12 md:pt-0">
-                    <div className="mb-12">
-                        <div className="border-solid border border-black p-4 rounded-full flex w-16 h-16 mb-4">
-                            <img src={giveLoveIcon.src}/>
+                    <div className="mb-6 bg-red-100 p-8 rounded-lg flex">
+                        <img src={donateBoxIcon.src} className="mr-8"/>
+                        <div>
+                            <h3 className="text-2xl mb-2">Connecting Kindness with Need</h3>
+                            <p className="text-gray-500">
+                            Your unused items can support individuals and families, offering help to those in need and providing essential resources.                        
+                            </p>
                         </div>
-                        <h3 className="text-3xl mb-4">Connecting Kindness with Need</h3>
-                        <p className="text-gray-500">
-                        Your unused items can provide essential support to individuals and families in need. By giving a new life to your unused items, you offer a helping hand to those facing challenging circumstances, ensuring they have access to necessary resources.
-                        </p>
                     </div>
-                    <div className="mb-12">
-                        <div className="border-solid border border-black p-4 rounded-full flex w-16 h-16 mb-4">
-                            <img src={donateBoxIcon.src}/>
+                    <div className="mb-6 bg-red-100 p-8 rounded-lg flex">
+                        <img src={globalHeartIcon.src} className="mr-8"/>
+                        <div>
+                            <h3 className="text-2xl mb-2">Promoting Sustainable Living</h3>
+                            <p className="text-gray-500">
+                            By keeping items in circulation, you contribute to environmental conservation and help build a greener future for everyone.                            </p>
                         </div>
-                        <h3 className="text-3xl mb-4">Promoting Sustainable Living</h3>
-                        <p className="text-gray-500">
-                        Sharing what you no longer need helps reduce waste and promotes a more sustainable lifestyle. By keeping items in circulation, you contribute to environmental conservation and help build a greener future for everyone.                        
-                        </p>
                     </div>
-                    <div>
-                        <div className="border-solid border border-black p-4 rounded-full flex w-16 h-16 mb-4">
-                            <img src={donateDollIcon.src}/>
+                    <div className="mb-12 bg-red-100 p-8 rounded-lg flex">
+                        <img src={donateDollIcon.src} className="mr-8"/>
+                        <div>
+                            <h3 className="text-2xl mb-2">Building a Caring Community</h3>
+                            <p className="text-gray-500">
+                            Explore the benefits of sharing what you no longer need. Join us in building a community where resources are shared and valued.
+                            </p>
                         </div>
-                        <h3 className="text-3xl mb-4">Building a Caring Community</h3>
-                        <p className="text-gray-500">
-                        Explore the benefits of sharing what you no longer need. Join us in building a community where resources are shared and valued.
-                        </p>
                     </div>
                 </div>
             </div>
