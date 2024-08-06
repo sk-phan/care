@@ -12,10 +12,10 @@ const About = async ({ lang } : WelcomeProps) => {
     const { t } = await useTranslation(lang);
 
     return (
-        <section className="mt-8 md:mt-16">
+        <section className="mt-12 md:mt-16">
             <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 mr-16">
-                    <h2 className="text-xl md:text-5xl font-semibold mb-4">{t("about.about-us")}</h2>
+                    <h2 className="text-3xl md:text-5xl font-semibold mb-4">{t("about.about-us")}</h2>
                     <p 
                     className="
                         text-xl
@@ -50,7 +50,7 @@ const About = async ({ lang } : WelcomeProps) => {
                             By keeping items in circulation, you contribute to environmental conservation and help build a greener future for everyone.                            </p>
                         </div>
                     </div>
-                    <div className="mb-12 bg-red-100 p-8 rounded-lg flex">
+                    <div className="bg-red-100 p-8 rounded-lg flex">
                         <img src={donateDollIcon.src} className="mr-8"/>
                         <div>
                             <h3 className="text-2xl mb-2">Building a Caring Community</h3>
