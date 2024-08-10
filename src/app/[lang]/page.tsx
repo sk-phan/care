@@ -13,7 +13,9 @@ export default async function Home({ params } : {params: { lang: string };}) {
       <About 
       lang={lang}/>
       <Roller />
-      <ItemsSection />
+      <ItemsSection 
+      lang={lang}
+      />
     </main>
   )
 }
