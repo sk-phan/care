@@ -4,6 +4,7 @@ import { useState } from "react";
 import Button from "./Button";
 import NavBarItem from "./NavBarItem";
 import { useTranslation } from "@/app/i18n";
+import Link from "next/link";
 
 interface NavBarProps {
     lang: string;
@@ -13,13 +14,14 @@ const NavBar = async({ lang } : NavBarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const { t } = await useTranslation(lang);
+    const homePagePath =  "/" + (lang === "fi" || lang === "en" ? lang : "");
 
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900 mb-4 md:mb-12">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
-                <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                <Link href={homePagePath} className="flex items-center space-x-3 rtl:space-x-reverse">
                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Care</span>
-                </a>
+                </Link>
                 <Button 
                     variant="fill" 
                     color="primary"
