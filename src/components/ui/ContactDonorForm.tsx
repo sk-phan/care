@@ -46,6 +46,7 @@ const ContactDonorForm = () => {
                     required />
                 </div>
                 <Button
+                    type="submit"
                     color="secondary"
                     className="
                     p-4
