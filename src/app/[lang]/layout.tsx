@@ -10,7 +10,7 @@ import "../../styles/globals.css";
 
 import { cn } from "@/lib/utils";
 import NavBar from "@/components/ui/NavBar";
-import ContactSection from '@/components/ui/ContactSection';
+import Footer from '@/components/ui/Footer';
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -44,7 +44,7 @@ export default async function RootLayout({
           lang={lang}/>
           {children}
         </div>
-        <ContactSection />
+        <Footer />
      </body>
     </html>
   );
