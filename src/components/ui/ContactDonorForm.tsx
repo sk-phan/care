@@ -1,6 +1,20 @@
+"use client";
+
+import { useRef } from "react";
 import "../../styles/ContactDonorForm.css"
 import Button from "./Button";
+
+interface ContactDonorFormPropsType {
+}
 const ContactDonorForm = () => {
+
+    const formRef = useRef();
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log(formRef.current)
+    }
+
     return (
         <div className="mt-6 bg-gray-100 p-6 rounded-3xl">
             <div className="flex items-center mb-6">
@@ -22,7 +36,7 @@ const ContactDonorForm = () => {
                     </div>
                 </div>
             </div>
-            <form>
+            <form onSubmit={onSubmit} ref={formRef}>
                 <div className="flex flex-col xl:flex-row">
                     <div className="xl:w-1/2 xl:mr-6">
                         <input type="text" 

@@ -6,7 +6,7 @@ interface ItemsSectionProps {
 }
 
 const ItemsSection = async ({ lang } : ItemsSectionProps) => {
-    const { t } = await useTranslation(lang);
+    const t = await useTranslation(lang);
 
     return (
         <section className="w-full mt-12 md:mt-16">

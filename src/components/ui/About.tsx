@@ -9,7 +9,7 @@ interface WelcomeProps {
 }
 
 const About = async ({ lang } : WelcomeProps) => {
-    const { t } = await useTranslation(lang);
+    const t = await useTranslation(lang);
 
     return (
         <section className="mt-12 md:mt-16">

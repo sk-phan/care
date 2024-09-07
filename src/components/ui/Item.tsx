@@ -4,7 +4,7 @@ import Button from "./Button";
 import Badge from "./Badge";
 
 const Item = async () => {
-    const { t } = await useTranslation("en")
+    const t = await useTranslation("en")
 
     return (
         <div>

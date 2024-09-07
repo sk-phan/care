@@ -10,10 +10,10 @@ interface NavBarProps {
     lang: string;
 }
 
-const NavBar = async({ lang } : NavBarProps) => {
+const NavBar = ({ lang } : NavBarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { t } = await useTranslation(lang);
+    const { t } = useTranslation(lang);
     const homePagePath =  "/" + (lang === "fi" || lang === "en" ? lang : "");
 
     return (

@@ -1,7 +1,9 @@
+"use client"
 import { createInstance } from 'i18next'
 import resourcesToBackend from 'i18next-resources-to-backend'
 import { initReactI18next } from 'react-i18next/initReactI18next'
 import { getOptions } from './settings'
+import { useEffect, useState } from 'react'
 
 const initI18next = async (lng, ns) => {
   const i18nInstance = createInstance()
@@ -12,10 +14,17 @@ const initI18next = async (lng, ns) => {
   return i18nInstance
 }
 
-export async function useTranslation(lng, ns, options = {}) {
-  const i18nextInstance = await initI18next(lng, ns)
-  return {
-    t: i18nextInstance.getFixedT(lng, Array.isArray(ns) ? ns[0] : ns, options.keyPrefix),
-    i18n: i18nextInstance
-  }
+export function useTranslation(lng, options = {}) {
+  const [t, setT] = useState(() => (key) => key); // Fallback function until i18n is ready
+  const [i18n, setI18n] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const i18nextInstance = await initI18next(lng);
+      setI18n(i18nextInstance);
+      setT(() => i18nextInstance.getFixedT(lng));
+    })();
+  }, [lng, options.keyPrefix]);
+
+  return { t, i18n };
 }
