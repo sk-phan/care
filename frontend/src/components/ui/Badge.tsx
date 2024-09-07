@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 
 // Define types for Badge variants and color schemes

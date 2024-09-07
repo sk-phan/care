@@ -1,3 +1,5 @@
+"use client";
+
 import Items from "./Items";
 import Tabs from "./Tabs";
 

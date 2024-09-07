@@ -1,10 +1,11 @@
+"use client";
+
 import { useTranslation } from "@/app/i18n";
 import "../../styles/Item.css";
-import Button from "./Button";
 import Badge from "./Badge";
 
-const Item = async () => {
-    const { t } = await useTranslation("en")
+const Item = () => {
+    const { t } = useTranslation("en")
 
     return (
         <div>

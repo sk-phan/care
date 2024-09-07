@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 
 // Define types for button variants and color schemes

@@ -1,3 +1,5 @@
+"use client";
+
 import Item from "./Item";
 
 const Items = () => {
