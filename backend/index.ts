@@ -1,13 +1,8 @@
-import express  from "express";
+import app from "./utils/app";
+import config from "./utils/config";
+import logger from "./utils/logger";
 
-const app = express();
-
-app.get('/ping', (res: any) => {
-  res.send('pong');
-});
-
-const PORT = 3003;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Define your routes and middleware here
+app.listen(config.PORT, '0.0.0.0', () => {
+   logger.info(`Server listening on ${config.PORT}`);
 });
