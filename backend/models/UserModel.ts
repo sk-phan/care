@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     authSource: {
+        type: String,
         enum: ["self", "google"],
         default: "self"
     } 
