@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "./Button";
 
 import '../../styles/HeroSection.css';

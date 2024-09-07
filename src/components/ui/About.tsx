@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslation } from "@/app/i18n";
 import donateDollIcon from "../../images/icons/donate_doll.svg";
 import donateBoxIcon from "../../images/icons/donate_box.svg";
@@ -8,8 +10,8 @@ interface WelcomeProps {
     lang: string;
 }
 
-const About = async ({ lang } : WelcomeProps) => {
-    const t = await useTranslation(lang);
+const About = ({ lang } : WelcomeProps) => {
+    const { t } = useTranslation(lang);
 
     return (
         <section className="mt-12 md:mt-16">
