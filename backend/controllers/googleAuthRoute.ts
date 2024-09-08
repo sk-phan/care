@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-
+import logger from '../utils/logger';
 const googleAuthRoute = require('express').Router()
 const { OAuth2Client } = require("google-auth-library");
 const User = require("../models/UserModel");
@@ -14,15 +14,12 @@ googleAuthRoute.post("/google-auth", async (req: Request, res: Response) => {
         idToken: credential,
         audience: client_id,
     });
-  
     const payload = ticket.getPayload();
-      
-    if (!payload) {
-      throw new Error('Invalid payload');
-    }
+    
+    if (!payload)  throw new Error('Invalid payload');
 
-      // Extract user details from payload
-    const { sub: userid, email, given_name, family_name } = payload;
+    // Extract user details from payload
+    const { email, given_name, family_name } = payload;
 
     // Check if user exists in the database
     let user = await User.findOne({ email });
@@ -35,10 +32,7 @@ googleAuthRoute.post("/google-auth", async (req: Request, res: Response) => {
         authSource: 'google',
       });
     }
-
-    console.log(userid);
     res.status(200).json({ payload });
-
     } catch (error: any) {
         res.status(400).json({ error: error.message });
         logger.error(error);
