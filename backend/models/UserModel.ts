@@ -1,25 +1,18 @@
-import mongoose from 'mongoose';
+import mongoose, { Document, Schema } from 'mongoose';
 
-const userSchema = new mongoose.Schema({
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    name: {
-        required: true,
-        type: String
-    },
-    passwordHash: {
-        type: String,
-        required: true,
-    },
-    authSource: {
-        type: String,
-        enum: ["self", "google"],
-        default: "self"
-    } 
-})
+export interface IUser extends Document {
+    email: string;
+    name: string;
+    passwordHash: string;
+    authSource: 'self' | 'google';
+}
+
+const userSchema = new Schema<IUser>({
+    email: { type: String, required: true, unique: true },
+    name: { required: true, type: String },
+    passwordHash: { type: String, required: true },
+    authSource: { type: String, enum: ['self', 'google'], default: 'self' },
+});
 
 userSchema.set('toJSON', {
     transform: (_document: mongoose.Document, returnedObject: { [key: string]: any }) => {
@@ -33,6 +26,6 @@ userSchema.set('toJSON', {
     }
 })
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model<IUser>('User', userSchema)
 
-module.exports = User;
+export default User;
