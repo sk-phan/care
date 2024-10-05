@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 import User, { IUser } from '../models/UserModel';
 import { BadRequestError } from "../errors/BadRequestError";
 import { InternalServerError } from "../errors/InternalServerError";
+import { AuthenticationError } from "../errors/AuthenticationError";
 
 const SECRET_KEY = process.env.JWT_SECRET;
 
@@ -37,4 +38,23 @@ export const getAllUsers = async (_req: Request, res: Response) => {
     } catch (error) {
         throw new InternalServerError();
     }
+};
+
+export const loginUser = async (req: Request, res: Response) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) {
+        throw new AuthenticationError();
+    }
+
+    const passwordCorrect = await bcrypt.compare(password, user.passwordHash);
+    if (!passwordCorrect) {
+        throw new AuthenticationError();
+    }
+
+    const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, {
+        expiresIn: '1h',
+    });
+    
+    res.json({ token, user: user.toJSON() });
 };
