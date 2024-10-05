@@ -1,8 +1,7 @@
-import app from "./utils/app";
-import config from "./utils/config";
-import logger from "./utils/logger";
+import app from "./config/app";
+import config from "./config/config";
+import logger from "./config/logger";
 
-// Define your routes and middleware here
 app.listen(config.PORT, '0.0.0.0', () => {
    logger.info(`Server listening on ${config.PORT}`);
 });
