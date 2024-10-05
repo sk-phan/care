@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import logger from '../utils/logger';
+import logger from '../config/logger';
 const googleAuthRoute = require('express').Router()
 const { OAuth2Client } = require("google-auth-library");
 const User = require("../models/UserModel");
