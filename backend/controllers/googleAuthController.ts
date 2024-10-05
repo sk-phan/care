@@ -1,12 +1,11 @@
 import { Request, Response } from 'express';
 import logger from '../config/logger';
-const googleAuthRoute = require('express').Router()
 const { OAuth2Client } = require("google-auth-library");
 const User = require("../models/UserModel");
 
 const client = new OAuth2Client("307978777663-2dpvmr35u7b6l8s57r2hobs0gagahieo.apps.googleusercontent.com");
 
-googleAuthRoute.post("/google-auth", async (req: Request, res: Response) => {
+export const loginWithGoogle = async (req: Request, res: Response) => {
     const { credential, client_id } = req.body;
     try {
       // Verify the ID token
@@ -37,6 +36,5 @@ googleAuthRoute.post("/google-auth", async (req: Request, res: Response) => {
         res.status(400).json({ error: error.message });
         logger.error(error);
     }
-});
+};
 
-export default googleAuthRoute;
