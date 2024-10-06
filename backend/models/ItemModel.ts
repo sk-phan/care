@@ -1,28 +1,39 @@
-import mongoose from 'mongoose';
+import mongoose, { Document, Schema, Model } from 'mongoose';
 
-const itemSchema = new mongoose.Schema({
+export interface IItem extends Document {
+    title: string;
+    description: string;
+    condition: "new" | "like-new" | "very-good" | "good" | "acceptable";
+    status: "available" | "reserved";
+    image: string;
+    city: string;
+    country: string;
+    donorId: mongoose.Schema.Types.ObjectId; 
+    createdAt: Date;
+}
+
+const itemSchema: Schema<IItem> = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        unique: true
     },
     description: {
-        required: true,
-        type: String
+        type: String,
+        required: true
     },
     condition: {
         type: String,
-        enum: ["new","like-new","very-good","good","acceptable"],
+        enum: ["new", "like-new", "very-good", "good", "acceptable"],
         default: "new"
     },
     status: {
         type: String,
-        enum: ["available","reserved"],
+        enum: ["available", "reserved"],
         default: "available"
     },
     image: {
         type: String,
-        required: true,
+        required: true
     },
     city: {
         type: String,
@@ -32,7 +43,7 @@ const itemSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    donor: {
+    donorId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
@@ -40,21 +51,21 @@ const itemSchema = new mongoose.Schema({
         type: Date,
         default: () => new Date()
     }
-})
+});
 
+// Create indexes for optimization
 itemSchema.index({ title: 1 });
 itemSchema.index({ city: 1 });
 itemSchema.index({ country: 1 });
 
 itemSchema.set('toJSON', {
     transform: (_document: mongoose.Document, returnedObject: { [key: string]: any }) => {
-        returnedObject.id = returnedObject._id.toString();
+    returnedObject.id = returnedObject._id.toString();
 
-        delete returnedObject._id;
-        delete returnedObject.__v;
-    }
-})
+    delete returnedObject._id;
+    delete returnedObject.__v;
+}
+});
 
-const Item = mongoose.model('Item', itemSchema)
-
-module.exports = Item;
+const Item: Model<IItem> = mongoose.model<IItem>('Item', itemSchema);
+export default Item;
