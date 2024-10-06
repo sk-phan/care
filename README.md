@@ -1,5 +1,4 @@
 Work in progress...
-The idea is to create a commmunity to share and help children who are in need of clothes, books, or toys. 
+## Community Platform for Sharing Clothes, Books, and Toys
 
-Front-end tech: Next.js, React, Typescript, Tailwind.
-Back-end tech: Node.js, Express, MongoDB, Typescript.
+A full-stack web app to connect and support children in need of clothes, books, and toys, built using Next.js, React, TypeScript, Tailwind, Node.js, Express, and MongoDB.
