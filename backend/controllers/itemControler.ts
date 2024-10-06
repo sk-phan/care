@@ -57,10 +57,14 @@ export const updateItem = async (req: Request, res: Response, next: NextFunction
     }
 };
 
-export const deleteItem = async (req: Request, res: Response) => {
-    const deletedItem = await Item.findByIdAndDelete(req.params.id);
-    if (!deletedItem) {
-        throw new BadRequestError('Item not found');
+export const deleteItem = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const deletedItem = await Item.findByIdAndDelete(req.params.id);
+        if (!deletedItem) {
+            throw new BadRequestError('Item not found');
+        }
+        res.status(204).end();
+    } catch(e) {
+        next(e);
     }
-    res.status(204).end();
 };
