@@ -36,7 +36,7 @@ const About = ({ lang } : WelcomeProps) => {
                 </div>
                 <div className="md:w-1/2 pt-12 md:pt-0">
                     <div className="mb-6 bg-red-100 p-8 rounded-lg flex">
-                        <img src={donateBoxIcon.src} className="mr-8"/>
+                        <img src={donateBoxIcon.src} className="mr-8 scale-75"/>
                         <div>
                             <h3 className="text-2xl mb-2">Connecting Kindness with Need</h3>
                             <p className="text-gray-500">
@@ -45,7 +45,7 @@ const About = ({ lang } : WelcomeProps) => {
                         </div>
                     </div>
                     <div className="mb-6 bg-red-100 p-8 rounded-lg flex">
-                        <img src={globalHeartIcon.src} className="mr-8"/>
+                        <img src={globalHeartIcon.src} className="mr-8 scale-75"/>
                         <div>
                             <h3 className="text-2xl mb-2">Promoting Sustainable Living</h3>
                             <p className="text-gray-500">
@@ -53,7 +53,7 @@ const About = ({ lang } : WelcomeProps) => {
                         </div>
                     </div>
                     <div className="bg-red-100 p-8 rounded-lg flex">
-                        <img src={donateDollIcon.src} className="mr-8"/>
+                        <img src={donateDollIcon.src} className="mr-8 scale-75"/>
                         <div>
                             <h3 className="text-2xl mb-2">Building a Caring Community</h3>
                             <p className="text-gray-500">
