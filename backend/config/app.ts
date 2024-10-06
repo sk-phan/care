@@ -4,6 +4,8 @@ import logger from "./logger";
 import config from "./config";
 import { errorHandler } from '../middlewares/errorHandler.middleware';
 import userRoutes from '../routes/userRoutes';
+// import { authHandler } from '../middlewares/authHandler.middleware';
+import itemRoutes from '../routes/itemRoutes';
 
 const cors = require('cors');
 const app = express();
@@ -26,6 +28,8 @@ app.use(express.static('build'));
 app.use(express.json());
 
 app.use('/api/users', userRoutes);
+// app.use(authHandler); 
+app.use('/api/items', itemRoutes);
 
 // Must be defined in the end of application
 app.use(errorHandler); 

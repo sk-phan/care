@@ -1,40 +1,63 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 
 const jwt  = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 import User, { IUser } from '../models/UserModel';
-import { BadRequestError } from "../errors/BadRequestError";
-import { InternalServerError } from "../errors/InternalServerError";
+import { AuthenticationError } from "../errors/AuthenticationError";
 
 const SECRET_KEY = process.env.JWT_SECRET;
-
-export const createUser = async (req: Request, res: Response) => {
-    const { email, name, password} = req.body;
+export const createUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
+        const { email, name, password } = req.body;
+
         const existingUser = await User.findOne({ email });
         if (existingUser) {
-            throw new BadRequestError('Email is already in use');
+            throw new Error('Email is already in use');
         }
 
-        const passwordHash = await bcrypt.hash(password, 12);
+        const passwordHash = await bcrypt.hash(password, 10);
         const newUser: IUser = new User({ email, name, passwordHash });
         await newUser.save();
+
         const token = jwt.sign({ id: newUser.id, email: newUser.email }, SECRET_KEY, {
-            expiresIn: '1h',
+            expiresIn: '1h' 
         });
+
         res.status(201).json({ token, user: newUser.toJSON() });
-    }
-    catch (error) {
-        throw new InternalServerError();
+    } catch (error) {
+        next(error);
     }
 };
 
-export const getAllUsers = async (_req: Request, res: Response) => {
+
+export const getAllUsers = async (_req: Request, res: Response, next: NextFunction) => {
     try {
         const users = await User.find({});
         res.json(users);
     } catch (error) {
-        throw new InternalServerError();
+        next(error);
+    }
+};
+
+export const loginUser = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const { email, password } = req.body;
+        const user = await User.findOne({ email });
+        if (!user) {
+            throw new AuthenticationError();
+        }
+    
+        const passwordCorrect = await bcrypt.compare(password, user.passwordHash);
+        if (!passwordCorrect) {
+            throw new AuthenticationError();
+        }
+    
+        const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, {
+            expiresIn: '1h',
+        });
+        res.json({ token, user: user.toJSON() });
+    } catch (error) {
+        next(error);
     }
 };
