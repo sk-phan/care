@@ -1,4 +1,4 @@
-import { CustomError } from "../utils/customError";
+import { CustomError } from "../utils/CustomError";
 
 export class InternalServerError extends CustomError {
     StatusCode = 500;
