@@ -5,6 +5,7 @@ export interface IItem extends Document {
     description: string;
     condition: "new" | "like-new" | "very-good" | "good" | "acceptable";
     status: "available" | "reserved";
+    category: "toy" | "book" | "clothing" | "other"
     image: string;
     city: string;
     country: string;
@@ -30,6 +31,11 @@ const itemSchema: Schema<IItem> = new mongoose.Schema({
         type: String,
         enum: ["available", "reserved"],
         default: "available"
+    },
+    category: {
+        type: String,
+        enum: ["toy", "book", "clothing", "other"],
+        required: true
     },
     image: {
         type: String,
