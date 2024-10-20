@@ -9,8 +9,8 @@ import { Outfit as FontSans } from "next/font/google";
 import "../../styles/globals.css";
 
 import { cn } from "@/lib/utils";
-import NavBar from "@/components/ui/NavBar";
-import Footer from '@/components/ui/Footer';
+import NavBar from "@/components/NavBar";
+import Footer from '@/components/Footer';
 
 const fontSans = FontSans({
   subsets: ["latin"],

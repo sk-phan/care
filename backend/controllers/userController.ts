@@ -30,7 +30,6 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
     }
 };
 
-
 export const getAllUsers = async (_req: Request, res: Response, next: NextFunction) => {
     try {
         const users = await User.find({});

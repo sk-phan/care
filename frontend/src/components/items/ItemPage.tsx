@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from "react";
 import "../../styles/ItemPage.css";
-import ContactDonorForm from "./ContactDonorForm";
+import ContactDonorForm from "../ContactDonorForm";
 
 const ItemPage = () => {
     useEffect(() => {

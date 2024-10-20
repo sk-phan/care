@@ -2,7 +2,7 @@
 
 import { useTranslation } from "@/app/i18n";
 import "../../styles/Item.css";
-import Badge from "./Badge";
+import Badge from "../Badge";
 
 const Item = () => {
     const { t } = useTranslation("en")

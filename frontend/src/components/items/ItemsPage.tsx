@@ -1,7 +1,7 @@
 "use client";
 
 import Items from "./Items";
-import Tabs from "./Tabs";
+import Tabs from "../Tabs";
 
 interface ItemsPage {
     lang: string;

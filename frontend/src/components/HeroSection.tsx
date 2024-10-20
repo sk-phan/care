@@ -2,8 +2,8 @@
 
 import Button from "./Button";
 
-import '../../styles/HeroSection.css';
-import heroImage from '../../../public/hero-image.png';
+import '../styles/HeroSection.css';
+import heroImage from '../../public/hero-image.png';
 
 interface HeroSectionProps {
     lang: string;

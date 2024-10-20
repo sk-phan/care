@@ -1,16 +1,15 @@
 "use client";
 
 import { FormEvent, useRef } from "react";
-import "../../styles/ContactDonorForm.css"
+import "../styles/ContactDonorForm.css"
 import Button from "./Button";
 
 const ContactDonorForm = () => {
 
-    const formRef = useRef();
+    const formRef = useRef<HTMLFormElement | null>(null);
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(formRef.current)
     }
 
     return (

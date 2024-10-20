@@ -1,9 +1,9 @@
 "use client";
 
 import { useTranslation } from "@/app/i18n";
-import donateDollIcon from "../../images/icons/donate_doll.svg";
-import donateBoxIcon from "../../images/icons/donate_box.svg";
-import globalHeartIcon from "../../images/icons/global_heart.svg";
+import donateDollIcon from "../images/icons/donate_doll.svg";
+import donateBoxIcon from "../images/icons/donate_box.svg";
+import globalHeartIcon from "../images/icons/global_heart.svg";
 import Button from "./Button";
 
 interface WelcomeProps {
