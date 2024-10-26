@@ -11,7 +11,7 @@ itemRoutes.get('/', getAllItems);
 itemRoutes.get('/:id', getItemById);
 
 // Create a new item (requires authentication)
-itemRoutes.post('/', authHandler, createItem);
+itemRoutes.post('/create', authHandler, createItem);
 
 // Update an item by ID (requires authentication)
 itemRoutes.put('/:id', authHandler, updateItem);
