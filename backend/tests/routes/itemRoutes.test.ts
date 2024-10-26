@@ -45,7 +45,7 @@ describe('Item Routes', () => {
         expect(response.body).toEqual(responseJson[0]);
     });
 
-    it('POST /api/items should create a new item', async () => {
+    it('POST /api/items/create should create a new item', async () => {
         const newItem = {
             id: '3',
             title: "Children's Storybook",
@@ -65,7 +65,7 @@ describe('Item Routes', () => {
         });
 
         const response = await request(app)
-            .post('/api/items')
+            .post('/api/items/create')
             .send(newItem);
 
         expect(response.status).toBe(201);
