@@ -5,7 +5,7 @@ import { createItem, deleteItem, getAllItems, getItemById, updateItem } from '..
 const itemRoutes = express.Router();
 
 // Get all items
-itemRoutes.get('/', authHandler, getAllItems);
+itemRoutes.get('/', getAllItems);
 
 // Get a single item by ID
 itemRoutes.get('/:id', getItemById);

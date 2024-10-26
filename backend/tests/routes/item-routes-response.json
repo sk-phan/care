@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Children's Toy",
+        "description": "A gently used educational toy for toddlers.",
+        "condition": "like-new",
+        "status": "available",
+        "category": "toy",
+        "image": "https://example.com/images/toy.jpg",
+        "city": "Helsinki",
+        "country": "Finland",
+        "donorId": "63c0e3c844f1b4d2d4e8e6e4", 
+        "createdAt": "2024-10-20T12:00:00Z"
+    },
+    {
+        "title": "Winter Jacket",
+        "description": "A warm winter jacket suitable for children.",
+        "condition": "very-good",
+        "status": "available",
+        "category": "clothing",
+        "image": "https://example.com/images/jacket.jpg",
+        "city": "Rovaniemi",
+        "country": "Finland",
+        "donorId": "63c0e3c844f1b4d2d4e8e6e5", 
+        "createdAt": "2024-10-20T12:00:00Z"
+    }
+]
