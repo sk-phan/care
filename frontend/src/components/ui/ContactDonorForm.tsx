@@ -1,25 +1,27 @@
 "use client";
 
-import { FormEvent, useRef } from "react";
+import { FormEvent, LegacyRef, MutableRefObject, useRef } from "react";
 import "../../styles/ContactDonorForm.css"
 import Button from "./Button";
+import Image from "next/image";
 
 const ContactDonorForm = () => {
 
-    const formRef = useRef();
+    const formRef = useRef<HTMLFormElement>(null);
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(formRef.current)
     }
 
     return (
         <div className="mt-6 bg-gray-100 p-6 rounded-3xl">
             <div className="flex items-center mb-6">
-                <img 
+                <Image 
                 className="object-cover rounded-full avatar mr-4"
                 src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                alt="placeholder image"/>
+                alt="placeholder image"
+                width={100}
+                height={100}/>
                 <div>
                     <span className="font-medium block">Mikko Korhonen</span>
                     <div className="flex flex-col xl:flex-row xl:justify-between">

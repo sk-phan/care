@@ -1,5 +1,5 @@
 import HeroSection from '@/components/ui/HeroSection';
-import About from '@/components/ui/About';
+import About from '@/components/about/About';
 import Roller from '@/components/ui/Roller';
 import ItemsSection from '@/components/ui/ItemsSection';
 
