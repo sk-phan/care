@@ -6,5 +6,5 @@
 
 # Dotenv environment variable files
 .env
-.env.test
+.env.local
 .env.production
