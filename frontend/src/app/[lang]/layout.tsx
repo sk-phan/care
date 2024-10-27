@@ -8,9 +8,9 @@ import type { Metadata } from "next";
 import { Outfit as FontSans } from "next/font/google";
 import "../../styles/globals.css";
 
-import { cn } from "@/lib/utils";
-import NavBar from "@/components/ui/NavBar";
-import Footer from '@/components/ui/Footer';
+import { cn } from "@/stores/utils";
+import NavBar from "@/components/common/NavBar";
+import Footer from '@/components/common/Footer';
 
 const fontSans = FontSans({
   subsets: ["latin"],

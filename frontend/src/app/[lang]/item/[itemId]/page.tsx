@@ -1,4 +1,4 @@
-import ItemPage from "@/components/ui/ItemPage";
+import ItemPage from "@/components/common/ItemPage";
 
 export default async function Items({ params }: { params: { lang: string, itemId: string }}) {
     const lang = params.lang;
