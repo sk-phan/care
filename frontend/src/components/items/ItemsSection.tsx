@@ -13,7 +13,10 @@ const ItemsSection = ({ lang } : ItemsSectionProps) => {
     return (
         <section className="w-full mt-12 md:mt-16">
             <div>
-                <h2 className="text-3xl md:text-5xl font-semibold mb-8">{t("items-section.available-items")}</h2>
+                <h2 
+                className="text-3xl md:text-5xl font-semibold mb-8">
+                    {t("items-section.available-items")}
+                </h2>
             </div>
             <Items />
         </section>

@@ -1,10 +1,15 @@
 "use client"
 
 import { useState } from "react";
-import Button from "./Button";
-import NavBarItem from "./NavBarItem";
-import { useTranslation } from "@/app/i18n";
 import Link from "next/link";
+
+import { useTranslation } from "@/app/i18n";
+
+import Button from "./Button";
+import NavBarItems from "./NavBarItems";
+import useCommonStyle from "@/app/hooks/styles/useCommonStyles";
+import { loginRoute } from "@/routing/routes";
+import { Route, RoutePath } from "@/routing/routes.type";
 
 interface NavBarProps {
     lang: string;
@@ -14,6 +19,8 @@ const NavBar = ({ lang } : NavBarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const { t } = useTranslation(lang);
+    const { primaryButtonLink } = useCommonStyle();
+
     const homePagePath =  "/" + (lang === "fi" || lang === "en" ? lang : "");
 
     return (
@@ -40,20 +47,19 @@ const NavBar = ({ lang } : NavBarProps) => {
                     onClick={() => setIsOpen(!isOpen)}>
                     <span className="sr-only">Open main menu</span>
                     <svg className="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" strokeLinecap="round" stroke-linejoin="round" stroke-width="1" d="M1 1h15M1 7h15M1 13h15"/>
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M1 1h15M1 7h15M1 13h15"/>
                     </svg>
                 </Button>
                 <div className={`${isOpen ? 'block' : 'hidden' } w-full md:block md:w-auto`} id="navbar-default">
-                    <NavBarItem />
+                    <NavBarItems 
+                    lang={lang}/>
                 </div>
 
-                <Button
-                className="
-                p-4
-                hidden 
-                md:block">
+                <Link
+                href={loginRoute.path[lang as keyof RoutePath]}
+                className={primaryButtonLink}>
                     {t("nav-bar.start-sharing")}
-                </Button>
+                </Link>
             </div>
         </nav>
     )

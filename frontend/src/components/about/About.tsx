@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import Button from "../ui/Button";
+import Button from "../common/Button";
 import donateDollIcon from "../../images/icons/donate_doll.svg";
 import donateBoxIcon from "../../images/icons/donate_box.svg";
 import globalHeartIcon from "../../images/icons/global_heart.svg";
