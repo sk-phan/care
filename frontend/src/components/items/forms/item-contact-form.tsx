@@ -1,16 +1,26 @@
 "use client";
 
-import { FormEvent, LegacyRef, MutableRefObject, useRef } from "react";
-import "../../styles/ContactDonorForm.css"
-import Button from "./Button";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { useRef } from "react";
 
-const ContactDonorForm = () => {
+import TextInput from "@/components/common/TextInput";
+import Button from "../../common/Button";
+import "../../../styles/items/ItemContactForm.css";
+import { ItemContactFormData } from "./item-contact-form.type";
+import TextArea from "@/components/common/TextArea";
+
+const ItemContactForm = () => {
+    const { 
+        handleSubmit, 
+        control,
+        formState: { errors } 
+    } = useForm<ItemContactFormData>();
 
     const formRef = useRef<HTMLFormElement>(null);
 
-    const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const onSubmit = (data: ItemContactFormData) => {
+        console.log(data);
     }
 
     return (
@@ -36,28 +46,34 @@ const ContactDonorForm = () => {
                     </div>
                 </div>
             </div>
-            <form onSubmit={onSubmit} ref={formRef}>
+            <form onSubmit={handleSubmit(onSubmit)} ref={formRef}>
                 <div className="flex flex-col xl:flex-row">
                     <div className="xl:w-1/2 xl:mr-6">
-                        <input type="text" 
-                        id="name" 
-                        className="rounded-full bg-white border border-gray-900 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-                        placeholder="Your name" 
-                        required />
+                    <TextInput 
+                        name="name" 
+                        control={control} 
+                        rules={{ required: "Name is required" }} 
+                        error={errors.name} 
+                        placeholder="Full name"
+                    />
                     </div>
                     <div className="mt-6 xl:mt-0 xl:w-1/2">
-                        <input type="text" id="email" className="rounded-full bg-white border border-gray-900 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-                        placeholder="Your email" 
-                        required />
+                        <TextInput 
+                            name="email" 
+                            control={control} 
+                            rules={{ required: "Email is required" }} 
+                            error={errors.email} 
+                            placeholder="Email"
+                        />
                     </div>
                 </div>
                 <div className="w-full mt-6">
-                    <textarea 
-                    id="message" 
-                    className="rounded-3xl bg-white border border-gray-900 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-                    placeholder="Your message to the donor..." 
-                    rows={10}
-                    required />
+                    <TextArea 
+                        name="message" 
+                        control={control} 
+                        rows={10}
+                        placeholder="Your message to the donor..."
+                    />
                 </div>
                 <Button
                     type="submit"
@@ -74,4 +90,4 @@ const ContactDonorForm = () => {
     )
 }
 
-export default ContactDonorForm;
+export default ItemContactForm;
