@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "title": "Children's Toy",
         "description": "A gently used educational toy for toddlers.",
         "condition": "like-new",
@@ -12,6 +13,7 @@
         "createdAt": "2024-10-20T12:00:00Z"
     },
     {
+        "id": "2",
         "title": "Winter Jacket",
         "description": "A warm winter jacket suitable for children.",
         "condition": "very-good",

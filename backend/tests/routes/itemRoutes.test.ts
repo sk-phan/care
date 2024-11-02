@@ -47,7 +47,6 @@ describe('Item Routes', () => {
 
     it('POST /api/items/create should create a new item', async () => {
         const newItem = {
-            id: '3',
             title: "Children's Storybook",
             description: "A beautifully illustrated storybook for young readers.",
             condition: "like-new",
@@ -57,7 +56,6 @@ describe('Item Routes', () => {
             city: "Tampere",
             country: "Finland",
             donorId: "63c0e3c844f1b4d2d4e8e6e6", 
-            createdAt: "2024-10-20T12:00:00Z"
         };
 
         (createItem as jest.Mock).mockImplementation((_req, res) => {
