@@ -1,3 +1,4 @@
+import { Item, ItemPostParams } from "@/types/items.type";
 import api from "./api";
 
 export const ItemsApi = {
