@@ -2,12 +2,14 @@
 
 import { useTranslation } from "@/app/i18n";
 import Items from "./Items";
+import { ItemType } from "@/types/items.type";
 
 interface ItemsSectionProps {
     lang: string;
+    items: ItemType[];
 }
 
-const ItemsSection = ({ lang } : ItemsSectionProps) => {
+ const ItemsSection = ({ lang, items } : ItemsSectionProps) => {
     const { t }= useTranslation(lang);
 
     return (
@@ -18,7 +20,7 @@ const ItemsSection = ({ lang } : ItemsSectionProps) => {
                     {t("items-section.available-items")}
                 </h2>
             </div>
-            <Items />
+            <Items items={items} />
         </section>
     )
 }
