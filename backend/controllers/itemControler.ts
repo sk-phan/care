@@ -5,7 +5,7 @@ import { IItem } from "../models/ItemModel";
 
 export const createItem = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { title, description, condition, image, city, country, donorId } = req.body as IItem;
+        const { title, description, condition, image, city, country, donorId, category } = req.body as IItem;
     
         const newItem = new Item({
             title,
@@ -14,7 +14,8 @@ export const createItem = async (req: Request, res: Response, next: NextFunction
             image,
             city,
             country,
-            donorId
+            donorId,
+            category
         });
     
         const savedItem = await newItem.save();

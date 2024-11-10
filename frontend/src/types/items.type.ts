@@ -1,4 +1,4 @@
-export type Item = {
+export type ItemType = {
     id: string;
     title: string;
     description: string;
@@ -12,7 +12,7 @@ export type Item = {
     createdAt: string;
 };
 
-export type ItemPostParams = Pick<Item, 
+export type ItemPostParams = Pick<ItemType, 
     "title" | 
     "description" | 
     "condition" | 

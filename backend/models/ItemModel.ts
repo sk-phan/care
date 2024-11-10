@@ -5,7 +5,7 @@ export interface IItem extends Document {
     description: string;
     condition: "new" | "like-new" | "very-good" | "good" | "acceptable";
     status: "available" | "reserved";
-    category: "toy" | "book" | "clothing" | "other"
+    category: "toy" | "book" | "clothing" | "other";
     image: string;
     city: string;
     country: string;

@@ -2,15 +2,14 @@
 
 import Items from "./Items";
 import Tabs from "../common/Tabs";
-import { Item } from "@/types/items.type";
+import { ItemType } from "@/types/items.type";
 
 interface ItemsPage {
     lang: string;
-    items: Item[];
+    items: ItemType[];
 }
 
 const ItemsPage = ({ lang, items } : ItemsPage) => {
-    console.log(items)
     return (
         <div>
             <h2
@@ -24,7 +23,7 @@ const ItemsPage = ({ lang, items } : ItemsPage) => {
                 Items
             </h2>
             <Tabs />
-            <Items/>
+            <Items items={items}/>
         </div>
     )
 }
