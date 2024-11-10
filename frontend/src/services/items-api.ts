@@ -1,17 +1,18 @@
+import { ItemType, ItemPostParams } from "@/types/items.type";
 import api from "./api";
 
 export const ItemsApi = {
     getAll: async (params?: any) => {
-        return api.get<Item[]>('/items', params);
+        return api.get<ItemType[]>('/items', params);
     },
     getById: async (id: string) => {
-        return api.get<Item>(`/items/${id}`);
+        return api.get<ItemType>(`/items/${id}`);
     },
     create: async (data: ItemPostParams) => {
-        return api.post<Item>('/items', data);
+        return api.post<ItemType>('/items', data);
     },
-    update: async (id: string, item: Item) => {
-        return api.put<Item>(`/items/${id}`, item);
+    update: async (id: string, item: ItemType) => {
+        return api.put<ItemType>(`/items/${id}`, item);
     },
     delete: async (id: string) => {
         return api.delete<void>(`/items/${id}`);

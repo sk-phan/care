@@ -7,7 +7,7 @@ import { useTranslation } from "@/app/i18n";
 
 import Button from "./Button";
 import NavBarItems from "./NavBarItems";
-import useCommonStyle from "@/app/hooks/styles/useCommonStyles";
+import useCommonStyles from "@/app/hooks/styles/useCommonStyles";
 import { loginRoute } from "@/routing/routes";
 import { Route, RoutePath } from "@/routing/routes.type";
 
@@ -19,7 +19,7 @@ const NavBar = ({ lang } : NavBarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const { t } = useTranslation(lang);
-    const { primaryButtonLink } = useCommonStyle();
+    const { primaryButtonLink } = useCommonStyles();
 
     const homePagePath =  "/" + (lang === "fi" || lang === "en" ? lang : "");
 
@@ -57,7 +57,7 @@ const NavBar = ({ lang } : NavBarProps) => {
 
                 <Link
                 href={loginRoute.path[lang as keyof RoutePath]}
-                className={primaryButtonLink}>
+                className={`${primaryButtonLink} hidden md:block`}>
                     {t("nav-bar.start-sharing")}
                 </Link>
             </div>
