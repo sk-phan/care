@@ -8,7 +8,7 @@ import { BASE_URL } from '@/services/api_base.utils';
 export default async function Home({ params } : {params: { lang: string };}) {
   const lang = params.lang;
 
-  const data = await fetch(BASE_URL + '/items', { cache: 'no-cache' });
+  const data = await fetch(BASE_URL + '/items');
   const items: ItemType[] = await data.json();
 
   return (
