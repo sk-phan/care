@@ -6,11 +6,9 @@ import Badge from "../common/Badge";
 import { ItemType } from "@/types/items.type";
 
 const Item = ({ item } : { item: ItemType }) => {
-    const { t } = useTranslation("en")
 
-    console.log(item)
     return (
-        <div>
+        <div className="hover:opacity-85 cursor-pointer">
             <div className="item-image relative pb-2">
                 <Badge
                 className="absolute top-4 left-4 font-medium"
