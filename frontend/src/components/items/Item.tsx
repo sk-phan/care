@@ -1,14 +1,16 @@
 "use client";
 import Image from "next/image";
-import { useTranslation } from "@/app/i18n";
 import "../../styles/Item.css";
 import Badge from "../common/Badge";
 import { ItemType } from "@/types/items.type";
+import Link from "next/link";
+import { urlConfigs } from "@/routing/urlConfigs";
 
 const Item = ({ item } : { item: ItemType }) => {
+    const itemPath = urlConfigs.Item;
 
     return (
-        <div className="hover:opacity-85 cursor-pointer">
+        <Link href={`${itemPath.en}/${item.id}`} className="hover:opacity-85 cursor-pointer">
             <div className="item-image relative pb-2">
                 <Badge
                 className="absolute top-4 left-4 font-medium"
@@ -28,7 +30,7 @@ const Item = ({ item } : { item: ItemType }) => {
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <span className="text-gray-500 font-medium">{item.city}, {item.country}</span>
             </div>
-        </div>
+        </Link>
     )
 }
 

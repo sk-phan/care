@@ -1,46 +1,32 @@
 import { Route } from "./routes.type";
+import { urlConfigs } from "./urlConfigs";
 
 export const navRoutes: Route[] = [
     {
         id: 'home',
         title: 'Home',
-        path: {
-            fi: '/',
-            en: '/en'
-        },
+        path: urlConfigs.Home,
     },
     {
         id: 'items',
         title: 'Items',
-        path: {
-            fi: '/items',
-            en: '/en/items'
-        }
+        path: urlConfigs.Items,
     },
     {
         id: 'about',
         title: 'About',
-        path: {
-            fi: '/about',
-            en: '/en/about'
-        }
+        path: urlConfigs.About
     },
     {
         id: 'contact',
         title: 'Contact',
-        path: {
-            fi: '/contact',
-            en: '/en/contact'
-        }
+        path: urlConfigs.Contact
     },
 ];
 
 export const loginRoute: Route = {
     id: 'login',
     title: 'Login',
-    path: {
-        fi:'/login',
-        en: '/en/login'
-    }
-}
+    path: urlConfigs.Login
+};
 

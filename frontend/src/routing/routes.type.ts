@@ -1,6 +1,7 @@
 export type RoutePath = {
     fi: string;
     en: string;
+    enable: boolean;
 };
 
 export type Route = {
