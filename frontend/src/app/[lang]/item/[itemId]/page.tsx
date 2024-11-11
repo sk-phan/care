@@ -1,10 +1,15 @@
 import ItemPage from "@/components/items/ItemPage";
+import { BASE_URL } from "@/services/api_base.utils";
+import { ItemType } from "@/types/items.type";
 
-export default async function Items({ params }: { params: { lang: string, itemId: string }}) {
+export default async function Item({ params }: { params: { lang: string, itemId: string }}) {
     const lang = params.lang;
     const itemId =  params.itemId;
-    
+    const data =  await fetch(`${BASE_URL}/items/${itemId}`)
+    const item: ItemType = await data.json();
+
     return (
-        <ItemPage />
+        <ItemPage 
+        item={item}/>
     )
 }
