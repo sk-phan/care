@@ -11,23 +11,26 @@ interface AuthenticatedRequest extends Request {
 }
 
 export const authHandler = async (req: AuthenticatedRequest, _res: Response, next: NextFunction) => {
-    const authHeader = req.get('authorization');
-
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        throw new AuthenticationError();
+    try {
+        const authHeader = req.get('authorization');
+    
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            throw new AuthenticationError();
+        }
+    
+        const token = authHeader.split(' ')[1];
+    
+        const decodedToken: any = jwt.verify(token, SECRET_KEY);
+        const user = await User.findById(decodedToken.id).select('-passwordHash');
+    
+        if (!user) {
+            throw new BadRequestError('User not found');
+        }
+    
+        req.user = user; 
+    } catch(error) {
+        next(error);
     }
-
-    const token = authHeader.split(' ')[1];
-
-    const decodedToken: any = jwt.verify(token, SECRET_KEY);
-    const user = await User.findById(decodedToken.id).select('-passwordHash');
-
-    if (!user) {
-        throw new BadRequestError('User not found');
-    }
-
-    req.user = user; 
-    next();
 };
 
 
