@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
-import Item from "../models/ItemModel";
-import { BadRequestError } from "../errors/BadRequestError";
-import { IItem } from "../models/ItemModel";
+import Item from "../../models/ItemModel";
+import { BadRequestError } from "../../errors/BadRequestError";
+import { IItem } from "../../models/ItemModel";
 
 export const createItem = async (req: Request, res: Response, next: NextFunction) => {
     try {

@@ -36,6 +36,7 @@
     "typescript-eslint": "^8.4.0"
   },
   "dependencies": {
+    "@types/nodemailer": "^6.4.16",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

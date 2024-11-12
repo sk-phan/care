@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import logger from '../config/logger';
+import logger from '../../config/logger';
+import User from '../../models/UserModel';
 const { OAuth2Client } = require("google-auth-library");
-const User = require("../models/UserModel");
 
 const client = new OAuth2Client("307978777663-2dpvmr35u7b6l8s57r2hobs0gagahieo.apps.googleusercontent.com");
 

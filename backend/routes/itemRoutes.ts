@@ -1,6 +1,6 @@
 import express from 'express';
 import { authHandler } from '../middlewares/authHandler.middleware';
-import { createItem, deleteItem, getAllItems, getItemById, updateItem } from '../controllers/itemControler';
+import { createItem, deleteItem, getAllItems, getItemById, updateItem } from '../controllers/item/itemControler';
 
 const itemRoutes = express.Router();
 

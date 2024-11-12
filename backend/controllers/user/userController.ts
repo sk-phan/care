@@ -3,10 +3,11 @@ import { NextFunction, Request, Response } from "express";
 const jwt  = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-import User, { IUser } from '../models/UserModel';
-import { AuthenticationError } from "../errors/AuthenticationError";
+import User, { IUser } from '../../models/UserModel';
+import { AuthenticationError } from "../../errors/AuthenticationError";
 
 const SECRET_KEY = process.env.JWT_SECRET;
+
 export const createUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { email, name, password } = req.body;
@@ -29,7 +30,6 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
         next(error);
     }
 };
-
 
 export const getAllUsers = async (_req: Request, res: Response, next: NextFunction) => {
     try {

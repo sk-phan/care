@@ -1,4 +1,5 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
+import { IUser } from './UserModel';
 
 export interface IItem extends Document {
     title: string;
@@ -9,7 +10,7 @@ export interface IItem extends Document {
     image: string;
     city: string;
     country: string;
-    donorId: mongoose.Schema.Types.ObjectId; 
+    donorId: IUser | mongoose.Schema.Types.ObjectId; 
     createdAt: Date;
 }
 
