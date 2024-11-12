@@ -6,6 +6,8 @@ import { ItemType } from "@/types/items.type";
 import Link from "next/link";
 import { urlConfigs } from "@/routing/urlConfigs";
 
+const _ = require('lodash'); 
+
 const Item = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.Item;
 
@@ -15,7 +17,7 @@ const Item = ({ item } : { item: ItemType }) => {
                 <Badge
                 className="absolute top-4 left-4 font-medium"
                 >
-                    {item.condition}
+                    {_.capitalize(item.status)}
                 </Badge>
                 <Image 
                 className="rounded-xl object-cover" 
@@ -26,8 +28,9 @@ const Item = ({ item } : { item: ItemType }) => {
                 alt="item"
                 src={item.image}/>
             </div>
-            <div>
+            <div className="flex flex-col">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
+                <span className="text-gray-500 font-medium">{_.capitalize(item.condition)}</span>
                 <span className="text-gray-500 font-medium">{item.city}, {item.country}</span>
             </div>
         </Link>

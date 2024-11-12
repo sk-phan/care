@@ -22,7 +22,7 @@ const colorClasses: { [key in BadgeColor]: string } = {
 
 // Define a mapping of variants to Tailwind CSS classes
 const variantClasses: { [key in BadgeVariant]: (color: string) => string } = {
-  fill: (color) => `${color} py-2 rounded-full inline px-4`,
+  fill: (color) => `${color} py-1 rounded-full inline px-3`,
   outline: (color) => `border ${color} text-${color.split(' ')[0]} bg-transparent hover:bg-${color.split(' ')[0].split('-')[1]}-100 inline px-4 py-2 rounded-full`,
   text: (color) => `text-${color.split(' ')[0]} bg-transparent hover:bg-${color.split(' ')[0].split('-')[1]}-100 inline rounded-full`,
 };
