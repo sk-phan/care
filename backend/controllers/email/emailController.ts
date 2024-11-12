@@ -7,17 +7,18 @@ import { BadRequestError } from "../../errors/BadRequestError";
 import { NotFoundError } from "../../errors/NotFoundError";
 import logger from "../../config/logger";
 
-export const itemRequest = async (req: Request, res: Response, next: NextFunction) => {
+export const createEmailRequest = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { name, email, message, itemId } = req.body as emailRequest;
         if (!name || !email || !itemId) {
             throw new BadRequestError('Field name, email or itemId is missing. Please try again!');
         }
 
-        const item: IItem | null = await Item.findById(itemId);
+        const item: IItem | null = await Item.findById(itemId).populate('donorId');
         if (!item) {
             throw new NotFoundError('Item not found.');
         };
+        console.log(item)
 
         const donor = item?.donorId as IUser | null;
         if (!donor || !donor.email) {
