@@ -1,5 +1,5 @@
-import { ItemType, ItemPostParams } from "@/types/items.type";
-import api from "./api";
+import { ItemType, ItemPostParams } from "@/types/items/items.type";
+import api from "../api";
 
 export const ItemsApi = {
     getAll: async (params?: any) => {

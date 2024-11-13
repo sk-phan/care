@@ -20,6 +20,7 @@ const ItemContactForm = () => {
     const formRef = useRef<HTMLFormElement>(null);
 
     const onSubmit = (data: ItemContactFormData) => {
+        
         console.log(data);
     }
 

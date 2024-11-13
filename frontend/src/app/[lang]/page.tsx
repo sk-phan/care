@@ -1,8 +1,8 @@
 import HeroSection from '@/components/hero-section/hero-section';
 import About from '@/components/about/About';
 import ItemsSection from '@/components/items/ItemsSection';
-import { ItemType } from '@/types/items.type';
-import { BASE_URL } from '@/services/api_base.utils';
+import { ItemType } from '@/types/items/items.type';
+import { BASE_URL } from '@/services/api_base';
 
 export default async function Home({ params } : {params: { lang: string };}) {
   const lang = params.lang;

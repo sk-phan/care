@@ -1,6 +1,6 @@
 import ItemsPage from "@/components/items/ItemsPage";
-import { BASE_URL } from "@/services/api_base.utils";
-import { ItemType } from "@/types/items.type";
+import { BASE_URL } from "@/services/api_base";
+import { ItemType } from "@/types/items/items.type";
 
 export default async function Items({ params } : {params: { lang: string };}) {
     const data = await fetch(BASE_URL + '/items');

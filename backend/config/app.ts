@@ -5,7 +5,7 @@ import config from "./config";
 import { errorHandler } from '../middlewares/errorHandler.middleware';
 import userRoutes from '../routes/userRoutes';
 import itemRoutes from '../routes/itemRoutes';
-import emailRoutes from '../routes/emailRoutes';
+import pickupRequestRoutes from '../routes/pickupRequestRoutes';
 
 const cors = require('cors');
 const app = express();
@@ -29,7 +29,7 @@ app.use(express.json());
 
 app.use('/api/users', userRoutes);
 app.use('/api/items', itemRoutes);
-app.use('/api/email', emailRoutes);
+app.use('/api/pickupRequest', pickupRequestRoutes);
 
 // Must be defined in the end of application
 app.use(errorHandler); 

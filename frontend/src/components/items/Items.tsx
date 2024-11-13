@@ -1,6 +1,6 @@
 "use client";
 
-import { ItemType } from "@/types/items.type";
+import { ItemType } from "@/types/items/items.type";
 import Item from "./Item";
 
 const Items = ({ 

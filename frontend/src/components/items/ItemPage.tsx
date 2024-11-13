@@ -1,6 +1,6 @@
 "use client"
 import { useEffect } from "react";
-import { ItemType } from "@/types/items.type";
+import { ItemType } from "@/types/items/items.type";
 
 import ItemContactForm from "./forms/item-contact-form";
 import "../../styles/ItemPage.css";

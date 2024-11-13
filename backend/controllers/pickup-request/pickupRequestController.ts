@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
-import nodemailer, { SentMessageInfo, SendMailOptions, Transporter } from 'nodemailer'; // Import types from nodemailer
+import nodemailer, { SentMessageInfo, SendMailOptions, Transporter } from 'nodemailer'; 
 import Item, { IItem } from "../../models/ItemModel";
-import { emailRequest } from "./emailController.type";
+import { emailRequest } from "./pickupRequestController.type";
 import { IUser } from "../../models/UserModel";
 import { BadRequestError } from "../../errors/BadRequestError";
 import { NotFoundError } from "../../errors/NotFoundError";
