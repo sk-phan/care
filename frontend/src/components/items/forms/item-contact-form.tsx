@@ -9,20 +9,44 @@ import Button from "../../common/Button";
 import "../../../styles/items/ItemContactForm.css";
 import { ItemContactFormData } from "./item-contact-form.type";
 import TextArea from "@/components/common/TextArea";
+import { useMutation } from "@tanstack/react-query";
+import { PickupRequestApi } from "@/services/pickup-request/pickup-request-api";
+import { PickUpRequestPostParams } from "@/types/pickup-request/pickup-request.type";
+import { useNotify } from "@/hooks/notification/useNotify";
+import { BaseDonorType } from "@/types/donor/donor.type";
 
-const ItemContactForm = () => {
+const ItemContactForm = ({
+    donor
+} : {
+    donor: BaseDonorType
+}) => {
     const { 
         handleSubmit, 
         control,
         formState: { errors } 
     } = useForm<ItemContactFormData>();
 
-    const formRef = useRef<HTMLFormElement>(null);
+    const notify = useNotify();
 
+    const formRef = useRef<HTMLFormElement>(null);
+    const mutation = useMutation({
+        mutationFn: (newTodo: PickUpRequestPostParams) => {
+            return PickupRequestApi.create(newTodo)
+        },
+        onSuccess: () => {
+            notify({
+                message: "This is a success message!",
+            });
+        },
+        onError:(error) => {
+            console.log(error)
+        }
+    })
     const onSubmit = (data: ItemContactFormData) => {
-        
+        mutation.mutate({...data, itemId: '6731163f964185a39c3c51a3'})
         console.log(data);
-    }
+    };
+
 
     return (
         <div className="mt-6 bg-gray-100 p-6 rounded-3xl">

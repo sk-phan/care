@@ -3,6 +3,6 @@ import { createEmailRequest } from '../controllers/pickup-request/pickupRequestC
 
 const pickupRequestRoutes = express.Router();
 
-pickupRequestRoutes.get('/', createEmailRequest);
+pickupRequestRoutes.post('/', createEmailRequest);
 
 export default pickupRequestRoutes;

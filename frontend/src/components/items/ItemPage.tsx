@@ -57,7 +57,9 @@ const ItemPage = ({
                 <p className="text-gray-700">
                     {item.description}
                 </p>
-                <ItemContactForm />
+                <ItemContactForm 
+                    donor={item.donorId}
+                />
             </div>
         </div>
     )

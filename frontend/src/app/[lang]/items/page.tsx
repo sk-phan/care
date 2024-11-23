@@ -1,5 +1,5 @@
 import ItemsPage from "@/components/items/ItemsPage";
-import { BASE_URL } from "@/services/api_base";
+import { BASE_URL } from "@/services/api-base";
 import { ItemType } from "@/types/items/items.type";
 
 export default async function Items({ params } : {params: { lang: string };}) {

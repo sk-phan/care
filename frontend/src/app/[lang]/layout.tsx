@@ -11,7 +11,7 @@ import "../../styles/globals.css";
 import { cn } from "@/stores/utils";
 import NavBar from "@/components/common/NavBar";
 import Footer from '@/components/common/Footer';
-import StoreProvider from '../StoreProvider';
+import { Providers } from './providers';
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -40,13 +40,13 @@ export default async function RootLayout({
           fontSans.variable
         )}
       >
-        <StoreProvider>
+        <Providers>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-8xl">
             <NavBar 
             lang={lang}/>
             {children}
           </div>
-        </StoreProvider>
+        </Providers>
         <Footer />
       </body>
     </html>
