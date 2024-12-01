@@ -1,3 +1,5 @@
+import { BaseDonorType } from "../donor/donor.type";
+
 export type ItemType = {
     id: string;
     title: string;
@@ -8,7 +10,7 @@ export type ItemType = {
     image: string;
     city: string;
     country: string;
-    donorId: string;
+    donorId: string | BaseDonorType;
     createdAt: string;
 };
 

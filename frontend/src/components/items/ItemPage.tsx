@@ -5,6 +5,7 @@ import { ItemType } from "@/types/items/items.type";
 import ItemContactForm from "./forms/item-contact-form";
 import "../../styles/ItemPage.css";
 import Image from "next/image";
+import { BaseDonorType } from "@/types/donor/donor.type";
 
 const _ = require('lodash'); 
 
@@ -58,7 +59,7 @@ const ItemPage = ({
                     {item.description}
                 </p>
                 <ItemContactForm 
-                    donor={item.donorId}
+                    donor={item.donorId as BaseDonorType}
                 />
             </div>
         </div>

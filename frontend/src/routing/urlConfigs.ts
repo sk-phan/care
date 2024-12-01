@@ -14,9 +14,9 @@ export const urlConfigs = {
         en: '/en/contact',
         enable: true
     },
-    Login: {
-        fi:'/login',
-        en: '/en/login',
+    Register: {
+        fi:'/register',
+        en: '/en/register',
         enable: true
     },
     Items: {

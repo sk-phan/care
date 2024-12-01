@@ -14,7 +14,7 @@ const NavBarItems = ({
                 return (
                     <li key={item.id}>
                         <Link 
-                            href={item.path[lang as keyof RoutePath]}
+                            href={item.path[lang as keyof RoutePath] as string}
                             className="
                                 block 
                                 py-2 

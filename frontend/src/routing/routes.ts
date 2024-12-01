@@ -24,9 +24,3 @@ export const navRoutes: Route[] = [
     },
 ];
 
-export const loginRoute: Route = {
-    id: 'login',
-    title: 'Login',
-    path: urlConfigs.Login
-};
-

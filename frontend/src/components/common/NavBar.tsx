@@ -8,8 +8,8 @@ import { useTranslation } from "@/app/i18n";
 import Button from "./Button";
 import NavBarItems from "./NavBarItems";
 import useCommonStyles from "@/app/hooks/styles/useCommonStyles";
-import { loginRoute } from "@/routing/routes";
-import { Route, RoutePath } from "@/routing/routes.type";
+import { RoutePath } from "@/routing/routes.type";
+import { urlConfigs } from "@/routing/urlConfigs";
 
 interface NavBarProps {
     lang: string;
@@ -56,7 +56,7 @@ const NavBar = ({ lang } : NavBarProps) => {
                 </div>
 
                 <Link
-                href={loginRoute.path[lang as keyof RoutePath]}
+                href={urlConfigs.Register[lang as keyof RoutePath] as string}
                 className={`${primaryButtonLink} hidden md:block`}>
                     {t("nav-bar.start-sharing")}
                 </Link>

@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import { useRef } from "react";
 
 import TextInput from "@/components/common/TextInput";
 import Button from "../../common/Button";
@@ -28,7 +27,6 @@ const ItemContactForm = ({
 
     const notify = useNotify();
 
-    const formRef = useRef<HTMLFormElement>(null);
     const mutation = useMutation({
         mutationFn: (newTodo: PickUpRequestPostParams) => {
             return PickupRequestApi.create(newTodo)
@@ -71,7 +69,7 @@ const ItemContactForm = ({
                     </div>
                 </div>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} ref={formRef}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-col xl:flex-row">
                     <div className="xl:w-1/2 xl:mr-6">
                     <TextInput 
