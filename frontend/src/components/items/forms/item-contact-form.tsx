@@ -76,7 +76,6 @@ const ItemContactForm = ({
                         name="name" 
                         control={control} 
                         rules={{ required: "Name is required" }} 
-                        error={errors.name} 
                         placeholder="Full name"
                     />
                     </div>
@@ -85,7 +84,6 @@ const ItemContactForm = ({
                             name="email" 
                             control={control} 
                             rules={{ required: "Email is required" }} 
-                            error={errors.email} 
                             placeholder="Email"
                         />
                     </div>

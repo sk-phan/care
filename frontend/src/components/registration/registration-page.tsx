@@ -7,7 +7,10 @@ import RegistrationForm from "./form/registration-form";
 
 const RegistrationPage = () => {
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-space-between gap-6">
+            <div className="w-1/2">
+                <RegistrationForm />
+            </div>
             <div className="w-1/2">
                 <Image 
                     src={happyChildrenImage}
@@ -15,9 +18,6 @@ const RegistrationPage = () => {
                     height={1000}
                     alt="Happy children image"
                 />
-            </div>
-            <div className="w-1/2">
-                <RegistrationForm />
             </div>
         </div>
     )

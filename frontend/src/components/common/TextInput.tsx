@@ -1,7 +1,8 @@
-import { FieldError, Controller, Control, FieldValues, Path } from 'react-hook-form';
+import { TextField, TextFieldProps } from '@mui/material';
+import { Controller, Control, FieldValues, Path } from 'react-hook-form';
 
-type TextInputProps<T extends FieldValues> = {
-    rules?: {
+type TextInputProps<T extends FieldValues> = Omit<TextFieldProps, 'name'> & {
+    rules?: { 
         required?: boolean | string;
         minLength?: { value: number; message: string };
         maxLength?: { value: number; message: string };
@@ -10,16 +11,15 @@ type TextInputProps<T extends FieldValues> = {
     };
     name: Path<T>; 
     control: Control<T>; 
-    error?: FieldError; 
-    placeholder: string;
+    placeholder?: string;
 };
 
 const TextInput = <T extends FieldValues>({
-    rules, 
-    name, 
+    rules,
+    name,
     control,
-    error,
-    placeholder
+    placeholder,
+    ...props 
 }: TextInputProps<T>) => {
     
     return (
@@ -28,31 +28,16 @@ const TextInput = <T extends FieldValues>({
             name={name} 
             control={control}
             rules={rules}
-            render={({ field }) => (
-                <input 
-                    {...field} 
-                    placeholder={placeholder}
-                    className="
-                    rounded-full 
-                    bg-white border 
-                    border-gray-900 
-                    text-gray-900 
-                    text-sm 
-                    focus:ring-blue-500 
-                    focus:border-blue-500
-                    block w-full 
-                    p-2.5 
-                    outline-none 
-                    dark:bg-gray-700 
-                    dark:border-gray-600 
-                    dark:placeholder-gray-400 
-                    dark:text-white 
-                    dark:focus:ring-blue-500 
-                    dark:focus:border-blue-500" 
+            render={({ field, fieldState }) => (
+                <TextField 
+                    {...field}
+                    id="outlined-basic" 
+                    error={!!fieldState.error}
+                    helperText={fieldState?.error?.message}
+                    {...props}
                 />
             )}
         />
-        {error && <span className='text-red-500 text-xs'>{error.message}</span>}
         </>
     );
 };

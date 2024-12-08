@@ -14,7 +14,8 @@ const RegistrationForm = () => {
             country: 'Finland',
             category: 'toy',
             status: 'available'
-        }
+        },
+        mode: "all"
     })
     return (
         <FormProvider {...method}>

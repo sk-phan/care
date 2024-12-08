@@ -25,7 +25,7 @@ const NavBar = ({ lang } : NavBarProps) => {
 
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900 mb-4 md:mb-12">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
+            <div className="flex flex-wrap items-center justify-between mx-auto py-4">
                 <Link href={homePagePath} className="flex items-center space-x-3 rtl:space-x-reverse">
                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Care</span>
                 </Link>
