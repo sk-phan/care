@@ -6,7 +6,6 @@ import categories from "@/common/categories.json";
 import AutoCompleteField from "@/components/common/auto-complete-field";
 import SelectField from "@/components/common/SelectField";
 import TextInput from "@/components/common/TextInput";
-import { InputAdornment } from "@mui/material";
 
 const RegistrationFormFields = () => {
     const { control, formState: {errors} } = useFormContext();
@@ -25,18 +24,13 @@ const RegistrationFormFields = () => {
             />
             <TextInput 
                 control={control}
-                name="phone-number"
-                label="Phone number"   
-                required
-                slotProps={{
-                    input: {
-                        startAdornment: <InputAdornment position="start">+358</InputAdornment>,
-                    },
-                }}                
+                name="email"
+                label="Email"   
+                required              
                 rules={{
                     required: "This field is required",
                 }}
-                error={!!errors.phoneNumber}
+                error={!!errors.email}
             />
             <TextInput 
                 control={control}

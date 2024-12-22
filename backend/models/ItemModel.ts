@@ -1,19 +1,7 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
-import { ItemConditionType } from "shared/src/types/item.type";
+import { BaseItemType } from "shared/src/types/item.type";
 
-export interface IItem extends Document {
-    name: string;
-    title: string;
-    description: string;
-    condition: ItemConditionType;
-    status: "available" | "reserved";
-    category: "toy" | "book" | "clothing" | "other";
-    image: string;
-    city: string;
-    country: string;
-    createdAt: Date;
-    email: string;
-}
+export interface IItem extends Document, BaseItemType {};
 
 const itemSchema: Schema<IItem> = new mongoose.Schema({
     name: {
@@ -26,7 +14,6 @@ const itemSchema: Schema<IItem> = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true
     },
     condition: {
         type: String,
@@ -45,7 +32,6 @@ const itemSchema: Schema<IItem> = new mongoose.Schema({
     },
     image: {
         type: String,
-        required: true
     },
     city: {
         type: String,
@@ -53,7 +39,6 @@ const itemSchema: Schema<IItem> = new mongoose.Schema({
     },
     country: {
         type: String,
-        required: true
     },
     createdAt: {
         type: Date,

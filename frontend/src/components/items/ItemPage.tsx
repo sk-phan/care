@@ -1,11 +1,10 @@
 "use client"
 import { useEffect } from "react";
-import { ItemType } from "@/types/items/items.type";
 
 import ItemContactForm from "./forms/item-contact-form";
 import "../../styles/ItemPage.css";
 import Image from "next/image";
-import { BaseDonorType } from "@/types/donor/donor.type";
+import { ItemType } from "shared/src/types/item.type";
 
 const _ = require('lodash'); 
 
@@ -34,6 +33,7 @@ const ItemPage = ({
             width={100}
             height={100}
             unoptimized
+            priority
             className="rounded-xl w-full md:w-1/2 object-cover item-image"
             />
             <div className="mt-6 md:mt-0 md:ml-8 md:w-1/2 h-fit" id="item-info">
@@ -59,8 +59,8 @@ const ItemPage = ({
                     {item.description}
                 </p>
                 <ItemContactForm 
-                    donor={item.donorId as BaseDonorType}
-                />
+                    donorName={item.name}
+                    donorEmail={item.email}/>
             </div>
         </div>
     )

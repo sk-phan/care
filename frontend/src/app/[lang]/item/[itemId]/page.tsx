@@ -1,6 +1,6 @@
 import ItemPage from "@/components/items/ItemPage";
 import { BASE_URL } from "@/services/api-base";
-import { ItemType } from "@/types/items/items.type";
+import { ItemType } from "shared/src/types/item.type";
 
 export default async function Item({ params }: { params: { lang: string, itemId: string }}) {
     const lang = params.lang;

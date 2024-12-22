@@ -2,9 +2,9 @@
 import Image from "next/image";
 import "../../styles/Item.css";
 import Badge from "../common/Badge";
-import { ItemType } from "@/types/items/items.type";
 import Link from "next/link";
 import { urlConfigs } from "@/routing/urlConfigs";
+import { ItemType } from "shared/src/types/item.type";
 
 const _ = require('lodash'); 
 

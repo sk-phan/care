@@ -11,12 +11,12 @@ itemRoutes.get('/', getAllItems);
 itemRoutes.get('/:id', getItemById);
 
 // Create a new item (requires authentication)
-itemRoutes.post('/create', authHandler, createItem);
+itemRoutes.post('/', createItem);
 
 // Update an item by ID (requires authentication)
 itemRoutes.put('/:id', authHandler, updateItem);
 
 // Delete an item by ID (requires authentication)
-itemRoutes.delete('/:id', authHandler, deleteItem);
+itemRoutes.delete('/:id', deleteItem);
 
 export default itemRoutes;

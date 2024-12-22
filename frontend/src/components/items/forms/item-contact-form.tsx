@@ -12,12 +12,13 @@ import { useMutation } from "@tanstack/react-query";
 import { PickupRequestApi } from "@/services/pickup-request/pickup-request-api";
 import { PickUpRequestPostParams } from "@/types/pickup-request/pickup-request.type";
 import { useNotify } from "@/hooks/notification/useNotify";
-import { BaseDonorType } from "@/types/donor/donor.type";
 
 const ItemContactForm = ({
-    donor
+    donorName,
+    donorEmail
 } : {
-    donor: BaseDonorType
+    donorName: string;
+    donorEmail: string;
 }) => {
     const { 
         handleSubmit, 
@@ -42,7 +43,6 @@ const ItemContactForm = ({
     })
     const onSubmit = (data: ItemContactFormData) => {
         mutation.mutate({...data, itemId: '6731163f964185a39c3c51a3'})
-        console.log(data);
     };
 
 
@@ -54,7 +54,8 @@ const ItemContactForm = ({
                 src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="placeholder image"
                 width={100}
-                height={100}/>
+                height={100}
+                />
                 <div>
                     <span className="font-medium block">Mikko Korhonen</span>
                     <div className="flex flex-col xl:flex-row xl:justify-between">

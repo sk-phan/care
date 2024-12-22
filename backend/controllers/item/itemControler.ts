@@ -5,18 +5,18 @@ import { IItem } from "../../models/ItemModel";
 
 export const createItem = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { name, title, description, condition, image, city, country, category, email} = req.body as IItem;
+        const { name, title, description, condition, city, category, email} = req.body as IItem;
     
         const newItem = new Item({
             name,
             title,
             description,
             condition,
-            image,
-            city,
-            country,
+            city,            
+            country: 'FI',
             category,
             email,
+            status: 'available'
         });
     
         const savedItem = await newItem.save();
@@ -28,7 +28,7 @@ export const createItem = async (req: Request, res: Response, next: NextFunction
 
 export const getAllItems = async (_req: Request, res: Response, next: NextFunction) => {
     try {
-        const items = await Item.find({}).populate('donorId', 'name email');
+        const items = await Item.find({});
         res.json(items);
     } catch(e) {
         next(e)
@@ -37,7 +37,7 @@ export const getAllItems = async (_req: Request, res: Response, next: NextFuncti
 
 export const getItemById = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const item = await Item.findById(req.params.id).populate('donorId', 'name email');
+        const item = await Item.findById(req.params.id);
         if (!item) {
             throw new BadRequestError('Item not found');
         }

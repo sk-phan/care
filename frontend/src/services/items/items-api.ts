@@ -1,4 +1,4 @@
-import { ItemType, ItemPostParams } from "@/types/items/items.type";
+import { ItemCreateParams, ItemType } from "shared/src/types/item.type";
 import api from "../api";
 
 export const ItemsApi = {
@@ -8,7 +8,7 @@ export const ItemsApi = {
     getById: async (id: string) => {
         return api.get<ItemType>(`/items/${id}`);
     },
-    create: async (data: ItemPostParams) => {
+    create: async (data: ItemCreateParams) => {
         return api.post<ItemType>('/items', data);
     },
     update: async (id: string, item: ItemType) => {
