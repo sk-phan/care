@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Backend dependencies
+  - package-ecosystem: "npm"
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
+
+  # Frontend dependencies
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+
+  # Shared dependencies 
+  - package-ecosystem: "npm"
+    directory: "/shared"
+    schedule:
+      interval: "weekly"
