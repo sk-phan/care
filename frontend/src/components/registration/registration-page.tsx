@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import happyBabyImage from '../../images/img/registration_page.png';
+import happyBabyImage from '@/images/img/registration_page.png';
 import RegistrationForm from "./form/registration-form";
 import Heading from "../common/heading";
 

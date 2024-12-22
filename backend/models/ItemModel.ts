@@ -1,10 +1,11 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
+import { ItemConditionType } from "shared/src/types/item.type";
 
 export interface IItem extends Document {
     name: string;
     title: string;
     description: string;
-    condition: "new" | "like-new" | "very-good" | "good" | "acceptable";
+    condition: ItemConditionType;
     status: "available" | "reserved";
     category: "toy" | "book" | "clothing" | "other";
     image: string;

@@ -13,7 +13,7 @@ const RegistrationForm = ({ lang } : { lang?: LocaleType}) => {
     const method = useForm({ 
         defaultValues: {
             name: '',
-            phoneNumber: null,
+            email: '',
             title: '',
             description: '',
             condition: 'like-new',

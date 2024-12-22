@@ -1,0 +1,1 @@
+export type ItemConditionType = "new" | "like-new" | "very-good" | "good" | "acceptable";

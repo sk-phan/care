@@ -1,0 +1,17 @@
+{
+  "name": "care",
+  "version": "1.0.0",
+  "description": "Work in progress... ## Community Platform for Sharing Clothes, Books, and Toys",
+  "main": "index.js",
+  "workspaces": [
+    "backend",
+    "frontend",
+    "shared"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sk-phan <sukiphan97@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/sk-phan/care.git"
+}

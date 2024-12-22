@@ -3,6 +3,9 @@
         "target": "ES6",
         "outDir": "./build/",
         "module": "commonjs",
+        "paths": {
+            "shared/*": ["../shared/*"]
+        },
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
