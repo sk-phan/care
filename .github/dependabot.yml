@@ -1,19 +1,23 @@
 version: 2
 updates:
-  # Backend dependencies
   - package-ecosystem: "npm"
     directory: "/backend"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "fix" 
+    versioning-strategy: "increase" 
 
-  # Frontend dependencies
   - package-ecosystem: "npm"
     directory: "/frontend"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "fix" 
+    versioning-strategy: "increase" 
 
-  # Shared dependencies 
   - package-ecosystem: "npm"
     directory: "/shared"
     schedule:
       interval: "weekly"
+    versioning-strategy: "increase"
