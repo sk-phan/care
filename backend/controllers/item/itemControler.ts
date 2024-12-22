@@ -5,17 +5,18 @@ import { IItem } from "../../models/ItemModel";
 
 export const createItem = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { title, description, condition, image, city, country, donorId, category } = req.body as IItem;
+        const { name, title, description, condition, image, city, country, category, email} = req.body as IItem;
     
         const newItem = new Item({
+            name,
             title,
             description,
             condition,
             image,
             city,
             country,
-            donorId,
-            category
+            category,
+            email,
         });
     
         const savedItem = await newItem.save();

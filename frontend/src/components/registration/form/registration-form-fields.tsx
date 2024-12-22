@@ -1,48 +1,70 @@
+import { useFormContext } from "react-hook-form";
+import cities from "@/common/cities.json";
+import conditions from "@/common/item-conditions.json";
+import categories from "@/common/categories.json";
+
+import AutoCompleteField from "@/components/common/auto-complete-field";
 import SelectField from "@/components/common/SelectField";
 import TextInput from "@/components/common/TextInput";
-import { useFormContext } from "react-hook-form";
+import { InputAdornment } from "@mui/material";
 
 const RegistrationFormFields = () => {
-    const { control } = useFormContext();
+    const { control, formState: {errors} } = useFormContext();
 
     return (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 form-fields-margin-bottom">
+            <TextInput 
+                control={control}
+                name="name"
+                label="Name"   
+                required
+                rules={{
+                    required: "This field is required",
+                }}
+                error={!!errors.name}
+            />
+            <TextInput 
+                control={control}
+                name="phone-number"
+                label="Phone number"   
+                required
+                slotProps={{
+                    input: {
+                        startAdornment: <InputAdornment position="start">+358</InputAdornment>,
+                    },
+                }}                
+                rules={{
+                    required: "This field is required",
+                }}
+                error={!!errors.phoneNumber}
+            />
             <TextInput 
                 control={control}
                 name="title"
-                placeholder="Title" 
                 label="Title"   
                 required
+                rules={{
+                    required: "This field is required",
+                }}
+                error={!!errors.title}
             />
-            <SelectField 
-                control={control}
-                name="condition"
-                label="Condition"   
-                options={[
-                {   value: "like-new",
-                    label: "like new"}
-                ]}  
-                required       
-            />
-            <SelectField 
+            <AutoCompleteField 
+                options={cities}
                 control={control}
                 name="city"
-                label="City"   
-                options={[
-                {   value: "like-new",
-                    label: "like new"}
-                ]}        
-                required 
+                label="City"
             />
             <SelectField 
                 control={control}
                 name="category"
                 label="Category"   
-                options={[
-                {   value: "like-new",
-                    label: "like new"}
-                ]}        
-                required 
+                options={categories}        
+            />
+            <SelectField 
+                control={control}
+                name="condition"
+                label="Condition"   
+                options={conditions}        
             />
             <TextInput 
                 control={control}

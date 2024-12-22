@@ -8,8 +8,10 @@ import donateBoxIcon from "../../images/icons/donate_box.svg";
 import globalHeartIcon from "../../images/icons/global_heart.svg";
 
 import { useTranslation } from "@/app/i18n";
+import { LocaleType } from "@/app/i18n/locales/locales.type";
+
 interface WelcomeProps {
-    lang: string;
+    lang: LocaleType;
 }
 
 const About = ({ lang } : WelcomeProps) => {

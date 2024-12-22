@@ -3,4 +3,5 @@ export type emailRequest = {
     email: string;
     message: string | null;
     itemId: string;
+    donorEmail: string;
 }

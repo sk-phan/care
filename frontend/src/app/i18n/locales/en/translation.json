@@ -8,5 +8,9 @@
     },
     "items-section": {
         "available-items": "Available items"
+    },
+    "common": {
+        "send": "Send",
+        "cancel": "Cancel"
     }
 }

@@ -1,0 +1,18 @@
+[
+    {
+        "label": "Toy",
+        "value": "toy"
+    },
+    {
+        "label": "Book",
+        "value": "book"
+    },
+    {
+        "label": "Clothing",
+        "value": "clothing"
+    },
+    {
+        "label": "Other",
+        "value": "other"
+    }
+]

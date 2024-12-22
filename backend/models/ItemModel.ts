@@ -1,7 +1,7 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
-import { IUser } from './UserModel';
 
 export interface IItem extends Document {
+    name: string;
     title: string;
     description: string;
     condition: "new" | "like-new" | "very-good" | "good" | "acceptable";
@@ -10,11 +10,15 @@ export interface IItem extends Document {
     image: string;
     city: string;
     country: string;
-    donorId: IUser | mongoose.Schema.Types.ObjectId; 
     createdAt: Date;
+    email: string;
 }
 
 const itemSchema: Schema<IItem> = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
     title: {
         type: String,
         required: true,
@@ -50,14 +54,14 @@ const itemSchema: Schema<IItem> = new mongoose.Schema({
         type: String,
         required: true
     },
-    donorId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    },
     createdAt: {
         type: Date,
         default: () => new Date()
-    }
+    },
+    email: {
+        type: String,
+        required: true
+    },
 });
 
 // Create indexes for optimization

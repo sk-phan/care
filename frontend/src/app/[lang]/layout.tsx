@@ -6,7 +6,8 @@ export async function generateStaticParams() {
 
 import type { Metadata } from "next";
 import { Outfit as FontSans } from "next/font/google";
-import "../../styles/globals.css";
+import "../../styles/common/globals.css";
+import "../../styles/common/formStyles.css";
 
 import { cn } from "@/stores/utils";
 import NavBar from "@/components/common/NavBar";

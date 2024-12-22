@@ -2,14 +2,13 @@ import { NextFunction, Request, Response } from "express";
 import nodemailer, { SentMessageInfo, SendMailOptions, Transporter } from 'nodemailer'; 
 import Item, { IItem } from "../../models/ItemModel";
 import { emailRequest } from "./pickupRequestController.type";
-import { IUser } from "../../models/UserModel";
 import { BadRequestError } from "../../errors/BadRequestError";
 import { NotFoundError } from "../../errors/NotFoundError";
 import logger from "../../config/logger";
 
 export const createEmailRequest = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { name, email, message, itemId } = req.body as emailRequest;
+        const { name, email, message, itemId, donorEmail } = req.body as emailRequest;
         if (!name || !email || !itemId) {
             throw new BadRequestError('Field name, email or itemId is missing. Please try again!');
         }
@@ -18,16 +17,14 @@ export const createEmailRequest = async (req: Request, res: Response, next: Next
         if (!item) {
             throw new NotFoundError('Item not found.');
         };
-        console.log(item)
 
-        const donor = item?.donorId as IUser | null;
-        if (!donor || !donor.email) {
+        if (!donorEmail) {
             throw new BadRequestError('Donor email not available');
         }
 
         const mailOptions: SendMailOptions = {
             from: email,
-            to: donor.email,
+            to: donorEmail,
             subject: "Notification",
             text: message || '',
         }
