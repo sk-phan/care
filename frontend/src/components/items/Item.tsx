@@ -1,10 +1,14 @@
 "use client";
-import Image from "next/image";
-import "../../styles/Item.css";
-import Badge from "../common/Badge";
 import Link from "next/link";
+import Image from "next/image";
+
+import "../../styles/Item.css";
+
 import { urlConfigs } from "@/routing/urlConfigs";
 import { ItemType } from "shared/src/types/item.type";
+
+import Badge from "../common/Badge";
+import placeholderImage from "@/images/img/item_placeholder_img.png";
 
 const _ = require('lodash'); 
 
@@ -26,7 +30,7 @@ const Item = ({ item } : { item: ItemType }) => {
                 sizes="100vw"
                 style={{ width: '100%', height: '270px'}} 
                 alt="item"
-                src={item.image}/>
+                src={item.image || placeholderImage.src}/>
             </div>
             <div className="flex flex-col">
                 <h3 className="text-lg font-semibold">{item.title}</h3>

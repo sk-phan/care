@@ -15,7 +15,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 // Define a mapping of colors to Tailwind CSS classes
 const colorClasses: { [key in ButtonColor]: string } = {
-  primary: 'bg-red-600 text-white hover:bg-red-700 hover:border-blue-700',
+  primary: 'bg-teal-900 text-white hover:bg-teal-950 hover:border-blue-700',
   secondary: 'bg-black text-white border-0 hover:bg-gray-700 hover:border-gray-700',
   danger: 'bg-red-500 text-white border-red-500 hover:bg-red-700 hover:border-red-700',
 };

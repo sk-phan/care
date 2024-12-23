@@ -15,6 +15,8 @@ import useCreateItemRegistration from "../data/use-create-item-registation";
 import { ItemCreateParams } from "shared/src/types/item.type";
 import { useRouter } from "next/navigation";
 import { urlConfigs } from "@/routing/urlConfigs";
+import RegistrationFormPreview from "./registration-form-preview";
+import Heading from "@/components/common/heading";
 
 const RegistrationForm = ({ lang } : { lang?: LocaleType}) => {
     const { t } = useTranslation(lang);
@@ -47,23 +49,33 @@ const RegistrationForm = ({ lang } : { lang?: LocaleType}) => {
 
     return (
         <FormProvider {...method}>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <RegistrationFormFields />
-                <div className="flex gap-4 justify-end">
-                    <Button 
-                        variant="outlined"
-                    >
-                        {t("common.cancel")}
-                    </Button>
-                    <Button 
-                    type="submit"
-                    variant="contained"
-                    disabled={isSubmitting || !isValid || isValidating}
-                    >
-                        {t("common.send")}
-                    </Button>
+            <div className="flex justify-between gap-12 h-full">
+                <form onSubmit={handleSubmit(onSubmit)} className="w-1/2">
+                    <Heading 
+                        level={2}
+                        title="Post an item"
+                        subHeading="Turn your unused items into valuable resources for others. The item will be available for 30 days after posting"
+                    />
+                    <RegistrationFormFields />
+                    <div className="flex gap-4 justify-end">
+                        <Button 
+                            variant="outlined"
+                        >
+                            {t("common.cancel")}
+                        </Button>
+                        <Button 
+                        type="submit"
+                        variant="contained"
+                        disabled={isSubmitting || !isValid || isValidating}
+                        >
+                            {t("common.send")}
+                        </Button>
+                    </div>
+                </form>
+                <div className="w-1/2 rounded-lg bg-primary flex items-center justify-center">
+                    <RegistrationFormPreview />
                 </div>
-            </form>
+            </div>
         </FormProvider>
     )
 };

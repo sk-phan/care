@@ -9,7 +9,7 @@ export type BaseItemType = {
     condition: ItemConditionType;
     status: "available" | "reserved";
     category: ItemCategoryType;
-    image: string;
+    image?: string;
     city: string;
     country: string;
     createdAt: Date;
@@ -26,4 +26,4 @@ export type ItemCreateParams = Pick<ItemType,
     "description" | 
     "condition" | 
     "category" | 
-    "city" >;
+    "city">;
