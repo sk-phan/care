@@ -17,6 +17,7 @@ import { useRouter } from "next/navigation";
 import { urlConfigs } from "@/routing/urlConfigs";
 import RegistrationFormPreview from "./registration-form-preview";
 import Heading from "@/components/common/heading";
+import revalidateHomePath from "@/services/server-actions/revalidate-path";
 
 const RegistrationForm = ({ lang } : { lang?: LocaleType}) => {
     const { t } = useTranslation(lang);
@@ -40,6 +41,7 @@ const RegistrationForm = ({ lang } : { lang?: LocaleType}) => {
     useEffect(() => {
         if (status === 'success') {
             notify({ message: 'Registration is succesfully saved!'});
+            revalidateHomePath(urlConfigs.Home.en);
             router.push(urlConfigs.Items.en);
         };
         if (status === 'error') {
@@ -53,8 +55,8 @@ const RegistrationForm = ({ lang } : { lang?: LocaleType}) => {
                 <form onSubmit={handleSubmit(onSubmit)} className="w-1/2">
                     <Heading 
                         level={2}
-                        title="Post an item"
-                        subHeading="Turn your unused items into valuable resources for others. The item will be available for 30 days after posting"
+                        title="List your item"
+                        subHeading="Share your unused items and give them a new purpose! Your listing will remain active for 30 days."
                     />
                     <RegistrationFormFields />
                     <div className="flex gap-4 justify-end">

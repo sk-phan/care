@@ -6,10 +6,16 @@ const theme = createTheme({
         main: 'rgb(19, 78, 74)', 
         },
     },
+    typography: {
+        fontFamily: 'var(--font-sans)', 
+    },
     components: {
         MuiButton: {
         styleOverrides: {
             root: {
+                borderRadius: '20px',
+                boxShadow: 'none',
+                fontSize: '16px',
                 '&.MuiButton-contained.MuiButton-containedPrimary': {
                     color: 'white',
                 },

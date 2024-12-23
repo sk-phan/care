@@ -2,7 +2,7 @@ import React, { createContext, useState, ReactNode, useCallback } from "react";
 import { Snackbar, Alert, AlertColor } from "@mui/material";
 import { NotificationContextType, NotificationOptions } from "./notification-context.type";
 
-const DEFAULT_DURATION = 3000;
+const DEFAULT_DURATION = 5000;
 
 export const NotificationContext = createContext<NotificationContextType | undefined>(undefined);
 
@@ -30,7 +30,7 @@ export const NotificationProvider: React.FC<{ children: ReactNode }> = ({ childr
             open={open}
             autoHideDuration={duration}
             onClose={handleClose}
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }} 
+            anchorOrigin={{ vertical: "top", horizontal: "center" }} 
         >
             <Alert 
                 onClose={handleClose} 
