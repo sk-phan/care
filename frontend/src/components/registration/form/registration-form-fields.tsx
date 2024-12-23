@@ -17,20 +17,20 @@ const RegistrationFormFields = () => {
                 name="name"
                 label="Name"   
                 required
-                rules={{
-                    required: "This field is required",
-                }}
-                error={!!errors.name}
+                // rules={{
+                //     required: "This field is required",
+                // }}
+                // error={!!errors.name}
             />
             <TextInput 
                 control={control}
                 name="email"
                 label="Email"   
-                required              
-                rules={{
-                    required: "This field is required",
-                }}
-                error={!!errors.email}
+                // required              
+                // rules={{
+                //     required: "This field is required",
+                // }}
+                // error={!!errors.email}
             />
             <TextInput 
                 control={control}

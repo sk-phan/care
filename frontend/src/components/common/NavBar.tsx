@@ -10,6 +10,7 @@ import NavBarItems from "./NavBarItems";
 import useCommonStyles from "@/app/hooks/styles/useCommonStyles";
 import { RoutePath } from "@/routing/routes.type";
 import { urlConfigs } from "@/routing/urlConfigs";
+import { usePathname } from "next/navigation";
 
 interface NavBarProps {
     lang: string;
@@ -18,10 +19,17 @@ interface NavBarProps {
 const NavBar = ({ lang } : NavBarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const pathname = usePathname();
     const { t } = useTranslation(lang);
     const { primaryButtonLink } = useCommonStyles();
 
+    const isAtRegisterPage = pathname.includes('register');
+
     const homePagePath =  "/" + (lang === "fi" || lang === "en" ? lang : "");
+
+    if (isAtRegisterPage) {
+        return;
+    }
 
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900 mb-4 md:mb-12">
@@ -47,7 +55,7 @@ const NavBar = ({ lang } : NavBarProps) => {
                     onClick={() => setIsOpen(!isOpen)}>
                     <span className="sr-only">Open main menu</span>
                     <svg className="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M1 1h15M1 7h15M1 13h15"/>
+                        <path stroke="currentColor" stroke-linecap="round" strokeLinejoin="round" stroke-width="1" d="M1 1h15M1 7h15M1 13h15"/>
                     </svg>
                 </Button>
                 <div className={`${isOpen ? 'block' : 'hidden' } w-full md:block md:w-auto`} id="navbar-default">
