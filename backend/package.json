@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
-    "build": "tsc", 
-    "dev": "ts-node-dev index.ts",
+    "start": "node build/backend/index.js",
     "test": "jest --coverage",
+    "dev": "ts-node-dev index.ts",
     "ts-node": "ts-node",
     "lint": "eslint .",
     "tsc": "tsc"
@@ -37,16 +36,13 @@
     "typescript-eslint": "^8.4.0"
   },
   "dependencies": {
-    "@types/nodemailer": "^6.4.16",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "google-auth-library": "^9.14.1",
     "jsonwebtoken": "^9.0.2",
-    "lodash": "^4.17.21",
     "mongodb": "^6.8.1",
-    "mongoose": "^8.6.1",
-    "nodemailer": "^6.9.16"
+    "mongoose": "^8.6.1"
   }
 }
