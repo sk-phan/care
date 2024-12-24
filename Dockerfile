@@ -12,6 +12,7 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 
+
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
@@ -23,21 +24,18 @@ RUN apt-get update -qq && \
 COPY package-lock.json package.json ./
 RUN npm ci
 
-# Copy application code (including TypeScript files)
+# Copy application code
 COPY . .
 
-# Run build step (e.g., TypeScript compilation)
+# Build the TypeScript files
 RUN npm run build
 
 # Final stage for app image
 FROM base
 
-# Copy only the compiled code from the build stage
-# This assumes compiled JavaScript files are in /app/backend/build/backend/
-COPY --from=build /app/backend/build /app/backend/build
+# Copy built application
+COPY --from=build /app /app
 
-# Expose port 3000
-EXPOSE 3000
-
-# Run the app from the compiled index.js file
-CMD ["node", "backend/build/backend/index.js"]
+# Start the server by default, this can be overwritten at runtime
+EXPOSE 8080
+CMD [ "node", "build/backend/index.js" ]

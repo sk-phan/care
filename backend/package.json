@@ -9,7 +9,8 @@
     "dev": "ts-node-dev index.ts",
     "ts-node": "ts-node",
     "lint": "eslint .",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build": "tsc"
   },
   "author": "Suki Nhung Phan",
   "license": "ISC",

@@ -1,10 +1,12 @@
-# fly.toml app configuration file generated for backend-proud-glitter-4214 on 2024-12-24T14:38:22+02:00
+# fly.toml app configuration file generated for care-old-wind-4827 on 2024-12-24T14:45:04+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'backend-proud-glitter-4214'
+app = 'care-old-wind-4827'
 primary_region = 'arn'
+
+[build]
 
 [http_service]
   internal_port = 8080

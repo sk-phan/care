@@ -16,5 +16,8 @@
   },
   "author": "sk-phan <sukiphan97@gmail.com>",
   "license": "ISC",
-  "repository": "https://github.com/sk-phan/care.git"
+  "repository": "https://github.com/sk-phan/care.git",
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.9"
+  }
 }
