@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.ts",
-    "test": "jest --coverage",
+    "start": "node dist/index.js",
+    "build": "tsc", 
     "dev": "ts-node-dev index.ts",
+    "test": "jest --coverage",
     "ts-node": "ts-node",
     "lint": "eslint .",
     "tsc": "tsc"
