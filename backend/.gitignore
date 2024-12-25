@@ -8,6 +8,3 @@
 .env
 .env.local
 .env.production
-
-# Build
-/build
