@@ -13,6 +13,7 @@ import { cn } from "@/stores/utils";
 import NavBar from "@/components/common/nav-bar";
 import Footer from '@/components/common/Footer';
 import { Providers } from './providers';
+import { LocaleType } from '../i18n/locales/locales.type';
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default async function RootLayout({
   params
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang?: string };
+  params: { lang?: LocaleType };
 }>) {
   const lang = params.lang && languages.includes(params.lang) ? params.lang : 'en';
 
