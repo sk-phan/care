@@ -3,6 +3,7 @@
 import { useTranslation } from "@/app/i18n";
 import Items from "./Items";
 import { ItemType } from "@/types/item/item.type";
+import Heading from "../common/heading";
 
 interface ItemsSectionProps {
     lang: string;
@@ -14,12 +15,7 @@ interface ItemsSectionProps {
 
     return (
         <section className="w-full mt-12 md:mt-16">
-            <div>
-                <h2 
-                className="text-3xl md:text-5xl font-semibold mb-8">
-                    {t("items-section.available-items")}
-                </h2>
-            </div>
+            <Heading title={t("items-section.available-items")}/>
             <Items items={items} />
         </section>
     )

@@ -10,7 +10,7 @@ import "../../styles/common/globals.css";
 import "../../styles/common/formStyles.css";
 
 import { cn } from "@/stores/utils";
-import NavBar from "@/components/common/NavBar";
+import NavBar from "@/components/common/nav-bar";
 import Footer from '@/components/common/Footer';
 import { Providers } from './providers';
 

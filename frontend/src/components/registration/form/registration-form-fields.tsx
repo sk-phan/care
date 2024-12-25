@@ -4,7 +4,7 @@ import conditions from "@/common/item-conditions.json";
 import categories from "@/common/categories.json";
 
 import AutoCompleteField from "@/components/common/auto-complete-field";
-import SelectField from "@/components/common/SelectField";
+import SelectField from "@/components/common/select-field";
 import TextInput from "@/components/common/TextInput";
 
 const RegistrationFormFields = () => {

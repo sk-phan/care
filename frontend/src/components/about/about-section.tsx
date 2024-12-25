@@ -26,7 +26,7 @@ const AboutSection = ({ lang } : WelcomeProps) => {
         <section className="mt-12 md:mt-16">
             <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 md:mr-16">
-                    <h2 className="text-3xl md:text-5xl font-semibold mb-4">{t("about.about-us")}</h2>
+                    <Heading title={t("about.about-us")}/>
                     <p 
                     className="
                         text-xl
