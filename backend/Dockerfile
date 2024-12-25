@@ -1,5 +1,5 @@
 # Use a lightweight Node.js image for the build stage
-FROM node:16-alpine as builder
+FROM node:18-alpine as builder
 
 # Set environment to build mode
 ENV NODE_ENV build
