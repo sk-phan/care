@@ -1,15 +1,16 @@
 import Heading from "@/components/common/heading";
 import Item from "@/components/items/Item";
-import React from "react";
+import React, { useId } from "react";
 import { useFormContext } from "react-hook-form";
 import { ItemType } from "@/types/item/item.type";
 
 const RegistrationFormPreview = () => {
     const { watch } = useFormContext();
+    const randomId = useId();
 
     const mapFormValuesToPreviewItem = (): ItemType => {
         return {
-            id: React.useId(),
+            id: randomId,
             title: watch('title'),
             description: '',
             condition: watch('condition'),
@@ -23,8 +24,6 @@ const RegistrationFormPreview = () => {
             image: undefined
         }
     }
-
-
 
     return (
         <div>
