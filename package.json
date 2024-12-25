@@ -1,0 +1,13 @@
+{
+  "name": "care",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sk-phan/care.git",
+  "author": "sk-phan <sukiphan97@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "backend",
+    "frontend",
+    "shared"
+  ]
+}
