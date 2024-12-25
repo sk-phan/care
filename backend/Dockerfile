@@ -1,43 +1,41 @@
-# syntax = docker/dockerfile:1
+# Use a lightweight Node.js image for the build stage
+FROM node:16-alpine as builder
 
-# Adjust NODE_VERSION as desired
-ARG NODE_VERSION=18.20.4
-FROM node:${NODE_VERSION}-slim as base
+# Set environment to build mode
+ENV NODE_ENV build
 
-LABEL fly_launch_runtime="Node.js"
+# Set working directory
+WORKDIR /home/node
 
-# Node.js app lives here
-WORKDIR /app
-
-# Set production environment
-ENV NODE_ENV="production"
-
-# Throw-away build stage to reduce size of final image
-FROM base as build
-
-# Install packages needed to build node modules
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
-
-# Install node modules
-COPY package-lock.json package.json ./
+# Copy package files and install dependencies
+COPY package*.json ./
 RUN npm ci
 
-# Copy application code (including TypeScript files)
+# Copy the rest of the application code
 COPY . .
 
-# Run build step (e.g., TypeScript compilation)
-RUN npm run build
+# Build the application and remove dev dependencies
+RUN npm run build && npm prune --production
 
-# Final stage for app image
-FROM base
+# Use a new lightweight image for the final app
+FROM node:16-alpine
 
-# Copy only the compiled code from the build stage
-# This assumes compiled JavaScript files are in /app/backend/build/backend/
-COPY --from=build /app/backend/build /app/backend/build
+# Set environment to production mode
+ENV NODE_ENV production
 
-# Expose port 3000
+# Set working directory
+WORKDIR /home/node
+
+# Copy production files from builder
+COPY --from=builder /home/node/package*.json ./
+COPY --from=builder /home/node/node_modules/ ./node_modules/
+COPY --from=builder /home/node/build/ ./build/
+
+# Set non-root user
+USER node
+
+# Expose the port your app uses
 EXPOSE 3000
 
-# Run the app from the compiled index.js file
-CMD ["node", "backend/build/backend/index.js"]
+# Run the application
+CMD ["node", "build/backend/index.js"]
