@@ -1,6 +1,0 @@
-import { Document, Model } from 'mongoose';
-import { BaseItemType } from "shared/src/types/item.type";
-export interface IItem extends Document, BaseItemType {
-}
-declare const Item: Model<IItem>;
-export default Item;

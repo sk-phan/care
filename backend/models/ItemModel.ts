@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
-import { BaseItemType } from "shared/src/types/item.type";
+import { BaseItemType } from "../types/item.type";
 
 export interface IItem extends Document, BaseItemType {};
 
