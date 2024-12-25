@@ -9,3 +9,4 @@ const errorHandler = (error, _req, res, _next) => {
     return res.status(400).json({ message: error.message });
 };
 exports.errorHandler = errorHandler;
+//# sourceMappingURL=errorHandler.middleware.js.map

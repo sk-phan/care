@@ -48,3 +48,4 @@ const loginWithGoogle = (req, res) => __awaiter(void 0, void 0, void 0, function
     }
 });
 exports.loginWithGoogle = loginWithGoogle;
+//# sourceMappingURL=googleAuthController.js.map

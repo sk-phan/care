@@ -12,3 +12,4 @@ const productionMongoURI = process.env.MONGODB_URI;
 const MONGODB_URI = productionMongoURI;
 const config = { MONGODB_URI, PORT };
 exports.default = config;
+//# sourceMappingURL=config.js.map

@@ -64,3 +64,4 @@ itemSchema.set('toJSON', {
 });
 const Item = mongoose_1.default.model('Item', itemSchema);
 exports.default = Item;
+//# sourceMappingURL=ItemModel.js.map

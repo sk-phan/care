@@ -9,3 +9,4 @@ const logger_1 = __importDefault(require("./config/logger"));
 app_1.default.listen(config_1.default.PORT, '0.0.0.0', () => {
     logger_1.default.info(`Server listening on ${config_1.default.PORT}`);
 });
+//# sourceMappingURL=index.js.map

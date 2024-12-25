@@ -8,3 +8,4 @@ const pickupRequestController_1 = require("../controllers/pickup-request/pickupR
 const pickupRequestRoutes = express_1.default.Router();
 pickupRequestRoutes.post('/', pickupRequestController_1.createEmailRequest);
 exports.default = pickupRequestRoutes;
+//# sourceMappingURL=pickupRequestRoutes.js.map

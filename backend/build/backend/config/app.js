@@ -31,3 +31,4 @@ app.use('/api/pickupRequest', pickupRequestRoutes_1.default);
 // Must be defined in the end of application
 app.use(errorHandler_middleware_1.errorHandler);
 exports.default = app;
+//# sourceMappingURL=app.js.map

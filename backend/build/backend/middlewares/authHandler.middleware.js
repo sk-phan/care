@@ -37,3 +37,4 @@ const authHandler = (req, _res, next) => __awaiter(void 0, void 0, void 0, funct
     }
 });
 exports.authHandler = authHandler;
+//# sourceMappingURL=authHandler.middleware.js.map

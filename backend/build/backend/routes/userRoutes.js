@@ -12,3 +12,4 @@ userRoutes.post('/login', userController_1.loginUser);
 userRoutes.post('/loginWithGoogle', googleAuthController_1.loginWithGoogle);
 userRoutes.get('/', userController_1.getAllUsers);
 exports.default = userRoutes;
+//# sourceMappingURL=userRoutes.js.map

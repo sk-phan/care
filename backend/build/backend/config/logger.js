@@ -8,3 +8,4 @@ const error = (...params) => {
 };
 const logger = { info, error };
 exports.default = logger;
+//# sourceMappingURL=logger.js.map

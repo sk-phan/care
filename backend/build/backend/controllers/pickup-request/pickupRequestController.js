@@ -54,3 +54,4 @@ const createEmailRequest = (req, res, next) => __awaiter(void 0, void 0, void 0,
     }
 });
 exports.createEmailRequest = createEmailRequest;
+//# sourceMappingURL=pickupRequestController.js.map

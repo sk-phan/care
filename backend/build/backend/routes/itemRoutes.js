@@ -18,3 +18,4 @@ itemRoutes.put('/:id', authHandler_middleware_1.authHandler, itemControler_1.upd
 // Delete an item by ID (requires authentication)
 itemRoutes.delete('/:id', itemControler_1.deleteItem);
 exports.default = itemRoutes;
+//# sourceMappingURL=itemRoutes.js.map

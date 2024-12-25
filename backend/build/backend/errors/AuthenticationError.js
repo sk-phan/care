@@ -13,3 +13,4 @@ class AuthenticationError extends CustomError_1.CustomError {
     }
 }
 exports.AuthenticationError = AuthenticationError;
+//# sourceMappingURL=AuthenticationError.js.map

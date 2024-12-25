@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
     "start": "node build/backend/index.js",
     "test": "jest --coverage",
     "dev": "ts-node-dev index.ts",
     "ts-node": "ts-node",
     "lint": "eslint .",
-    "tsc": "tsc",
-    "build": "tsc"
+    "tsc": "tsc"
   },
   "author": "Suki Nhung Phan",
   "license": "ISC",
@@ -30,6 +32,8 @@
     "@types/supertest": "^6.0.2",
     "eslint": "^9.10.0",
     "nodemon": "^3.1.4",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^6.0.1",
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
