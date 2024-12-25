@@ -7,7 +7,7 @@ import "../../styles/Item.css";
 import { urlConfigs } from "@/routing/urlConfigs";
 import { ItemType } from "@/types/item/item.type";
 
-import Badge from "../common/Badge";
+import Badge from "../common/badge";
 import placeholderImage from "@/images/img/item_placeholder_img.png";
 
 const _ = require('lodash'); 

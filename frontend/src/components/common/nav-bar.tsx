@@ -5,15 +5,16 @@ import Link from "next/link";
 
 import { useTranslation } from "@/app/i18n";
 
-import Button from "./Button";
+import Button from "./button";
 import NavBarItems from "./nav-bar-item";
 import useCommonStyles from "@/app/hooks/styles/useCommonStyles";
 import { RoutePath } from "@/routing/routes.type";
 import { urlConfigs } from "@/routing/urlConfigs";
 import { usePathname } from "next/navigation";
+import { LocaleType } from "@/app/i18n/locales/locales.type";
 
 interface NavBarProps {
-    lang: string;
+    lang: LocaleType;
 }
 
 const NavBar = ({ lang } : NavBarProps) => {

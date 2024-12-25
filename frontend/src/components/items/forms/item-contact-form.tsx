@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 
 import TextInput from "@/components/common/TextInput";
-import Button from "../../common/Button";
+import Button from "../../common/button";
 import "../../../styles/items/ItemContactForm.css";
 import { ItemContactFormData } from "./item-contact-form.type";
 import TextArea from "@/components/common/TextArea";

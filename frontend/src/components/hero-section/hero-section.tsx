@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "../common/Button";
+import Button from "../common/button";
 
 import '../../styles/HeroSection.css';
 import heroImage from '../../../public/hero-image.png';

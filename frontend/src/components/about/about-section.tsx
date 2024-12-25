@@ -10,7 +10,6 @@ import { useTranslation } from "@/app/i18n";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import Link from "next/link";
 import { urlConfigs } from "@/routing/urlConfigs";
-import { RoutePath } from "@/routing/routes.type";
 
 import { Button } from "@mui/material";
 import Heading from "../common/heading";
@@ -39,7 +38,7 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                         variant="contained"
                         className="hidden md:inline-block"
                         LinkComponent={Link}
-                        href={urlConfigs.Register[lang as keyof RoutePath] as string}
+                        href={urlConfigs.Register[lang]}
                     >
                         {t("nav-bar.start-sharing")}
                     </Button>
