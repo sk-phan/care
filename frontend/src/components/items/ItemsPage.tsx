@@ -2,7 +2,7 @@
 
 import Items from "./Items";
 import Tabs from "../common/Tabs";
-import { ItemType } from "shared/src/types/item.type";
+import { ItemType } from "@/types/item/item.type";
 
 interface ItemsPage {
     lang: string;

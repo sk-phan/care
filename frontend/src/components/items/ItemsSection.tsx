@@ -2,7 +2,7 @@
 
 import { useTranslation } from "@/app/i18n";
 import Items from "./Items";
-import { ItemType } from "shared/src/types/item.type";
+import { ItemType } from "@/types/item/item.type";
 
 interface ItemsSectionProps {
     lang: string;

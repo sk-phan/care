@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { ItemCreateParams } from "shared/src/types/item.type";
+import { ItemCreateParams } from "@/types/item/item.type";
 
 import { ItemsApi } from "@/services/items/items-api";
 

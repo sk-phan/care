@@ -1,4 +1,4 @@
-import { ItemCreateParams } from "shared/src/types/item.type";
+import { ItemCreateParams } from "@/types/item/item.type";
 
 export const registrationFormDefaultValues: ItemCreateParams =  {
     name: '',

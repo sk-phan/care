@@ -5,7 +5,7 @@ import Image from "next/image";
 import "../../styles/Item.css";
 
 import { urlConfigs } from "@/routing/urlConfigs";
-import { ItemType } from "shared/src/types/item.type";
+import { ItemType } from "@/types/item/item.type";
 
 import Badge from "../common/Badge";
 import placeholderImage from "@/images/img/item_placeholder_img.png";

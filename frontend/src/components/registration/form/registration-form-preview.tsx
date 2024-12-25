@@ -2,7 +2,7 @@ import Heading from "@/components/common/heading";
 import Item from "@/components/items/Item";
 import React from "react";
 import { useFormContext } from "react-hook-form";
-import { ItemType } from "shared/src/types/item.type";
+import { ItemType } from "@/types/item/item.type";
 
 const RegistrationFormPreview = () => {
     const { watch } = useFormContext();

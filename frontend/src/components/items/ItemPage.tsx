@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 
-import { ItemType } from "shared/src/types/item.type";
+import { ItemType } from "@/types/item/item.type";
 
 import ItemContactForm from "./forms/item-contact-form";
 import placeholderImage from "@/images/img/item_placeholder_img.png";

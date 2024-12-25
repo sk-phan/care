@@ -1,4 +1,4 @@
-import { ItemCreateParams, ItemType } from "shared/src/types/item.type";
+import { ItemCreateParams, ItemType } from "@/types/item/item.type";
 import api from "../api";
 
 export const ItemsApi = {

@@ -12,7 +12,7 @@ import { useTranslation } from "@/app/i18n";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 
 import useCreateItemRegistration from "../data/use-create-item-registation";
-import { ItemCreateParams } from "shared/src/types/item.type";
+import { ItemCreateParams } from "@/types/item/item.type";
 import { useRouter } from "next/navigation";
 import { urlConfigs } from "@/routing/urlConfigs";
 import RegistrationFormPreview from "./registration-form-preview";

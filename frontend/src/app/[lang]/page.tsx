@@ -2,7 +2,7 @@ import HeroSection from '@/components/hero-section/hero-section';
 import About from '@/components/about/About';
 import ItemsSection from '@/components/items/ItemsSection';
 import { BASE_URL } from '@/services/api-base';
-import { ItemType } from 'shared/src/types/item.type';
+import { ItemType } from '@/types/item/item.type';
 import { LocaleType } from '../i18n/locales/locales.type';
 
 export default async function Home({ params } : {params: { lang: LocaleType };}) {
