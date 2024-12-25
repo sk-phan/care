@@ -38,4 +38,4 @@ USER node
 EXPOSE 3000
 
 # Run the application
-CMD ["node", "build/backend/index.js"]
+CMD ["node", "build/index.js"]
