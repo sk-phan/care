@@ -14,8 +14,5 @@
     "dev:frontend": "npm run dev --workspace=frontend"
   },
   "author": "suki nhung phan",
-  "license": "ISC",
-  "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.9.2"
-  }
+  "license": "ISC"
 }
