@@ -11,32 +11,33 @@ import { LocaleType } from "@/app/i18n/locales/locales.type";
 import Link from "next/link";
 import { urlConfigs } from "@/routing/urlConfigs";
 import { RoutePath } from "@/routing/routes.type";
-import useCommonStyle from "@/app/hooks/styles/useCommonStyles";
+
 import { Button } from "@mui/material";
+import Heading from "../common/heading";
 
 interface WelcomeProps {
     lang: LocaleType;
 }
 
-const About = ({ lang } : WelcomeProps) => {
+const AboutSection = ({ lang } : WelcomeProps) => {
     const { t } = useTranslation(lang);
-    const { primaryButtonLink } = useCommonStyle();
 
     return (
         <section className="mt-12 md:mt-16">
             <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/2 mr-16">
+                <div className="md:w-1/2 md:mr-16">
                     <h2 className="text-3xl md:text-5xl font-semibold mb-4">{t("about.about-us")}</h2>
                     <p 
                     className="
                         text-xl
                         text-gray-500
+                        md:mb-8
                     "> 
                     {t("about.message")}
                     </p>
                     <Button
                         variant="contained"
-                        className="hidden mt-8 md:inline-block"
+                        className="hidden md:inline-block"
                         LinkComponent={Link}
                         href={urlConfigs.Register[lang as keyof RoutePath] as string}
                     >
@@ -44,7 +45,7 @@ const About = ({ lang } : WelcomeProps) => {
                     </Button>
                 </div>
                 <div className="md:w-1/2 pt-12 md:pt-0">
-                    <div className="mb-6 bg-orange-100 p-8 rounded-lg flex">
+                    <div className="mb-6 bg-orange-100 p-4 md:p-8 rounded-lg flex">
                         <Image 
                         src={donateBoxIcon.src} 
                         className="mr-8 scale-75"
@@ -58,7 +59,7 @@ const About = ({ lang } : WelcomeProps) => {
                             </p>
                         </div>
                     </div>
-                    <div className="mb-6 bg-orange-100 p-8 rounded-lg flex">
+                    <div className="mb-6 bg-orange-100 p-4 md:p-8 rounded-lg flex">
                         <Image 
                         src={globalHeartIcon.src} 
                         className="mr-8 scale-75"
@@ -71,7 +72,7 @@ const About = ({ lang } : WelcomeProps) => {
                             By keeping items in circulation, you contribute to environmental conservation and help build a greener future for everyone.                            </p>
                         </div>
                     </div>
-                    <div className="bg-orange-100 p-8 rounded-lg flex">
+                    <div className="bg-orange-100 p-4 md:p-8 rounded-lg flex">
                         <Image 
                         src={donateDollIcon.src} 
                         className="mr-8 scale-75"
@@ -91,4 +92,4 @@ const About = ({ lang } : WelcomeProps) => {
     )
 }
 
-export default About;
+export default AboutSection;

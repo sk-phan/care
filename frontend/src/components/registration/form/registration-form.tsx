@@ -51,8 +51,8 @@ const RegistrationForm = ({ lang } : { lang?: LocaleType}) => {
 
     return (
         <FormProvider {...method}>
-            <div className="flex justify-between gap-12 h-full">
-                <form onSubmit={handleSubmit(onSubmit)} className="w-1/2">
+            <div className="flex flex-col md:flex-row justify-between gap-12 h-full">
+                <form onSubmit={handleSubmit(onSubmit)} className="md:w-1/2">
                     <Heading 
                         level={2}
                         title="List your item"
@@ -62,6 +62,7 @@ const RegistrationForm = ({ lang } : { lang?: LocaleType}) => {
                     <div className="flex gap-4 justify-end">
                         <Button 
                             variant="outlined"
+                            onClick={router.back}
                         >
                             {t("common.cancel")}
                         </Button>
@@ -74,7 +75,7 @@ const RegistrationForm = ({ lang } : { lang?: LocaleType}) => {
                         </Button>
                     </div>
                 </form>
-                <div className="w-1/2 rounded-lg bg-primary flex items-center justify-center">
+                <div className="hidden md:flex md:w-1/2 rounded-lg bg-primary items-center justify-center">
                     <RegistrationFormPreview />
                 </div>
             </div>

@@ -1,7 +1,9 @@
 import HeroSection from '@/components/hero-section/hero-section';
-import About from '@/components/about/About';
 import ItemsSection from '@/components/items/ItemsSection';
+import AboutSection from '@/components/about/about-section';
+
 import { BASE_URL } from '@/services/api-base';
+
 import { ItemType } from '@/types/item/item.type';
 import { LocaleType } from '../i18n/locales/locales.type';
 
@@ -15,7 +17,7 @@ export default async function Home({ params } : {params: { lang: LocaleType };})
     <main className="flex min-h-screen flex-col items-center justify-between">
       <HeroSection
       lang={lang}/>
-      <About 
+      <AboutSection 
       lang={lang}/>
       <ItemsSection 
       lang={lang}
