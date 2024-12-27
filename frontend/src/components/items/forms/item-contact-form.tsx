@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 
 import TextInput from "@/components/common/text-input";
-import Button from "@/components/common/button";
+import Button from "@/components/common/c-button";
 import { ItemContactFormData } from "./item-contact-form.type";
 import TextArea from "@/components/common/text-area";
 import { useMutation } from "@tanstack/react-query";
