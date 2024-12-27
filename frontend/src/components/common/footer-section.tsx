@@ -5,7 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
-const Footer = () => {
+const FooterSection = () => {
     return (
         <section
         className="bg-black w-full mt-12 md:mt-16 py-12">
@@ -37,4 +37,4 @@ const Footer = () => {
     )
 }
 
-export default Footer;
+export default FooterSection;

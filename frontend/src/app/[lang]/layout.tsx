@@ -6,14 +6,15 @@ export async function generateStaticParams() {
 
 import type { Metadata } from "next";
 import { Outfit as FontSans } from "next/font/google";
-import "../../styles/common/globals.css";
-import "../../styles/common/formStyles.css";
+import { Providers } from './providers';
+import { LocaleType } from '../i18n/locales/locales.type';
 
 import { cn } from "@/stores/utils";
 import NavBar from "@/components/common/nav-bar";
-import Footer from '@/components/common/footer';
-import { Providers } from './providers';
-import { LocaleType } from '../i18n/locales/locales.type';
+import FooterSection from '@/components/common/footer-section';
+
+import "../../styles/common/globals.css";
+import "../../styles/common/formStyles.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -49,7 +50,7 @@ export default async function RootLayout({
             {children}
           </div>
         </Providers>
-        <Footer />
+        <FooterSection />
       </body>
     </html>
   );

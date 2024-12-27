@@ -1,5 +1,5 @@
 import Heading from "@/components/common/heading";
-import Item from "@/components/items/item";
+import ItemCard from "@/components/items/item-card";
 import React, { useId } from "react";
 import { useFormContext } from "react-hook-form";
 import { ItemType } from "@/types/item/item.type";
@@ -33,7 +33,7 @@ const RegistrationFormPreview = () => {
                 color="text-white"
             />
             <div className="bg-white w-96 rounded-md p-4">
-                <Item item={mapFormValuesToPreviewItem()}/>
+                <ItemCard item={mapFormValuesToPreviewItem()}/>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "@/app/i18n";
-import Items from './items';
+import ItemList from './item-list';
 import { ItemType } from "@/types/item/item.type";
 import Heading from "../common/heading";
 
@@ -16,7 +16,7 @@ interface ItemsSectionProps {
     return (
         <section className="w-full mt-12 md:mt-16">
             <Heading title={t("items-section.available-items")}/>
-            <Items items={items} />
+            <ItemList items={items} />
         </section>
     )
 }

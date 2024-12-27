@@ -12,7 +12,7 @@ import placeholderImage from "@/images/img/item_placeholder_img.png";
 
 const _ = require('lodash'); 
 
-const Item = ({ item } : { item: ItemType }) => {
+const ItemCard = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.Item;
 
     return (
@@ -41,4 +41,4 @@ const Item = ({ item } : { item: ItemType }) => {
     )
 }
 
-export default Item;
+export default ItemCard;

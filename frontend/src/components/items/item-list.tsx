@@ -1,9 +1,9 @@
 "use client";
 
 import { ItemType } from "@/types/item/item.type";
-import Item from "./item";
+import ItemCard from "./item-card";
 
-const Items = ({ 
+const ItemList = ({ 
     items 
 }: {
     items: ItemType[];
@@ -13,7 +13,7 @@ const Items = ({
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {items.map(item => {
                 return (
-                    <Item 
+                    <ItemCard 
                     key={item.id}
                     item={item}/>
                 )
@@ -22,4 +22,4 @@ const Items = ({
     );
 };
 
-export default Items;
+export default ItemList;

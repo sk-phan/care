@@ -1,6 +1,6 @@
 "use client";
 
-import Items from "./items";
+import ItemList from "./item-list";
 import Tabs from "../common/tabs";
 import { ItemType } from "@/types/item/item.type";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
@@ -27,7 +27,7 @@ const ItemsPage = ({ lang, items } : ItemsPage) => {
                 {t('Items')}
             </h2>
             <Tabs />
-            <Items items={items}/>
+            <ItemList items={items}/>
         </div>
     )
 }
