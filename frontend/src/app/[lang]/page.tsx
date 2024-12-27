@@ -1,5 +1,5 @@
 import HeroSection from '@/components/hero-section/hero-section';
-import ItemsSection from '@/components/items/ItemsSection';
+import ItemsSection from '@/components/items/items-section';
 import AboutSection from '@/components/about/about-section';
 
 import { BASE_URL } from '@/services/api-base';

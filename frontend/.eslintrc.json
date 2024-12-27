@@ -1,3 +1,16 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "plugins": ["unicorn"],
+  "rules": {
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "kebabCase"
+      }
+    ]
+  },
+  "extends": ["next", "next/core-web-vitals"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  }
 }

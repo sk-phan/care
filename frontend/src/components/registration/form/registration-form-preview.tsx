@@ -1,5 +1,5 @@
 import Heading from "@/components/common/heading";
-import Item from "@/components/items/Item";
+import Item from "@/components/items/item";
 import React, { useId } from "react";
 import { useFormContext } from "react-hook-form";
 import { ItemType } from "@/types/item/item.type";

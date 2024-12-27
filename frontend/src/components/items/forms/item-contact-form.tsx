@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 
-import TextInput from "@/components/common/TextInput";
+import TextInput from "@/components/common/text-input";
 import Button from "../../common/button";
 import "../../../styles/items/ItemContactForm.css";
 import { ItemContactFormData } from "./item-contact-form.type";
@@ -11,7 +11,7 @@ import TextArea from "@/components/common/TextArea";
 import { useMutation } from "@tanstack/react-query";
 import { PickupRequestApi } from "@/services/pickup-request/pickup-request-api";
 import { PickUpRequestPostParams } from "@/types/pickup-request/pickup-request.type";
-import { useNotify } from "@/hooks/notification/useNotify";
+import { useNotify } from "@/hooks/notification/use-notify";
 
 const ItemContactForm = ({
     donorName,

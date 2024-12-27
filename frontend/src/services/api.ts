@@ -1,8 +1,8 @@
-import axiosInstance from './axiosIntsance';
+import axiosInstance from './axios-instance';
 import { AxiosRequestConfig } from 'axios';
 
 type Params = Record<string, string | number | boolean>;
-type Data = Record<string, unknown>; // Assuming data can be any object
+type Data = Record<string, unknown>;
 
 const api = {
     get: async <T>(url: string, params?: Params, config?: AxiosRequestConfig): Promise<T> => {

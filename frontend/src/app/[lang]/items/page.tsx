@@ -1,5 +1,5 @@
 import { LocaleType } from "@/app/i18n/locales/locales.type";
-import ItemsPage from "@/components/items/ItemsPage";
+import ItemsPage from "@/components/items/items-page";
 import { BASE_URL } from "@/services/api-base";
 import { ItemType } from "@/types/item/item.type";
 

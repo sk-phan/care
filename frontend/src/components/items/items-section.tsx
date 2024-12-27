@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "@/app/i18n";
-import Items from "./Items";
+import Items from './items';
 import { ItemType } from "@/types/item/item.type";
 import Heading from "../common/heading";
 

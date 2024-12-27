@@ -5,7 +5,7 @@ import categories from "@/common/categories.json";
 
 import AutoCompleteField from "@/components/common/auto-complete-field";
 import SelectField from "@/components/common/select-field";
-import TextInput from "@/components/common/TextInput";
+import TextInput from "@/components/common/text-input";
 
 const RegistrationFormFields = () => {
     const { control, formState: {errors} } = useFormContext();

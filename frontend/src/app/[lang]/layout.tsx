@@ -11,7 +11,7 @@ import "../../styles/common/formStyles.css";
 
 import { cn } from "@/stores/utils";
 import NavBar from "@/components/common/nav-bar";
-import Footer from '@/components/common/Footer';
+import Footer from '@/components/common/footer';
 import { Providers } from './providers';
 import { LocaleType } from '../i18n/locales/locales.type';
 

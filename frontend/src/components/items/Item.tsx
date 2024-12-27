@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import "../../styles/Item.css";
 
-import { urlConfigs } from "@/routing/urlConfigs";
+import { urlConfigs } from "@/routing/url-configs";
 import { ItemType } from "@/types/item/item.type";
 
 import Badge from "../common/badge";

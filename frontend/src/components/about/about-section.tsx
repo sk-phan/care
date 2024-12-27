@@ -9,7 +9,7 @@ import globalHeartIcon from "../../images/icons/global_heart.svg";
 import { useTranslation } from "@/app/i18n";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import Link from "next/link";
-import { urlConfigs } from "@/routing/urlConfigs";
+import { urlConfigs } from "@/routing/url-configs";
 
 import { Button } from "@mui/material";
 import Heading from "../common/heading";

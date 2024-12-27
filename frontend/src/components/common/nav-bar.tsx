@@ -7,9 +7,9 @@ import { useTranslation } from "@/app/i18n";
 
 import Button from "./button";
 import NavBarItems from "./nav-bar-item";
-import useCommonStyles from "@/app/hooks/styles/useCommonStyles";
+import useCommonStyles from "@/app/hooks/styles/use-common-styles";
 import { RoutePath } from "@/routing/routes.type";
-import { urlConfigs } from "@/routing/urlConfigs";
+import { urlConfigs } from "@/routing/url-configs";
 import { usePathname } from "next/navigation";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 

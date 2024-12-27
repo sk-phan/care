@@ -7,14 +7,14 @@ import { FormProvider, useForm } from "react-hook-form";
 import RegistrationFormFields from "./registration-form-fields";
 import { registrationFormDefaultValues } from "./registration-form.utils";
 
-import { useNotify } from "@/hooks/notification/useNotify";
+import { useNotify } from "@/hooks/notification/use-notify";
 import { useTranslation } from "@/app/i18n";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 
 import useCreateItemRegistration from "../data/use-create-item-registation";
 import { ItemCreateParams } from "@/types/item/item.type";
 import { useRouter } from "next/navigation";
-import { urlConfigs } from "@/routing/urlConfigs";
+import { urlConfigs } from "@/routing/url-configs";
 import RegistrationFormPreview from "./registration-form-preview";
 import Heading from "@/components/common/heading";
 import revalidateHomePath from "@/services/server-actions/revalidate-path";

@@ -1,4 +1,4 @@
-import ItemPage from "@/components/items/ItemPage";
+import ItemPage from "@/components/items/item-page";
 import { BASE_URL } from "@/services/api-base";
 import { ItemType } from "@/types/item/item.type";
 

@@ -1,5 +1,5 @@
 import { Route } from "./routes.type";
-import { urlConfigs } from "./urlConfigs";
+import { urlConfigs } from "./url-configs";
 
 export const navRoutes: Route[] = [
     {
