@@ -1,7 +1,7 @@
 "use client";
 
 import Items from "./items";
-import Tabs from "../common/Tabs";
+import Tabs from "../common/tabs";
 import { ItemType } from "@/types/item/item.type";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
