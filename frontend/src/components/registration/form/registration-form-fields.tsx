@@ -6,16 +6,20 @@ import categories from "@/common/categories.json";
 import AutoCompleteField from "@/components/common/auto-complete-field";
 import SelectField from "@/components/common/select-field";
 import TextInput from "@/components/common/text-input";
+import useLocale from "@/app/i18n/use-locale";
+import { useTranslation } from "@/app/i18n";
 
 const RegistrationFormFields = () => {
     const { control, formState: {errors} } = useFormContext();
+    const { locale } = useLocale();
+    const { t } = useTranslation(locale);
 
     return (
         <div className="flex flex-col gap-5 form-fields-margin-bottom">
             <TextInput 
                 control={control}
                 name="name"
-                label="Name"   
+                label={t('form.name')}   
                 required
                 rules={{
                     required: "This field is required",
@@ -25,7 +29,7 @@ const RegistrationFormFields = () => {
             <TextInput 
                 control={control}
                 name="email"
-                label="Email"   
+                label={t('form.email')}   
                 required              
                 rules={{
                     required: "This field is required",
@@ -35,7 +39,7 @@ const RegistrationFormFields = () => {
             <TextInput 
                 control={control}
                 name="title"
-                label="Title"   
+                label={t('form.title')}   
                 required
                 rules={{
                     required: "This field is required",
@@ -51,13 +55,13 @@ const RegistrationFormFields = () => {
             <SelectField 
                 control={control}
                 name="category"
-                label="Category"   
+                label={t("form.category")}   
                 options={categories}        
             />
             <SelectField 
                 control={control}
                 name="condition"
-                label="Condition"   
+                label={t("form.condition")}   
                 options={conditions}        
             />
             <TextInput 

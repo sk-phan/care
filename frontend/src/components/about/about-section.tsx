@@ -52,9 +52,9 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                         height={100}
                         alt="donate box icon"/>
                         <div>
-                            <h3 className="text-2xl mb-2">Connecting Kindness with Need</h3>
+                            <h3 className="text-2xl mb-2">{t('about.first-feature-title')}</h3>
                             <p className="text-gray-800">
-                            Your unused items can support individuals and families, offering help to those in need and providing essential resources.                        
+                                {t('about.first-feature-subtitle')}
                             </p>
                         </div>
                     </div>
@@ -66,9 +66,10 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                         height={100}
                         alt="heart icon"/>
                         <div>
-                            <h3 className="text-2xl mb-2">Promoting Sustainable Living</h3>
+                            <h3 className="text-2xl mb-2">{t('about.second-featute-title')}</h3>
                             <p className="text-gray-800">
-                            By keeping items in circulation, you contribute to environmental conservation and help build a greener future for everyone.                            </p>
+                                {t('about.second-featute-subtitle')}
+                            </p>
                         </div>
                     </div>
                     <div className="bg-orange-100 p-4 md:p-8 rounded-lg flex">
@@ -79,9 +80,9 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                         width={100}
                         alt="donate doll icon"/>
                         <div>
-                            <h3 className="text-2xl mb-2">Building a Caring Community</h3>
+                            <h3 className="text-2xl mb-2">{t('about.third-feature-title')}</h3>
                             <p className="text-gray-800">
-                            Explore the benefits of sharing what you no longer need. Join us in building a community where resources are shared and valued.
+                                {t('about.third-feature-subtitle')}
                             </p>
                         </div>
                     </div>
