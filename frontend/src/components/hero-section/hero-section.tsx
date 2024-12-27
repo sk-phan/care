@@ -5,12 +5,15 @@ import Button from "../common/button";
 import '../../styles/HeroSection.css';
 import heroImage from '../../../public/hero-image.png';
 import Image from "next/image";
+import { LocaleType } from "@/app/i18n/locales/locales.type";
+import { useTranslation } from "@/app/i18n";
 
 interface HeroSectionProps {
-    lang: string;
+    lang: LocaleType;
 }
 
 const HeroSection = ({ lang }: HeroSectionProps) => {
+    const { t } = useTranslation(lang);
 
     return (
         <section>
@@ -22,7 +25,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                 text-4xl
                 font-medium
                 ">
-                Your Unused Items Can Make a Difference
+                { t('Your Unused Items Can Make a Difference')}
                 </h1>
 
                 <div>

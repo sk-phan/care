@@ -22,8 +22,7 @@ const ItemContactForm = ({
 }) => {
     const { 
         handleSubmit, 
-        control,
-        formState: { errors } 
+        control
     } = useForm<ItemContactFormData>();
 
     const notify = useNotify();
@@ -57,11 +56,11 @@ const ItemContactForm = ({
                 height={100}
                 />
                 <div>
-                    <span className="font-medium block">Mikko Korhonen</span>
+                    <span className="font-medium block">{donorName}</span>
                     <div className="flex flex-col xl:flex-row xl:justify-between">
                         <span className="xl:w-1/2 xl:mr-6 font-semibold">
                             <span className="text-gray-500 mr-2">Email:</span>
-                            <a href="mailto:someone@example.com" className="underline">mikko@gmail.com</a>
+                            <a href="mailto:someone@example.com" className="underline">{donorEmail}</a>
                         </span>
                         <span className="xl:w-1/2 xl:mr-6 font-semibold">
                             <span className="text-gray-500 mr-2">Phone:</span>

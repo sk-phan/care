@@ -1,7 +1,6 @@
 import RegistrationPage from "@/components/registration/registration-page";
 
-export default async function Register({ params } : {params: { lang: string };}) {
-    const lang = params.lang;
+export default async function Register() {
     return (
         <div className="min-h-screen">
             <RegistrationPage />

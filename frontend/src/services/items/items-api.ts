@@ -2,8 +2,8 @@ import { ItemCreateParams, ItemType } from "@/types/item/item.type";
 import api from "../api";
 
 export const ItemsApi = {
-    getAll: async (params?: any) => {
-        return api.get<ItemType[]>('/items', params);
+    getAll: async () => {
+        return api.get<ItemType[]>('/items');
     },
     getById: async (id: string) => {
         return api.get<ItemType>(`/items/${id}`);

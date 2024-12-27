@@ -3,13 +3,17 @@
 import Items from "./Items";
 import Tabs from "../common/Tabs";
 import { ItemType } from "@/types/item/item.type";
+import { LocaleType } from "@/app/i18n/locales/locales.type";
+import { useTranslation } from "@/app/i18n";
 
 interface ItemsPage {
-    lang: string;
+    lang: LocaleType;
     items: ItemType[];
 }
 
 const ItemsPage = ({ lang, items } : ItemsPage) => {
+    const { t } = useTranslation(lang);
+
     return (
         <div>
             <h2
@@ -20,7 +24,7 @@ const ItemsPage = ({ lang, items } : ItemsPage) => {
                 mb-8
                 "
             >
-                Items
+                {t('Items')}
             </h2>
             <Tabs />
             <Items items={items}/>
