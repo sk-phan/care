@@ -14,7 +14,7 @@ const _ = require('lodash');
 
 const ItemCard = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.Item;
-
+console.log(item.image)
     return (
         <Link href={`${itemPath.en}/${item.id}`} className="hover:opacity-85 cursor-pointer">
             <div className="relative pb-2">

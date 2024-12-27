@@ -18,9 +18,9 @@ const RegistrationFormPreview = () => {
             category: watch('category'),
             city: watch('city'),
             country: 'Finland',
-            name: "A",
-            email: "sk",
-            "createdAt": new Date(),
+            name: "",
+            email: "",
+            createdAt: new Date(),
             image: undefined
         }
     }

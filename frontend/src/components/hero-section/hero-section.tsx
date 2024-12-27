@@ -25,7 +25,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                 text-4xl
                 font-medium
                 ">
-                { t('Your Unused Items Can Make a Difference')}
+                { t('hero-section.title')}
                 </h1>
 
                 <div>
@@ -36,7 +36,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                     text-gray-500
                     md:pt-12
                     ">
-                    Turn Your Unused Items into Valuable Resources for Others — Join a Community of Givers Making a Difference
+                        {t('hero-section.subtitle')}
                     </p>
                     <Button
                     variant="text"
@@ -49,7 +49,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                     mt-4
                     font-semibold
                     text-gray-900">
-                        View all items
+                        {t('hero-section.view-all-items')}
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="black" stroke-width="2" strokeLinecap="round" strokeLinejoin="round"/>
                         <path d="M8.75 12H15.25M15.25 12L12.75 9.5M15.25 12L12.75 14.5" stroke="black" stroke-width="1.5" strokeLinecap="round" strokeLinejoin="round"/>
