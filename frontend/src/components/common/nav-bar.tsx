@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { useTranslation } from "@/app/i18n";
 
-import Button from "./button";
+import Button from "@/components/common/button";
 import NavBarItems from "./nav-bar-item";
 import useCommonStyles from "@/app/hooks/styles/use-common-styles";
 import { RoutePath } from "@/routing/routes.type";

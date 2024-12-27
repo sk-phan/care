@@ -4,14 +4,15 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 
 import TextInput from "@/components/common/text-input";
-import Button from "../../common/button";
-import "../../../styles/items/ItemContactForm.css";
+import Button from "@/components/common/button";
 import { ItemContactFormData } from "./item-contact-form.type";
-import TextArea from "@/components/common/textarea";
+import TextArea from "@/components/common/text-area";
 import { useMutation } from "@tanstack/react-query";
 import { PickupRequestApi } from "@/services/pickup-request/pickup-request-api";
 import { PickUpRequestPostParams } from "@/types/pickup-request/pickup-request.type";
 import { useNotify } from "@/hooks/notification/use-notify";
+
+import "../../../styles/items/ItemContactForm.css";
 
 const ItemContactForm = ({
     donorName,
