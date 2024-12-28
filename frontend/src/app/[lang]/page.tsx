@@ -10,8 +10,10 @@ import { LocaleType } from '../i18n/locales/locales.type';
 export default async function Home({ params } : {params: { lang: LocaleType };}) {
   const lang = params.lang;
 
-  const data = await fetch(BASE_URL + '/items');
-  const items: ItemType[] = await data.json();
+  const response = await fetch(BASE_URL + '/items');
+  const data = await response.json();
+
+  const items: ItemType[] = data.entities || [];
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">

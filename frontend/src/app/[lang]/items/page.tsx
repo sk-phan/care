@@ -4,8 +4,10 @@ import { BASE_URL } from "@/services/api-base";
 import { ItemType } from "@/types/item/item.type";
 
 export default async function Items({ params } : {params: { lang: LocaleType };}) {
-    const data = await fetch(BASE_URL + '/items');
-    const items: ItemType[] = await data.json();
+    const response = await fetch(BASE_URL + '/items');
+    const data = await response.json();
+
+    const items: ItemType[] = data.entities || [];
     const lang = params.lang;
     
     return (

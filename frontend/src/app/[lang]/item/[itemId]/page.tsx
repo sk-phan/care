@@ -4,8 +4,10 @@ import { ItemType } from "@/types/item/item.type";
 
 export default async function Item({ params }: { params: { itemId: string }}) {
     const itemId =  params.itemId;
-    const data =  await fetch(`${BASE_URL}/items/${itemId}`)
-    const item: ItemType = await data.json();
+    const response = await fetch(`${BASE_URL}/items/${itemId}`);
+    const data = await response.json();
+
+    const item: ItemType = data.entity;
 
     return (
         <ItemPage 
