@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 
 import User, { IUser } from '../../models/UserModel';
 import { AuthenticationError } from "../../errors/AuthenticationError";
+import useEntitiesWrapper from "../../utils/useEntitiesWrapper";
 
 const SECRET_KEY = process.env.JWT_SECRET;
 
@@ -31,13 +32,8 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
     }
 };
 
-export const getAllUsers = async (_req: Request, res: Response, next: NextFunction) => {
-    try {
-        const users = await User.find({});
-        res.json(users);
-    } catch (error) {
-        next(error);
-    }
+export const getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
+    useEntitiesWrapper(User, req, res).catch(next);
 };
 
 export const loginUser = async (req: Request, res: Response, next: NextFunction) => {

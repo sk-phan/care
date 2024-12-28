@@ -4,11 +4,11 @@ import { createItem, deleteItem, getAllItems, getItemById, updateItem } from '..
 
 const itemRoutes = express.Router();
 
-// Get all items
-itemRoutes.get('/', getAllItems);
-
 // Get a single item by ID
 itemRoutes.get('/:id', getItemById);
+
+// Get all items
+itemRoutes.get('/', getAllItems);
 
 // Create a new item (requires authentication)
 itemRoutes.post('/', createItem);

@@ -5,6 +5,7 @@ import Tabs from "../common/c-tabs";
 import { ItemType } from "@/types/item/item.type";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
+import { Pagination } from "@mui/material";
 
 interface ItemsPage {
     lang: LocaleType;
@@ -28,6 +29,9 @@ const ItemsPage = ({ lang, items } : ItemsPage) => {
             </h2>
             <Tabs />
             <ItemList items={items}/>
+            <div className="flex items-center justify-center mt-4">
+                <Pagination count={10} color="primary" />
+            </div>
         </div>
     )
 }

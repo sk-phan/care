@@ -2,6 +2,8 @@ import { NextFunction, Request, Response } from "express";
 import Item from "../../models/ItemModel";
 import { BadRequestError } from "../../errors/BadRequestError";
 import { IItem } from "../../models/ItemModel";
+import useEntitiesWrapper from "../../utils/useEntitiesWrapper";
+import useEntityWrapper from "../../utils/useEntityWrapper";
 
 export const createItem = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -22,19 +24,14 @@ export const createItem = async (req: Request, res: Response, next: NextFunction
         });
     
         const savedItem = await newItem.save();
-        res.status(201).json(savedItem);
+        useEntityWrapper(res, savedItem, 201);
     } catch(e) {
         next(e)
     }
 };
 
-export const getAllItems = async (_req: Request, res: Response, next: NextFunction) => {
-    try {
-        const items = await Item.find({});
-        res.json(items);
-    } catch(e) {
-        next(e)
-    }
+export const getAllItems = async (req: Request, res: Response, next: NextFunction) => {
+    return useEntitiesWrapper(Item, req, res).catch(next);
 };
 
 export const getItemById = async (req: Request, res: Response, next: NextFunction) => {
@@ -42,8 +39,9 @@ export const getItemById = async (req: Request, res: Response, next: NextFunctio
         const item = await Item.findById(req.params.id);
         if (!item) {
             throw new BadRequestError('Item not found');
-        }
-        res.json(item);
+        };
+
+        return useEntityWrapper(res, item);
     }  catch(e) {
         next(e)
     }
@@ -55,7 +53,7 @@ export const updateItem = async (req: Request, res: Response, next: NextFunction
         if (!updatedItem) {
             throw new BadRequestError('Item not found');
         }
-        res.json(updatedItem);
+        return useEntityWrapper(res, updatedItem, 201);
     }  catch(e) {
         next(e)
     }

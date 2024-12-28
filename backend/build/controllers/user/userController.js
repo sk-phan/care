@@ -17,6 +17,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const UserModel_1 = __importDefault(require("../../models/UserModel"));
 const AuthenticationError_1 = require("../../errors/AuthenticationError");
+const useEntitiesWrapper_1 = __importDefault(require("../../utils/useEntitiesWrapper"));
 const SECRET_KEY = process.env.JWT_SECRET;
 const createUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -38,14 +39,8 @@ const createUser = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.createUser = createUser;
-const getAllUsers = (_req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const users = yield UserModel_1.default.find({});
-        res.json(users);
-    }
-    catch (error) {
-        next(error);
-    }
+const getAllUsers = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    (0, useEntitiesWrapper_1.default)(UserModel_1.default, req, res).catch(next);
 });
 exports.getAllUsers = getAllUsers;
 const loginUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
