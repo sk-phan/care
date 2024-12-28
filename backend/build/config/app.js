@@ -22,6 +22,7 @@ mongoose.connect(config_1.default.MONGODB_URI)
     .catch((error) => {
     logger_1.default.error('error connecting to MongoDB:', error.message);
 });
+app.use(express_1.default.static('public'));
 app.use(cors());
 app.use(express_1.default.static('build'));
 app.use(express_1.default.json());
