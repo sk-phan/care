@@ -1,7 +1,7 @@
-export type emailRequest = {
+export type PickUpRequestCreateParams = {
     name: string;
     email: string;
-    message: string | null;
+    message?: string;
     itemId: string;
     donorEmail: string;
 }

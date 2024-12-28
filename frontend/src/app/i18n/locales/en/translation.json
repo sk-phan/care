@@ -24,6 +24,10 @@
         "title": "List your item",
         "subtitle": "Share your unused items and give them a new purpose! Your listing will remain active for 30 days."
     },
+    "item-contact-form": {
+        "success": "Request is successfully sent!",
+        "error": "Failed to send. Please try again!"
+    },
     "common": {
         "send": "Send",
         "cancel": "Cancel"
