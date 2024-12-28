@@ -6,14 +6,28 @@ import { ItemType } from "@/types/item/item.type";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
 import { Pagination } from "@mui/material";
+import { Metadata } from "@/types/api/api.type";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 interface ItemsPage {
     lang: LocaleType;
     items: ItemType[];
+    metadata: Metadata;
 }
 
-const ItemsPage = ({ lang, items } : ItemsPage) => {
+const ItemsPage = ({ lang, items, metadata } : ItemsPage) => {
     const { t } = useTranslation(lang);
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const { replace } = useRouter();
+
+    const { page, totalPages } = metadata;
+
+    const onChangePagination = (pageNumber: number) => {
+        const params = new URLSearchParams(searchParams);
+        params.set('page', pageNumber.toString());
+        replace(`${pathname}?${params.toString()}`);
+    };
 
     return (
         <div>
@@ -30,7 +44,12 @@ const ItemsPage = ({ lang, items } : ItemsPage) => {
             <Tabs />
             <ItemList items={items}/>
             <div className="flex items-center justify-center mt-4">
-                <Pagination count={10} color="primary" />
+                <Pagination 
+                    count={totalPages} 
+                    page={page} 
+                    color="primary" 
+                    onChange={(_, pageNumber) => onChangePagination(pageNumber)}
+                />
             </div>
         </div>
     )
