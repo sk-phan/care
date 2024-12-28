@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-
-import "../../styles/Item.css";
+import _ from 'lodash';
 
 import { urlConfigs } from "@/routing/url-configs";
 import { ItemType } from "@/types/item/item.type";
@@ -10,11 +9,11 @@ import { ItemType } from "@/types/item/item.type";
 import Badge from "../common/c-badge";
 import placeholderImage from "@/images/img/item_placeholder_img.png";
 
-const _ = require('lodash'); 
+import "../../styles/Item.css";
 
 const ItemCard = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.Item;
-console.log(item.image)
+
     return (
         <Link href={`${itemPath.en}/${item.id}`} className="hover:opacity-85 cursor-pointer">
             <div className="relative pb-2">

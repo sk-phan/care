@@ -36,6 +36,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.9",
     "@netlify/plugin-nextjs": "^5.9.2",
+    "@types/lodash": "^4.17.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^18",

@@ -1,14 +1,15 @@
 "use client"
 import { useEffect } from "react";
+import _ from 'lodash';
 import Image from "next/image";
 
 import { ItemType } from "@/types/item/item.type";
 
-import ItemContactForm from "./forms/item-contact-form";
 import placeholderImage from "@/images/img/item_placeholder_img.png";
-import "../../styles/ItemPage.css";
+import ItemContactFormSection from "./forms/item-contact-form-section";
 
-const _ = require('lodash'); 
+import "../../styles/ItemPage.css";
+import { Chip } from "@mui/material";
 
 const ItemPage = ({
     item
@@ -39,14 +40,12 @@ const ItemPage = ({
             className="rounded-xl w-full md:w-1/2 object-cover item-image"
             />
             <div className="mt-6 md:mt-0 md:ml-8 md:w-1/2 h-fit" id="item-info">
-                <span className="bg-green-500 text-white w-fit px-4 py-1 rounded-full">
-                    {_.capitalize(item.status)}
-                </span>
-                <h3
-                className="text-2xl md:text-4xl mt-4 mb-2 font-medium break-words"
-                >
-                    {item.title}
-                </h3>
+                <div className="flex items-center gap-2 mt-4 mb-2">
+                    <h3 className="text-2xl md:text-4xl font-medium break-words">
+                        {item.title}
+                    </h3>
+                    <Chip variant="outlined" className="border-primary text-primary" label={_.capitalize(item.status)} />
+                </div>
                 <div className="flex flex-col mb-1">
                     <span>
                         <span className="text-gray-500">Condition:</span> 
@@ -60,9 +59,10 @@ const ItemPage = ({
                 <p className="text-gray-700">
                     {item.description}
                 </p>
-                <ItemContactForm 
+                <ItemContactFormSection
                     donorName={item.name}
-                    donorEmail={item.email}/>
+                    donorEmail={item.email}
+                    itemId={item.id}/>
             </div>
         </div>
     )

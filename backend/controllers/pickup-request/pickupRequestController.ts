@@ -1,19 +1,19 @@
 import { NextFunction, Request, Response } from "express";
 import nodemailer, { SentMessageInfo, SendMailOptions, Transporter } from 'nodemailer'; 
 import Item, { IItem } from "../../models/ItemModel";
-import { emailRequest } from "./pickupRequestController.type";
 import { BadRequestError } from "../../errors/BadRequestError";
 import { NotFoundError } from "../../errors/NotFoundError";
 import logger from "../../config/logger";
+import { PickUpRequestCreateParams } from "../../types/pickup-request.type";
 
 export const createEmailRequest = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { name, email, message, itemId, donorEmail } = req.body as emailRequest;
+        const { name, email, message, itemId, donorEmail } = req.body as PickUpRequestCreateParams;
         if (!name || !email || !itemId) {
             throw new BadRequestError('Field name, email or itemId is missing. Please try again!');
         }
 
-        const item: IItem | null = await Item.findById(itemId).populate('donorId');
+        const item: IItem | null = await Item.findById(itemId);
         if (!item) {
             throw new NotFoundError('Item not found.');
         };

@@ -67,7 +67,7 @@ const RegistrationFormFields = () => {
             <TextInput 
                 control={control}
                 name="description"
-                label="Description"   
+                label={t("form.description")}   
                 multiline
                 rows={5}
             />

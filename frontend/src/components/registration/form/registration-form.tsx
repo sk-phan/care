@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 
@@ -9,15 +10,14 @@ import { registrationFormDefaultValues } from "./registration-form.utils";
 
 import { useNotify } from "@/hooks/notification/use-notify";
 import { useTranslation } from "@/app/i18n";
+import useLocale from "@/app/i18n/use-locale";
 
 import useCreateItemRegistration from "../data/use-create-item-registation";
 import { ItemCreateParams } from "@/types/item/item.type";
-import { useRouter } from "next/navigation";
 import { urlConfigs } from "@/routing/url-configs";
 import RegistrationFormPreview from "./registration-form-preview";
 import Heading from "@/components/common/heading";
 import revalidateHomePath from "@/services/server-actions/revalidate-path";
-import useLocale from "@/app/i18n/use-locale";
 
 const RegistrationForm = () => {
     const { locale } = useLocale();
