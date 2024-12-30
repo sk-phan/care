@@ -40,7 +40,7 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                         LinkComponent={Link}
                         href={urlConfigs.Register[lang]}
                     >
-                        {t("nav-bar.start-sharing")}
+                        {t("nav-bar.list-an-item")}
                     </Button>
                 </div>
                 <div className="md:w-1/2 pt-12 md:pt-0">
@@ -66,9 +66,9 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                         height={100}
                         alt="heart icon"/>
                         <div>
-                            <h3 className="text-2xl mb-2">{t('about.second-featute-title')}</h3>
+                            <h3 className="text-2xl mb-2">{t('about.second-feature-title')}</h3>
                             <p className="text-gray-800">
-                                {t('about.second-featute-subtitle')}
+                                {t('about.second-feature-subtitle')}
                             </p>
                         </div>
                     </div>

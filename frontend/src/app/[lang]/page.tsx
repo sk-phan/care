@@ -25,7 +25,6 @@ export default async function Home({ params } : {params: { lang: LocaleType };})
       <AboutSection 
       lang={lang}/>
       <ItemsSection 
-      lang={lang}
       items={items}
       />
     </main>
