@@ -3,13 +3,18 @@ import { LocaleType } from "./locales/locales.type";
 
 const useLocale = () : { locale: LocaleType }  => {
     const pathname = usePathname();
-    const isLanguageSegment = pathname[0] && (pathname[0] === 'en' || pathname[0] === 'fi');
-    
+    const segments = pathname.split('/').filter(Boolean);
+
+    const isLanguageSegment = segments[0] && (segments[0] === 'en' || segments[0] === 'fi');
+    let locale: LocaleType = 'en';
+
     if (isLanguageSegment) {
-        return { locale: pathname[0] as LocaleType};
+        locale = segments[0] as LocaleType;
     }
 
-    return { locale: 'en' }
+    return { 
+        locale,
+    }
 };
 
 export default useLocale;

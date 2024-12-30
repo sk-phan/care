@@ -3,23 +3,19 @@ import { urlConfigs } from "./url-configs";
 
 export const navRoutes: Route[] = [
     {
-        id: 'home',
-        title: 'Home',
+        key: 'home',
         path: urlConfigs.Home,
     },
     {
-        id: 'items',
-        title: 'Items',
+        key: 'items',
         path: urlConfigs.Items,
     },
     {
-        id: 'about',
-        title: 'About',
+        key: 'about',
         path: urlConfigs.About
     },
     {
-        id: 'contact',
-        title: 'Contact',
+        key: 'contact',
         path: urlConfigs.Contact
     },
 ];

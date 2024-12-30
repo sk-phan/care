@@ -1,6 +1,10 @@
 {
     "nav-bar": {
-        "list-an-item": "List an item"
+        "list-an-item": "List an item",
+        "home": "Home",
+        "items": "Items",
+        "about": "About",
+        "contact": "Contact"
     },
     "hero-section": {
         "view-all-items": "View all items",
@@ -20,6 +24,10 @@
     "items-section": {
         "available-items": "Available items",
         "see-all": "See all"
+    },
+    "item-card": {
+        "available": "Available",
+        "reserved": "Reserved"
     },
     "registration-form": {
         "title": "List your item",
