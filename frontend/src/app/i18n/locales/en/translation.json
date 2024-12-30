@@ -1,6 +1,6 @@
 {
     "nav-bar": {
-        "start-sharing": "Start sharing"
+        "list-an-item": "List an item"
     },
     "hero-section": {
         "view-all-items": "View all items",
@@ -18,7 +18,8 @@
         "third-feature-subtitle": "Explore the benefits of sharing what you no longer need. Join us in building a community where resources are shared and valued."         
     },
     "items-section": {
-        "available-items": "Available items"
+        "available-items": "Available items",
+        "see-all": "See all"
     },
     "registration-form": {
         "title": "List your item",

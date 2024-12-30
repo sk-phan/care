@@ -67,7 +67,7 @@ const NavBar = ({ lang } : NavBarProps) => {
                 <Link
                 href={urlConfigs.Register[lang as keyof RoutePath] as string}
                 className={`${primaryButtonLink} hidden md:block`}>
-                    {t("nav-bar.start-sharing")}
+                    {t("nav-bar.list-an-item")}
                 </Link>
             </div>
         </nav>
