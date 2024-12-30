@@ -30,7 +30,7 @@ interface ItemsSectionProps {
                     href={urlConfigs.Items[locale]}
                     sx={linkButton}
                     >
-                        See all
+                        {t('items-section.see-all')}
                 </Button>
             </div>
             <ItemList items={items} />

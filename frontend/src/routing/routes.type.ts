@@ -5,8 +5,7 @@ export type RoutePath = {
 };
 
 export type Route = {
-    id: string;
-    title: string;
+    key: string;
     path: RoutePath;
     children?: Route[];
 };

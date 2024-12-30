@@ -10,9 +10,13 @@ import Badge from "../common/c-badge";
 import placeholderImage from "@/images/img/item_placeholder_img.png";
 
 import "../../styles/Item.css";
+import { useTranslation } from "@/app/i18n";
+import useLocale from "@/app/i18n/use-locale";
 
 const ItemCard = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.Item;
+    const { locale } = useLocale();
+    const { t } = useTranslation(locale);
 
     return (
         <Link href={`${itemPath.en}/${item.id}`} className="hover:opacity-85 cursor-pointer">
@@ -20,7 +24,7 @@ const ItemCard = ({ item } : { item: ItemType }) => {
                 <Badge
                 className="absolute top-4 left-4 font-medium"
                 >
-                    {_.capitalize(item.status)}
+                    {t(`item-card.${item.status}`)}
                 </Badge>
                 <Image 
                 className="rounded-xl object-cover" 

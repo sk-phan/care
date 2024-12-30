@@ -1,10 +1,16 @@
 import { createTheme } from '@mui/material/styles';
+import { teal, orange, grey } from '@mui/material/colors';
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: 'rgb(19, 78, 74)',
+            light: teal[50],
+            main: teal[900],
+            dark: grey[900]
         },
+        secondary: {
+            main: orange[100],
+        }
     },
     typography: {
         fontFamily: 'var(--font-sans)', 

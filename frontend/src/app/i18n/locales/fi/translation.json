@@ -1,8 +1,52 @@
 {
     "nav-bar": {
-        "list-an-item": ""
+        "list-an-item": "Lisää ilmoitus",
+        "home": "Koti",
+        "items": "Tavarat",
+        "about": "Tietoa",
+        "contact": "Yhteystiedot"
     },
     "hero-section": {
-        "view-all-items": "View all items"
+        "view-all-items": "Näytä kaikki ilmoitukset",
+        "title": "Käyttämättömät tavarasi voivat tehdä muutoksen",
+        "subtitle": "Muuta käyttämättömät tavarasi arvokkaiksi resursseiksi muille — liity yhteisöön, joka tekee hyvää"
+    },
+    "about": {
+        "about-us": "Meistä",
+        "message": "Olemme yhteisölähtöinen alusta, joka yhdistää ihmiset, jotka haluavat jakaa hellästi käytettyjä vaatteita, kirjoja ja muita tavaroita niitä tarvitsevien kanssa. Listaamalla tarpeettomat tavarasi voit auttaa muita, vähentää jätettä ja tukea kestävämpää tulevaisuutta. Liity mukaan rakentamaan tukiverkostoa, jossa kaikilla on pääsy välttämättömiin resursseihin. Tehdään yhdessä muutos, yksi tavara kerrallaan.",
+        "first-feature-title": "Yhdistämme hyvyyden ja tarpeen",
+        "first-feature-subtitle": "Käyttämättömät tavarasi voivat tukea yksilöitä ja perheitä, tarjoten apua ja välttämättömiä resursseja.",
+        "second-feature-title": "Edistämme kestävää elämää",
+        "second-feature-subtitle": "Pitämällä tavarat kierrossa autat luonnon suojelemisessa ja rakennat vihreämpää tulevaisuutta kaikille.",
+        "third-feature-title": "Rakennamme välittävää yhteisöä",
+        "third-feature-subtitle": "Hyödynnä jakamisen hyödyt. Liity yhteisöömme, jossa resursseja jaetaan ja arvostetaan."
+    },
+    "items-section": {
+        "available-items": "Saatavilla olevat tavarat",
+        "see-all": "Näytä kaikki"
+    },
+    "item-card": {
+        "available": "Saatavilla",
+        "reserved": "Varattu"
+    },
+    "registration-form": {
+        "title": "Lisää ilmoitus",
+        "subtitle": "Jaa käyttämättömät tavarasi ja anna niille uusi tarkoitus! Ilmoituksesi pysyy aktiivisena 30 päivää."
+    },
+    "item-contact-form": {
+        "success": "Pyyntö lähetettiin onnistuneesti!",
+        "error": "Lähetys epäonnistui. Yritä uudelleen!"
+    },
+    "common": {
+        "send": "Lähetä",
+        "cancel": "Peruuta"
+    },
+    "form": {
+        "name": "Nimi",
+        "email": "Sähköposti",
+        "title": "Otsikko",
+        "category": "Kategoria",
+        "condition": "Kunto",
+        "description": "Kuvaus"
     }
 }
