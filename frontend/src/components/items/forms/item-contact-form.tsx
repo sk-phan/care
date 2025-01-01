@@ -42,7 +42,7 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
         if (status === 'error') {
             notify({ message: t('item-contact-form.error'), severity: 'error' });
         }
-    }, [notify, status, router]);
+    }, [notify, status, router, locale, t]);
 
     return (
         <FormProvider {...method}>

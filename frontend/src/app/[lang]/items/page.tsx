@@ -4,7 +4,6 @@ import { BASE_URL } from "@/services/api-base";
 import { EntitiesResponse } from "@/types/api/api.type";
 import { ItemType } from "@/types/item/item.type";
 import { CircularProgress } from "@mui/material";
-import { Suspense } from "react";
 
 const LIMIT = 9;
 
@@ -23,15 +22,21 @@ export default async function Items({
     const { entities, metadata } = data;
     const lang = params.lang;
 
+    if (!entities) {
+        return (
+            <div className="min-h-screen flex justify-center items-center">
+                <CircularProgress color="primary" />
+            </div>
+        );
+    }
+
     return (
         <div className="min-h-screen">
-            <Suspense key={currentPage} fallback={<CircularProgress color="primary" />}>
-                <ItemsPage
-                    lang={lang}
-                    items={entities}
-                    metadata={metadata}
-                />
-            </Suspense>
+            <ItemsPage
+                lang={lang}
+                items={entities}
+                metadata={metadata}
+            />
         </div>
     );
 }

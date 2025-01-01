@@ -12,7 +12,7 @@ const AboutPage = () => {
         <div>
             <div>
                 <div className="flex md:flex-row flex-col items-center md:gap-48 gap-4">
-                    <h1 className={pageHeader}>Making every child's day a little brighter</h1>
+                    <h1 className={pageHeader}>Making every child&apos;s day a little brighter</h1>
                     <p className={`${pageDescription} w-2/3`}>
                         At Care, we believe that every child deserves to smile. Our mission is to connect kind-hearted individuals with children in need, ensuring they have access to toys, books, and clothes that can brighten their days and open new opportunities.
                     </p>
