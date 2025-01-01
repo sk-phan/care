@@ -8,7 +8,6 @@ import { useNotify } from "@/hooks/notification/use-notify";
 import useCreatePickupRequest from "../data/use-create-pickup-request";
 
 import TextInput from "@/components/common/text-input";
-import Button from "@/components/common/c-button";
 import { ItemContactFormData } from "./item-contact-form.type";
 import TextArea from "@/components/common/text-area";
 
@@ -17,6 +16,7 @@ import useLocale from "@/app/i18n/use-locale";
 import { useTranslation } from "@/app/i18n";
 
 import "../../../styles/items/ItemContactForm.css";
+import { Button } from "@mui/material";
 
 const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: string }) => {
     const router = useRouter();
@@ -42,7 +42,7 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
         if (status === 'error') {
             notify({ message: t('item-contact-form.error'), severity: 'error' });
         }
-    }, [notify, status]);
+    }, [notify, status, router]);
 
     return (
         <FormProvider {...method}>
@@ -92,15 +92,12 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                         placeholder="Your message to the donor..."
                     />
                 </div>
-                <Button
+                <Button 
+                    fullWidth
                     type="submit"
-                    color="secondary"
-                    className="
-                    p-4
-                    w-full
-                    md:block
-                    mt-8">
-                    Send
+                    variant="contained"
+                    className="mt-4"
+                >   Send
                 </Button>
             </form>
         </FormProvider>
