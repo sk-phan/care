@@ -1,32 +1,32 @@
 export const urlConfigs = {
     Home: {
-        fi: '/',
+        fi: '/fi',
         en: '/en',
         enable: true
     },
     About: {
-        fi: '/about',
+        fi: '/fi/about',
         en: '/en/about',
         enable: true
     },
     Contact: {
-        fi: '/contact',
+        fi: '/fi/contact',
         en: '/en/contact',
-        enable: true
+        enable: false
     },
     Register: {
-        fi:'/register',
+        fi:'/fi/register',
         en: '/en/register',
         enable: true
     },
     Items: {
         en: '/en/items',
-        fi: '/items',
+        fi: '/fi/items',
         enable: true
     },
     Item: {
         en: '/en/item',
-        fi: '/item',
+        fi: '/fi/item',
         enable: true
     }
 }

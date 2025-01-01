@@ -6,6 +6,8 @@ import { ItemType } from "@/types/item/item.type";
 import { CircularProgress } from "@mui/material";
 import { Suspense } from "react";
 
+const LIMIT = 9;
+
 export default async function Items({ 
     params,
     searchParams
@@ -15,8 +17,7 @@ export default async function Items({
 }) {
     const currentPage = Number(searchParams?.page) || 1;
 
-    // Fetch paginated items from the backend
-    const response = await fetch(`${BASE_URL}/items?page=${currentPage}&limit=9`, { cache: "no-cache" });
+    const response = await fetch(`${BASE_URL}/items?page=${currentPage}&limit=${LIMIT}`);
     const data: EntitiesResponse<ItemType> = await response.json();
 
     const { entities, metadata } = data;

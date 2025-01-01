@@ -14,9 +14,5 @@ export const navRoutes: Route[] = [
         key: 'about',
         path: urlConfigs.About
     },
-    {
-        key: 'contact',
-        path: urlConfigs.Contact
-    },
 ];
 

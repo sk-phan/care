@@ -14,7 +14,7 @@ const Heading = ({
     if (level === 2) {
         return (
             <div className="mb-4">
-                <h2 className={`text-3xl md:text-4xl font-medium ${color}`}>{title}</h2>
+                <h2 className={`text-3xl md:text-5xl font-medium ${color}`}>{title}</h2>
                 <p className={`text-base font-normal lg:text-lg ${subHeadingColor}`}>
                     {subHeading}
                 </p>        
@@ -69,7 +69,7 @@ const Heading = ({
 
     return (
         <div className="mb-4">
-            <h1 className={`text-4xl md:text-5xl font-medium ${color}`}>{title}</h1>
+            <h1 className={`text-4xl md:text-6xl font-medium ${color}`}>{title}</h1>
             <p className={`text-lg font-normal lg:text-lg ${subHeadingColor}`}>
                 {subHeading}
             </p>        
