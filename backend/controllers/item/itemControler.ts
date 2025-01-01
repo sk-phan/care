@@ -24,7 +24,7 @@ export const createItem = async (req: Request, res: Response, next: NextFunction
         });
     
         const savedItem = await newItem.save();
-        useEntityWrapper(res, savedItem, 201);
+        res.status(201).json(savedItem);
     } catch(e) {
         next(e)
     }
@@ -41,7 +41,7 @@ export const getItemById = async (req: Request, res: Response, next: NextFunctio
             throw new BadRequestError('Item not found');
         };
 
-        return useEntityWrapper(res, item);
+        res.status(200).json(item);
     }  catch(e) {
         next(e)
     }
