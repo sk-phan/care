@@ -7,6 +7,7 @@ import heroImage from '../../../public/hero-image.png';
 import Image from "next/image";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
+import useCommonStyleClasses from "@/hooks/styles/use-common-style-classes";
 
 interface HeroSectionProps {
     lang: LocaleType;
@@ -14,28 +15,22 @@ interface HeroSectionProps {
 
 const HeroSection = ({ lang }: HeroSectionProps) => {
     const { t } = useTranslation(lang);
+    const { pageHeader, pageDescription } = useCommonStyleClasses();
 
     return (
         <section>
             <div className="flex md:flex-row flex-col md:gap-48 gap-4">
-                <h1 
-                className="
-                hero-title
-                md:text-7xl
-                text-4xl
-                font-medium
-                ">
+                <h1 className={pageHeader}>
                 { t('hero-section.title')}
                 </h1>
 
                 <div>
                     <p 
-                    className="
-                    md:w-56
-                    font-medium
-                    text-gray-500
-                    md:pt-12
-                    ">
+                    className={`
+                        ${pageDescription}
+                        md:w-56
+                        md:pt-12
+                    `}>
                         {t('hero-section.subtitle')}
                     </p>
                     <Button
