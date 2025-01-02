@@ -6,7 +6,6 @@ export async function generateStaticParams() {
 
 import type { Metadata } from "next";
 import { Outfit as FontSans } from "next/font/google";
-import { Providers } from './providers';
 import { LocaleType } from '../i18n/locales/locales.type';
 
 import { cn } from "@/stores/utils";
@@ -16,6 +15,7 @@ import FooterSection from '@/components/common/footer-section';
 import "../../styles/common/globals.css";
 import "../../styles/common/formStyles.css";
 import { ReactNode } from 'react';
+import { Providers } from './Providers';
 
 const fontSans = FontSans({
   subsets: ["latin"],
