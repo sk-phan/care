@@ -16,7 +16,7 @@ export default async function Items({
 }) {
     const currentPage = Number(searchParams?.page) || 1;
 
-    const response = await fetch(`${BASE_URL}/items?page=${currentPage}&limit=${LIMIT}`, { cache: "no-store" });
+    const response = await fetch(`${BASE_URL}/items?page=${currentPage}&limit=${LIMIT}`);
     const data: EntitiesResponse<ItemType> = await response.json();
 
     const { entities, metadata } = data;
@@ -39,4 +39,6 @@ export default async function Items({
             />
         </div>
     );
-}
+};
+
+export const dynamic = "force-dynamic";

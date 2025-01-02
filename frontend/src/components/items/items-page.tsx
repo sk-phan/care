@@ -7,7 +7,7 @@ import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
 import { Pagination } from "@mui/material";
 import { Metadata } from "@/types/api/api.type";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface ItemsPage {
     lang: LocaleType;
@@ -18,7 +18,7 @@ interface ItemsPage {
 const ItemsPage = ({ lang, items, metadata } : ItemsPage) => {
     const { t } = useTranslation(lang);
     const pathname = usePathname();
-    const searchParams = useSearchParams();
+    const searchParams = window.location.search;
     const { replace } = useRouter();
 
     const { page, totalPages } = metadata;

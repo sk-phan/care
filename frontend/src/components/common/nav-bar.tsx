@@ -10,7 +10,6 @@ import useLocale from "@/app/i18n/use-locale";
 import { urlConfigs } from "@/routing/url-configs";
 
 import NavBarItems from "./nav-bar-item";
-import LanguageSelection from "./language-selection";
 import { Button } from "@mui/material";
 
 const NavBar = () => {
@@ -54,7 +53,7 @@ const NavBar = () => {
                 </div>
 
                 <div className="md:flex items-center hidden">
-                    <LanguageSelection />
+                    {/* <LanguageSelection /> */}
                     <Button
                         variant="contained"
                         className="hidden md:inline-block"
