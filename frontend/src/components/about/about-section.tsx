@@ -8,7 +8,6 @@ import globalHeartIcon from "../../images/icons/global_heart.svg";
 
 import { useTranslation } from "@/app/i18n";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
-import Link from "next/link";
 import { urlConfigs } from "@/routing/url-configs";
 
 import { Button } from "@mui/material";
@@ -37,7 +36,6 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                     <Button
                         variant="contained"
                         className="hidden md:inline-block"
-                        LinkComponent={Link}
                         href={urlConfigs.Register[lang]}
                     >
                         {t("nav-bar.list-an-item")}

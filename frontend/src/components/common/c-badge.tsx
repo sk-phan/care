@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 type BadgeVariant = 'fill' | 'outline' | 'text';
 type BadgeColor = 'primary' | 'secondary' | 'danger';
@@ -8,7 +8,7 @@ type BadgeColor = 'primary' | 'secondary' | 'danger';
 interface BadgeProps extends React.HTMLAttributes<HTMLElement> {
   variant?: BadgeVariant;
   color?: BadgeColor;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const colorClasses: { [key in BadgeColor]: string } = {
@@ -27,6 +27,7 @@ const Badge: React.FC<BadgeProps> = ({ variant = 'fill', color = 'primary', chil
   const colorClass = colorClasses[color];
   const variantClass = variantClasses[variant](colorClass);
   return (
+    // @ts-ignore
     <div
       className={`${variantClass} ${className}`}
       {...props}

@@ -16,7 +16,6 @@ const NavBarItems = () => {
                 return (
                     <li key={item.key}>
                         <Button 
-                            LinkComponent={Link}
                             variant='text'
                             href={item.path[locale]}
                             className='text-gray-800'
