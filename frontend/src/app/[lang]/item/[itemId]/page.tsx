@@ -9,6 +9,9 @@ export default async function Item({ params }: { params: { itemId: string }}) {
 
     const item: ItemType = data.entity;
 
+    if (!item) {
+        return "not found";
+    }
     return (
         <ItemPage 
         item={item}/>
