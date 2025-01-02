@@ -6,7 +6,6 @@ export async function generateStaticParams() {
 
 import type { Metadata } from "next";
 import { Outfit as FontSans } from "next/font/google";
-import { Providers } from './providers';
 import { LocaleType } from '../i18n/locales/locales.type';
 
 import { cn } from "@/stores/utils";
@@ -44,12 +43,10 @@ export default async function RootLayout({
           fontSans.variable
         )}
       >
-        <Providers>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-8xl">
             <NavBar />
             {children}
           </div>
-        </Providers>
         <FooterSection />
       </body>
     </html>
