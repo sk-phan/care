@@ -13,7 +13,7 @@ const LIMIT = 6;
 export default async function Home({ params } : {params: { lang: LocaleType };}) {
   const lang = params.lang;
 
-  const response = await fetch(BASE_URL + `/items?page=${PAGE}&limit=${LIMIT}`, {cache: "no-store"});
+  const response = await fetch(BASE_URL + `/items?page=${PAGE}&limit=${LIMIT}`, {cache: "no-cache"});
   const data = await response.json();
 
   const items: ItemType[] = data.entities || [];

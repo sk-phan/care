@@ -9,14 +9,12 @@ const LIMIT = 9;
 
 export default async function Items({ 
     params,
-    searchParams
 }: { 
     params: { lang: LocaleType }; 
-    searchParams: { page?: string }; 
 }) {
-    const currentPage = Number(searchParams?.page) || 1;
+    const currentPage =  1;
 
-    const response = await fetch(`${BASE_URL}/items?page=${currentPage}&limit=${LIMIT}`, { cache: "no-store" });
+    const response = await fetch(`${BASE_URL}/items?page=${currentPage}&limit=${LIMIT}`, { cache: "no-cache" });
     const data: EntitiesResponse<ItemType> = await response.json();
 
     const { entities, metadata } = data;
