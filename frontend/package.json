@@ -7,7 +7,8 @@
     "build": "rm -rf out && next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf .next"
+    "clean": "rm -rf .next",
+    "build:production": "npm run build && npm run start"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
