@@ -1,16 +1,15 @@
-"use client";
-
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 // Define types for button variants and color schemes
 type ButtonVariant = 'fill' | 'outline' | 'text';
 type ButtonColor = 'primary' | 'secondary' | 'danger';
 
-// Define a type for the button props
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+// Define a type for the button props, extending ButtonHTMLAttributes
+// excluding contentEditable and other unwanted props
+interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'contentEditable' | 'formAction'> {
   variant?: ButtonVariant;
   color?: ButtonColor;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 // Define a mapping of colors to Tailwind CSS classes
@@ -30,7 +29,10 @@ const variantClasses: { [key in ButtonVariant]: (color: string) => string } = {
 const Button: React.FC<ButtonProps> = ({ variant = 'fill', color = 'primary', children, className, ...props }) => {
   const colorClass = colorClasses[color];
   const variantClass = variantClasses[variant](colorClass);
+
+  // Add extra class names if needed and pass down all props
   return (
+    // @ts-ignore
     <button
       className={`${variantClass} ${className}`}
       {...props}

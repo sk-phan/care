@@ -7,7 +7,6 @@ import Heading from "../common/heading";
 import { Button, } from "@mui/material";
 import { urlConfigs } from "@/routing/url-configs";
 import useLocale from "@/app/i18n/use-locale";
-import Link from "next/link";
 import useCommonButtonStyles from "@/hooks/styles/use-common-button-styles";
 
 interface ItemsSectionProps {
@@ -26,7 +25,6 @@ interface ItemsSectionProps {
                 <Heading title={t("items-section.available-items")}/>
                 <Button 
                     variant="text" 
-                    LinkComponent={Link} 
                     href={urlConfigs.Items[locale]}
                     sx={linkButton}
                     >
