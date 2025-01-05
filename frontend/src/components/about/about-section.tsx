@@ -25,23 +25,23 @@ const AboutSection = ({ lang } : WelcomeProps) => {
         <section className="mt-12 md:mt-16">
             <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 md:mr-16">
-                    <Heading title={t("about.about-us")}/>
+                    <Heading level={2} title={t("about.about-us")}/>
                     <p 
                     className="
-                        text-xl
                         text-gray-500
                         md:mb-8
                     "> 
                     {t("about.message")}
                     </p>
-                    <Button
-                        variant="contained"
-                        className="hidden md:inline-block"
-                        LinkComponent={Link}
-                        href={urlConfigs.Register[lang]}
-                    >
-                        {t("nav-bar.list-an-item")}
-                    </Button>
+                    <div className="hidden md:inline-block">
+                        <Button
+                            variant="contained"
+                            LinkComponent={Link}
+                            href={urlConfigs.Register[lang]}
+                        >
+                            {t("nav-bar.list-an-item")}
+                        </Button>
+                    </div>
                 </div>
                 <div className="md:w-1/2 pt-12 md:pt-0">
                     <div className="mb-6 bg-orange-100 p-4 md:p-8 rounded-lg flex">

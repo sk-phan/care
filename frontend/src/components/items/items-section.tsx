@@ -23,7 +23,7 @@ interface ItemsSectionProps {
     return (
         <section className="w-full mt-12 md:mt-16">
             <div className="flex justify-between items-center">
-                <Heading title={t("items-section.available-items")}/>
+                <Heading level={2} title={t("items-section.available-items")}/>
                 <Button 
                     variant="text" 
                     LinkComponent={Link} 
