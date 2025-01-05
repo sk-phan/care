@@ -8,6 +8,7 @@ import SelectField from "@/components/common/select-field";
 import TextInput from "@/components/common/text-input";
 import useLocale from "@/app/i18n/use-locale";
 import { useTranslation } from "@/app/i18n";
+import { emailPattern } from "@/utils/form-validations";
 
 const RegistrationFormFields = () => {
     const { control, formState: {errors} } = useFormContext();
@@ -22,7 +23,7 @@ const RegistrationFormFields = () => {
                 label={t('form.name')}   
                 required
                 rules={{
-                    required: "This field is required",
+                    required: t('form.required'),
                 }}
                 error={!!errors.name}
             />
@@ -32,7 +33,11 @@ const RegistrationFormFields = () => {
                 label={t('form.email')}   
                 required              
                 rules={{
-                    required: "This field is required",
+                    required: t('form.required'),
+                    pattern: {
+                        value: emailPattern,
+                        message: t('form.invalid-email'), 
+                    },
                 }}
                 error={!!errors.email}
             />
@@ -42,7 +47,7 @@ const RegistrationFormFields = () => {
                 label={t('form.title')}   
                 required
                 rules={{
-                    required: "This field is required",
+                    required: t('form.required'),
                 }}
                 error={!!errors.title}
             />
