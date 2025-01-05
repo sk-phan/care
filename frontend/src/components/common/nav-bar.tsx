@@ -11,6 +11,7 @@ import { urlConfigs } from "@/routing/url-configs";
 
 import NavBarItems from "./nav-bar-item";
 import { Button } from "@mui/material";
+import LanguageSelection from "./language-selection";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +54,7 @@ const NavBar = () => {
                 </div>
 
                 <div className="md:flex items-center hidden">
-                    {/* <LanguageSelection /> */}
+                    <LanguageSelection />
                     <Button
                         variant="contained"
                         className="hidden md:inline-block"
