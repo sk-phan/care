@@ -35,7 +35,8 @@
     },
     "item-contact-form": {
         "success": "Pyyntö lähetettiin onnistuneesti!",
-        "error": "Lähetys epäonnistui. Yritä uudelleen!"
+        "error": "Lähetys epäonnistui. Yritä uudelleen!",
+        "message-placeholder": "Viestisi lahjoittajalle..."
     },
     "common": {
         "send": "Lähetä",
@@ -47,6 +48,8 @@
         "title": "Otsikko",
         "category": "Kategoria",
         "condition": "Kunto",
-        "description": "Kuvaus"
+        "description": "Kuvaus",
+        "required": "Tämä kenttä on pakollinen",
+        "invalid-email": "Virheellinen sähköpostiosoite"
     }
 }

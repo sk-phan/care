@@ -17,6 +17,7 @@ import { useTranslation } from "@/app/i18n";
 
 import "../../../styles/items/ItemContactForm.css";
 import { Button } from "@mui/material";
+import { emailPattern } from "@/utils/form-validations";
 
 const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: string }) => {
     const router = useRouter();
@@ -55,7 +56,7 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                             control={control} 
                             label={t('form.name')}
                             rules={{
-                                required: "This field is required",
+                                required: t('form.required'),
                             }}
                             error={!!errors.name}
                             sx={{
@@ -72,8 +73,12 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                             label={t('form.email')}   
                             control={control} 
                             rules={{
-                                required: "This field is required",
-                            }}
+                                required: t('form.required'),
+                                pattern: {
+                                    value: emailPattern,
+                                    message: t('form.invalid-email'), 
+                                },
+                            }} 
                             placeholder="Email"
                             error={!!errors.email}
                             sx={{
@@ -89,7 +94,7 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                         name="message" 
                         control={control} 
                         rows={10}
-                        placeholder="Your message to the donor..."
+                        placeholder={t('item-contact-form.message-placeholder')}
                     />
                 </div>
                 <Button 
@@ -97,7 +102,8 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                     type="submit"
                     variant="contained"
                     className="mt-4"
-                >   Send
+                >   
+                    {t('conmmom.send')}
                 </Button>
             </form>
         </FormProvider>

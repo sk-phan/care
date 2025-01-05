@@ -35,7 +35,8 @@
     },
     "item-contact-form": {
         "success": "Request is successfully sent!",
-        "error": "Failed to send. Please try again!"
+        "error": "Failed to send. Please try again!",
+        "message-placeholder": "Your message to donor..."
     },
     "common": {
         "send": "Send",
@@ -47,6 +48,8 @@
         "title": "Title",
         "category": "Category",
         "condition": "Condition",
-        "description": "Description"
+        "description": "Description",
+        "required": "This field is required",
+        "invalid-email": "Invalid email address"
     }
 }
