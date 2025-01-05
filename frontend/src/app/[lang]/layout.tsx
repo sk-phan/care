@@ -15,6 +15,7 @@ import FooterSection from '@/components/common/footer-section';
 
 import "../../styles/common/globals.css";
 import "../../styles/common/formStyles.css";
+import { Suspense } from 'react';
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -45,7 +46,9 @@ export default async function RootLayout({
       >
         <Providers>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-8xl">
-            <NavBar />
+            <Suspense fallback={<div>Loading...</div>}>
+              <NavBar />
+            </Suspense>
             {children}
           </div>
         </Providers>

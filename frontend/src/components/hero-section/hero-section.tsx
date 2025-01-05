@@ -1,13 +1,13 @@
 "use client";
-
-import Button from "@/components/common/c-button";
-
+import { Button } from "@mui/material";
 import '../../styles/HeroSection.css';
 import heroImage from '../../../public/hero-image.png';
 import Image from "next/image";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
 import useCommonStyleClasses from "@/hooks/styles/use-common-style-classes";
+import Link from "next/link";
+import { urlConfigs } from "@/routing/url-configs";
 
 interface HeroSectionProps {
     lang: LocaleType;
@@ -34,14 +34,15 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                         {t('hero-section.subtitle')}
                     </p>
                     <Button
+                    LinkComponent={Link}
+                    href={urlConfigs.Items[lang]}
                     variant="text"
                     className="
                     flex
-                    flex-row
-                    items-center
+                    justify-start
                     gap-1
-                    md:mt-6
                     mt-4
+                    p-0
                     font-semibold
                     text-gray-900">
                         {t('hero-section.view-all-items')}
