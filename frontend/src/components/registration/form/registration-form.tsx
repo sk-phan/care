@@ -78,7 +78,7 @@ const RegistrationForm = () => {
                         <Button 
                         type="submit"
                         variant="contained"
-                        disabled={isSubmitting || !isValid || isValidating}
+                        disabled={isSubmitting || !isValid || isValidating || status === 'pending'} 
                         >
                             {t("common.send")}
                         </Button>
