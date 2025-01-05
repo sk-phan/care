@@ -35,19 +35,19 @@ const NavBar = () => {
                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Care</span>
                 </Link>
 
-                <Button
-                    className="
-                        inline-flex 
-                        justify-end
-                        md:hidden 
-                        p-0
-                    " 
-                    aria-controls="navbar-default" 
-                    aria-expanded="false"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    <RxHamburgerMenu size={24}/>
-                </Button>
+                <div className="inline-flex md:hidden">
+                    <Button
+                        className="
+                            justify-end
+                            p-0
+                        " 
+                        aria-controls="navbar-default" 
+                        aria-expanded="false"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        <RxHamburgerMenu size={24}/>
+                    </Button>
+                </div>
 
                 <div className={`${isOpen ? 'block' : 'hidden' } w-full md:block md:w-auto`} id="navbar-default">
                     <NavBarItems />
