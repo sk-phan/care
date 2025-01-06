@@ -12,8 +12,6 @@ Features
 - Donate clothes, books, and toys.
 - Request items based on needs.
 - View available donations and requests.
-- User authentication (login/register).
-- Admin interface for managing donations and requests.
 
 Getting Started
 Follow the steps below to set up the project on your local machine.
@@ -41,10 +39,10 @@ Setting up the Backend:
 Setting up the Frontend
 1. Navigate to the frontend directory: ``cd frontend``
 2. Run the following command to install the required dependencies: ``npm install``
-3. Create a .env.local file in the frontend/ directory with the following content: LOCAL_API_BASE_URL=http://127.0.0.1:3003/api
+3. Create a .env.local file in the frontend/ directory with the following content: NEXT_PUBLIC_LOCAL_API_BASE_URL=http://localhost:3000/api
 4. Start the frontend development server: npm run dev
 
-The frontend will be available at http://localhost:3000.
+The frontend will be available at http://localhost:3003.
 
 
 
