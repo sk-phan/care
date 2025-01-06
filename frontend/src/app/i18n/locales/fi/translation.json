@@ -49,6 +49,7 @@
         "category": "Kategoria",
         "condition": "Kunto",
         "description": "Kuvaus",
+        "city": "Kaupunki",
         "required": "Tämä kenttä on pakollinen",
         "invalid-email": "Virheellinen sähköpostiosoite"
     }

@@ -6,6 +6,6 @@ export const registrationFormDefaultValues: ItemCreateParams =  {
     title: '',
     description: '',
     condition: 'like-new',
-    city: 'Helsinki',
+    city: 'helsinki',
     category: 'toy',
 }

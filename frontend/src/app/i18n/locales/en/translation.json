@@ -49,6 +49,7 @@
         "category": "Category",
         "condition": "Condition",
         "description": "Description",
+        "city": "City",
         "required": "This field is required",
         "invalid-email": "Invalid email address"
     }

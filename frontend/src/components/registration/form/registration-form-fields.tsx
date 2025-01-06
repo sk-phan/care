@@ -3,7 +3,6 @@ import cities from "@/common/cities.json";
 import conditions from "@/common/item-conditions.json";
 import categories from "@/common/categories.json";
 
-import AutoCompleteField from "@/components/common/auto-complete-field";
 import SelectField from "@/components/common/select-field";
 import TextInput from "@/components/common/text-input";
 import useLocale from "@/app/i18n/use-locale";
@@ -51,11 +50,14 @@ const RegistrationFormFields = () => {
                 }}
                 error={!!errors.title}
             />
-            <AutoCompleteField 
+            <SelectField 
                 options={cities}
                 control={control}
                 name="city"
-                label="City"
+                label={t("form.city")}
+                rules={{
+                    required: t('form.required'),
+                }}
             />
             <SelectField 
                 control={control}
