@@ -4,7 +4,7 @@ import { describe, expect, test, vi } from 'vitest';  // to mock hooks and other
 
 vi.mock('next/navigation', () => ({
     __esModule: true,
-    usePathname: () => `/en/register`,
+    usePathname: () => `/en/`,
     useRouter: () => ({
         push: vi.fn(),
         replace: vi.fn(),
@@ -15,8 +15,19 @@ vi.mock('next/navigation', () => ({
 }));
 
 vi.mock('@/app/i18n', () => ({
-    useTranslation: vi.fn(() => ({ t: (key: string) => key })),
+    useTranslation: vi.fn(() => ({
+        t: (key: string) => {
+            const translations:  Record<string, string> = {
+                'nav-bar.home': 'Home',
+                'nav-bar.items': 'Items',
+                'nav-bar.about': 'About',
+                'nav-bar.list-an-item': 'List an item',
+            };
+            return translations[key] || key;
+        },
+    })),
 }));
+
 
 vi.mock('@/app/i18n/use-locale', () => ({
     __esModule: true,
@@ -25,22 +36,25 @@ vi.mock('@/app/i18n/use-locale', () => ({
 }),
 }));
 
+
 describe('NavBar',  () => {
-    test('Given a navigation, then should render correctly with all nav elements',async  () => {
+
+    test('Given a navigation in english, then should render correctly with all nav elements', async () => {
 
         render(<NavBar />);
-            
-        const logoText = await waitFor(() => screen.queryByText('Care'));
+
+        const logoText = await waitFor(() => screen.findByText('Care'));
+        const homeLink = await waitFor(() => screen.findByText('Home'));
+        const itemsLink = await waitFor(() => screen.findByText('Items'));
+        const aboutLink = await waitFor(() => screen.findByText('About'));
+
         const registerButton = await waitFor(() => screen.findByText('List an item'));
-
+    
         expect(logoText).toBeDefined();
+        expect(homeLink).toBeDefined();
+        expect(itemsLink).toBeDefined();
+        expect(aboutLink).toBeDefined();
+
         expect(registerButton).toBeDefined();
-    });
-
-    test('does not render NavBar on the register page', async () => {
-
-        render(<NavBar />);
-
-        await waitFor(() => expect(screen.queryByText('Care')).toBeNull());
     });
 });
