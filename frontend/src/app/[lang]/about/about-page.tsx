@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import kidGivingGiftsImage from "@/images/img/kids-giving-gifts.png";
+import kidGivingGiftsImage from "../../../../public/images/kids-giving-gifts.png";
 
 import useCommonStyleClasses from "@/hooks/styles/use-common-style-classes";
 import HowItWorksSection from "./sections/how-it-works-section";

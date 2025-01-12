@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 
-import donateDollIcon from "@/images/icons/donate_doll.svg";
-import donateBoxIcon from "@/images/icons/donate_box.svg";
-import globalHeartIcon from "@/images/icons/global_heart.svg";
+import donateDollIcon from "../../../../public/icons/donate-doll.svg";
+import donateBoxIcon from "../../../../public/icons/donate-box.svg";
+import globalHeartIcon from "../../../../public/icons/global-heart.svg";
 
 import { useTranslation } from "@/app/i18n";
 import { LocaleType } from "@/app/i18n/locales/locales.type";

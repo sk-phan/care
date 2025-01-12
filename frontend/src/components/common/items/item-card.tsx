@@ -7,7 +7,7 @@ import { urlConfigs } from "@/routing/url-configs";
 import { ItemType } from "@/types/item/item.type";
 
 import Badge from "@/components/common/c-badge";
-import placeholderImage from "@/images/img/item_placeholder_img.png";
+import placeholderImage from "../../../../public/images/item-placeholder-img.png";
 
 import "@/styles/Item.css";
 import { useTranslation } from "@/app/i18n";

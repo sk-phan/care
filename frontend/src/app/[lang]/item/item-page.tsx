@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { ItemType } from "@/types/item/item.type";
 
-import placeholderImage from "@/images/img/item_placeholder_img.png";
+import placeholderImage from "../../../../public/images/item-placeholder-img.png";
 import ItemContactFormSection from "./forms/item-contact-form-section";
 
 import "@/styles/ItemPage.css";
