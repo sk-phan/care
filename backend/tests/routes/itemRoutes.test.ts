@@ -3,8 +3,8 @@ import express from 'express';
 
 import itemRoutes from '../../routes/itemRoutes'; 
 import responseJson from './item-routes-response.json';
-import { getAllItems, getItemById, createItem, updateItem } from '../../controllers/itemControler';
 import userRoutes from '../../routes/userRoutes';
+import { createItem, getAllItems, getItemById, updateItem } from '../../controllers/item/itemControler';
 
 const app = express();
 app.use(express.json()); 

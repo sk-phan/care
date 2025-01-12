@@ -1,4 +1,4 @@
-import AboutPage from "@/components/about/about-page";
+import AboutPage from "./about-page";
 
 export default async function About() {
 

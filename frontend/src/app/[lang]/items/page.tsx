@@ -1,9 +1,9 @@
 import { LocaleType } from "@/app/i18n/locales/locales.type";
-import ItemsPage from "@/components/items/items-page";
 import { BASE_URL } from "@/services/api-base";
 import { EntitiesResponse } from "@/types/api/api.type";
 import { ItemType } from "@/types/item/item.type";
 import { CircularProgress } from "@mui/material";
+import ItemsPage from "./items-page";
 
 const LIMIT = 9;
 

@@ -1,13 +1,14 @@
 "use client";
 
-import ItemList from "./item-list";
-import Tabs from "../common/c-tabs";
 import { ItemType } from "@/types/item/item.type";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
 import { Pagination } from "@mui/material";
 import { Metadata } from "@/types/api/api.type";
 import { usePathname, useRouter } from "next/navigation";
+
+import Tabs from "@/components/common/c-tabs";
+import ItemList from "@/components/items/item-list";
 
 interface ItemsPage {
     lang: LocaleType;

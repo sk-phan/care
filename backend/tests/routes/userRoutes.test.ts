@@ -4,8 +4,8 @@ import express from 'express';
 import responseJson from './user-routes-response.json';
 import postResponseJson from './user-routes-post-response.json';
 
-import { createUser, getAllUsers, loginUser } from '../../controllers/userController';
 import userRoutes from '../../routes/userRoutes';
+import { createUser, getAllUsers, loginUser } from '../../controllers/user/userController';
 
 const app = express();
 app.use(express.json()); 

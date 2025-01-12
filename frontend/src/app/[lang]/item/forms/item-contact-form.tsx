@@ -15,9 +15,10 @@ import { urlConfigs } from "@/routing/url-configs";
 import useLocale from "@/app/i18n/use-locale";
 import { useTranslation } from "@/app/i18n";
 
-import "../../../styles/items/ItemContactForm.css";
 import { Button } from "@mui/material";
 import { emailPattern } from "@/utils/form-validations";
+
+import "@/styles/items/ItemContactForm.css";
 
 const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: string }) => {
     const router = useRouter();

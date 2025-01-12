@@ -1,11 +1,11 @@
-import HeroSection from '@/components/hero-section/hero-section';
-import ItemsSection from '@/components/items/items-section';
-import AboutSection from '@/components/about/about-section';
 
 import { BASE_URL } from '@/services/api-base';
 
 import { ItemType } from '@/types/item/item.type';
 import { LocaleType } from '../i18n/locales/locales.type';
+import ItemsSection from './sections/items-section';
+import AboutSection from './sections/about-section';
+import HeroSection from './sections/hero-section';
 
 const PAGE = 1;
 const LIMIT = 6;

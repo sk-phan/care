@@ -7,7 +7,7 @@ import { useTranslation } from "@/app/i18n";
 
 import ItemContactForm from "./item-contact-form";
 
-import "../../../styles/items/ItemContactForm.css";
+import "@/styles/items/ItemContactForm.css";
 
 const ItemContactFormSection = ({
     donorName,

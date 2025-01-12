@@ -1,4 +1,4 @@
-import RegistrationPage from "@/components/registration/registration-page";
+import RegistrationPage from "./registration-page";
 
 export default async function Register() {
     return (

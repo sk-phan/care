@@ -1,13 +1,15 @@
 "use client";
 import { Button } from "@mui/material";
-import '../../styles/HeroSection.css';
-import heroImage from '../../../public/hero-image.png';
 import Image from "next/image";
+import Link from "next/link";
+
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
 import useCommonStyleClasses from "@/hooks/styles/use-common-style-classes";
-import Link from "next/link";
 import { urlConfigs } from "@/routing/url-configs";
+
+import heroImage from '../../../../public/images/hero-image.png';
+import '@/styles/HeroSection.css';
 
 interface HeroSectionProps {
     lang: LocaleType;

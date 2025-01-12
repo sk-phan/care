@@ -1,6 +1,6 @@
-import ItemPage from "@/components/items/item-page";
 import { BASE_URL } from "@/services/api-base";
 import { ItemType } from "@/types/item/item.type";
+import ItemPage from "../item-page";
 
 export default async function Item({ params }: { params: { itemId: string }}) {
     const itemId =  params.itemId;

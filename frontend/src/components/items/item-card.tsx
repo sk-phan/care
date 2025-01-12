@@ -6,10 +6,10 @@ import _ from 'lodash';
 import { urlConfigs } from "@/routing/url-configs";
 import { ItemType } from "@/types/item/item.type";
 
-import Badge from "../common/c-badge";
+import Badge from "@/components/common/c-badge";
 import placeholderImage from "@/images/img/item_placeholder_img.png";
 
-import "../../styles/Item.css";
+import "@/styles/Item.css";
 import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 
