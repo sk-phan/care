@@ -1,0 +1,27 @@
+name: Run Tests on PR
+
+on:
+  pull_request:
+    branches:
+      - main 
+
+jobs:
+  # Frontend job
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js (Frontend)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' 
+
+      - name: Install Frontend Dependencies
+        working-directory: ./frontend
+        run: npm install
+
+      - name: Run Frontend Tests
+        working-directory: ./frontend 
+        run: npm test
