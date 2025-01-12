@@ -8,7 +8,7 @@ import { Metadata } from "@/types/api/api.type";
 import { usePathname, useRouter } from "next/navigation";
 
 import Tabs from "@/components/common/c-tabs";
-import ItemList from "@/components/items/item-list";
+import ItemList from "@/components/common/items/item-list";
 
 interface ItemsPage {
     lang: LocaleType;

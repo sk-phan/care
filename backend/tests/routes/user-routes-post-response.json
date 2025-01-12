@@ -1,9 +1,0 @@
-{
-    "token": "sampletoken",
-    "user": {
-        "email": "care-tester@gmail.com",
-        "name": "testi",
-        "authSource": "self",
-        "id": "671d327ec8756c51ab07212d"
-    }
-}

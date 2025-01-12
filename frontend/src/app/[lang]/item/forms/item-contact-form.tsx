@@ -98,14 +98,15 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                         placeholder={t('item-contact-form.message-placeholder')}
                     />
                 </div>
-                <Button 
-                    fullWidth
-                    type="submit"
-                    variant="contained"
-                    className="mt-4"
-                >   
-                    {t('common.send')}
-                </Button>
+                <div className="mt-4">
+                    <Button 
+                        fullWidth
+                        type="submit"
+                        variant="contained"
+                    >   
+                        {t('common.send')}
+                    </Button>
+                </div>
             </form>
         </FormProvider>
     )

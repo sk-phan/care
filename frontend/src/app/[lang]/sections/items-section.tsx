@@ -10,7 +10,7 @@ import { ItemType } from "@/types/item/item.type";
 
 import Heading from "@/components/common/heading";
 import { Button } from "@mui/material";
-import ItemList from "@/components/items/item-list";
+import ItemList from "@/components/common/items/item-list";
 
 interface ItemsSectionProps {
     items: ItemType[];
