@@ -1,4 +1,3 @@
-Work in progress...
 ## Community Platform for Sharing Clothes, Books, and Toys
 
 A full-stack web application designed to connect and support children in need of clothes, books, and toys. The platform allows users to donate items and request what they need, fostering a community-based sharing model.
