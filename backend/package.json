@@ -28,7 +28,7 @@
     "@types/mongoose": "^5.11.97",
     "@types/node": "^22.5.4",
     "@types/nodemailer": "^6.4.17",
-    "@types/react": "^19.0.2",
+    "@types/react": "^19.0.7",
     "@types/supertest": "^6.0.2",
     "eslint": "^9.10.0",
     "nodemon": "^3.1.4",
