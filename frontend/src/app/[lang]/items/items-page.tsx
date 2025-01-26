@@ -7,7 +7,6 @@ import { Pagination } from "@mui/material";
 import { Metadata } from "@/types/api/api.type";
 import { usePathname, useRouter } from "next/navigation";
 
-import Tabs from "@/components/common/c-tabs";
 import ItemList from "@/components/items/item-list";
 
 interface ItemsPage {
@@ -42,7 +41,6 @@ const ItemsPage = ({ lang, items, metadata } : ItemsPage) => {
             >
                 {t('Items')}
             </h2>
-            <Tabs />
             <ItemList items={items}/>
             <div className="flex items-center justify-center mt-4">
                 <Pagination 
