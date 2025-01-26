@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import { ItemType } from "@/types/item/item.type";
 
-import placeholderImage from "../../../../public/images/item-placeholder-img.png";
 import ItemContactFormSection from "./forms/item-contact-form-section";
 
 import "@/styles/ItemPage.css";
@@ -31,7 +30,7 @@ const ItemPage = ({
         <div className="flex flex-col md:flex-row">
             <Image 
             id="item-image"
-            src={item.image || placeholderImage.src} 
+            src={item.image ? item.image : "/images/item.png"} 
             alt="Item image"
             width={100}
             height={100}
