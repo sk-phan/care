@@ -12,7 +12,7 @@ import Link from "next/link";
 import { urlConfigs } from "@/routing/url-configs";
 
 import { Button } from "@mui/material";
-import Heading from "@/components/common/heading";
+import Heading from "@/common/components/heading";
 
 interface WelcomeProps {
     lang: LocaleType;

@@ -1,5 +1,5 @@
 
-import { BASE_URL } from '@/services/api-base';
+import { BASE_URL } from '@/common/api/api-base';
 
 import { ItemType } from '@/types/item/item.type';
 import { LocaleType } from '../i18n/locales/locales.type';

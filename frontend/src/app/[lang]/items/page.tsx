@@ -1,5 +1,5 @@
 import { LocaleType } from "@/app/i18n/locales/locales.type";
-import { BASE_URL } from "@/services/api-base";
+import { BASE_URL } from "@/common/api/api-base";
 import { EntitiesResponse } from "@/types/api/api.type";
 import { ItemType } from "@/types/item/item.type";
 import { CircularProgress } from "@mui/material";

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import kidGivingGiftsImage from "../../../../public/images/kids-giving-gifts.png";
 
-import useCommonStyleClasses from "@/hooks/styles/use-common-style-classes";
+import useCommonStyleClasses from "@/common/hooks/styles/use-common-style-classes";
 import HowItWorksSection from "./sections/how-it-works-section";
 
 const AboutPage = () => {

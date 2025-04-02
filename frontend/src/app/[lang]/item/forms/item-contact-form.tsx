@@ -4,12 +4,12 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-import { useNotify } from "@/hooks/notification/use-notify";
+import { useNotify } from "@/common/hooks/notification/use-notify";
 import useCreatePickupRequest from "../data/use-create-pickup-request";
 
-import TextInput from "@/components/common/text-input";
+import TextInput from "@/common/components/text-input";
 import { ItemContactFormData } from "./item-contact-form.type";
-import TextArea from "@/components/common/text-area";
+import TextArea from "@/common/components/text-area";
 
 import { urlConfigs } from "@/routing/url-configs";
 import useLocale from "@/app/i18n/use-locale";

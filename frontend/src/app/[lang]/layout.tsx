@@ -10,8 +10,8 @@ import { Providers } from './providers';
 import { LocaleType } from '../i18n/locales/locales.type';
 
 import { cn } from "@/stores/utils";
-import NavBar from "@/components/common/nav-bar";
-import FooterSection from '@/components/common/footer-section';
+import NavBar from "@/common/components/nav-bar";
+import FooterSection from '@/common/components/footer-section';
 
 import "../../styles/common/globals.css";
 import "../../styles/common/formStyles.css";

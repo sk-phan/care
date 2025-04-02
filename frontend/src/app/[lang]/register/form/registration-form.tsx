@@ -8,7 +8,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import RegistrationFormFields from "./registration-form-fields";
 import { registrationFormDefaultValues } from "./registration-form.utils";
 
-import { useNotify } from "@/hooks/notification/use-notify";
+import { useNotify } from "@/common/hooks/notification/use-notify";
 import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 
@@ -16,8 +16,8 @@ import useCreateItemRegistration from "../data/use-create-item-registation";
 import { ItemCreateParams } from "@/types/item/item.type";
 import { urlConfigs } from "@/routing/url-configs";
 import RegistrationFormPreview from "./registration-form-preview";
-import Heading from "@/components/common/heading";
-import revalidateHomePath from "@/services/server-actions/revalidate-path";
+import Heading from "@/common/components/heading";
+import revalidateHomePath from "@/common/api/server-actions/revalidate-path";
 
 const RegistrationForm = () => {
     const { locale } = useLocale();
