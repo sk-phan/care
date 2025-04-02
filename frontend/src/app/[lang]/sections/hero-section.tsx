@@ -5,11 +5,12 @@ import Link from "next/link";
 
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
-import useCommonStyleClasses from "@/hooks/styles/use-common-style-classes";
+import useCommonStyleClasses from "@/common/hooks/styles/use-common-style-classes";
 import { urlConfigs } from "@/routing/url-configs";
 
 import heroImage from '../../../../public/images/hero-image.png';
 import '@/styles/HeroSection.css';
+import { useEffect } from "react";
 
 interface HeroSectionProps {
     lang: LocaleType;
@@ -19,6 +20,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
     const { t } = useTranslation(lang);
     const { pageHeader, pageDescription } = useCommonStyleClasses();
 
+    useEffect(() => console.log("me"), [])
     return (
         <section>
             <div className="flex md:flex-row flex-col md:gap-48 gap-4">

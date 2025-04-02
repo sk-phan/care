@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import NavBar from '@/components/common/nav-bar'; // Adjust path as needed
+import NavBar from '@/common/components/nav-bar'; // Adjust path as needed
 import { describe, expect, test, vi } from 'vitest';  // to mock hooks and other imports
 
 vi.mock('next/navigation', () => ({

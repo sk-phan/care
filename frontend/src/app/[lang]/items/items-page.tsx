@@ -7,7 +7,7 @@ import { Pagination } from "@mui/material";
 import { Metadata } from "@/types/api/api.type";
 import { usePathname, useRouter } from "next/navigation";
 
-import ItemList from "@/components/items/item-list";
+import ItemList from "./list/item-list";
 
 interface ItemsPage {
     lang: LocaleType;

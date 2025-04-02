@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useTranslation } from "@/app/i18n";
 
 import useLocale from "@/app/i18n/use-locale";
-import useCommonButtonStyles from "@/hooks/styles/use-common-button-styles";
+import useCommonButtonStyles from "@/common/hooks/styles/use-common-button-styles";
 import { urlConfigs } from "@/routing/url-configs";
 import { ItemType } from "@/types/item/item.type";
 
-import Heading from "@/components/common/heading";
+import ItemList from "../items/list/item-list";
+import Heading from "@/common/components/heading";
 import { Button } from "@mui/material";
-import ItemList from "@/components/items/item-list";
 
 interface ItemsSectionProps {
     items: ItemType[];

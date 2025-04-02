@@ -3,7 +3,7 @@
 import { CiViewList } from "react-icons/ci";
 import { PiHandshakeThin, PiGiftThin } from "react-icons/pi";
 
-import Heading from "@/components/common/heading";
+import Heading from "@/common/components/heading";
 
 const steps = [
     {

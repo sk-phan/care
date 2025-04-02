@@ -1,10 +1,10 @@
 import { useFormContext } from "react-hook-form";
-import cities from "@/common/cities.json";
-import conditions from "@/common/item-conditions.json";
-import categories from "@/common/categories.json";
+import cities from "@/common/json/cities.json";
+import conditions from "@/common/json/item-conditions.json";
+import categories from "@/common/json/categories.json";
 
-import SelectField from "@/components/common/select-field";
-import TextInput from "@/components/common/text-input";
+import SelectField from "@/common/components/select-field";
+import TextInput from "@/common/components/text-input";
 import useLocale from "@/app/i18n/use-locale";
 import { useTranslation } from "@/app/i18n";
 import { emailPattern } from "@/utils/form-validations";

@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { ItemCreateParams } from "@/types/item/item.type";
 
-import { ItemsApi } from "@/services/items/items-api";
+import { ItemsApi } from "@/common/api/items/items-api";
 
 const useCreateItemRegistration = () => {
     const mutation = useMutation({
