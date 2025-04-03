@@ -1,9 +1,9 @@
 "use client";
 
 import { ItemType } from "@/types/item/item.type";
-import ItemCard from "./item-card";
+import DonatedItemCard from "./donated-item-card";
 
-const ItemList = ({ 
+const DonatedItemList = ({ 
     items 
 }: {
     items: ItemType[];
@@ -13,7 +13,7 @@ const ItemList = ({
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {items.map(item => {
                 return (
-                    <ItemCard 
+                    <DonatedItemCard 
                     key={item.id}
                     item={item}/>
                 )
@@ -22,4 +22,4 @@ const ItemList = ({
     );
 };
 
-export default ItemList;
+export default DonatedItemList;

@@ -8,7 +8,7 @@ import useCommonButtonStyles from "@/common/hooks/styles/use-common-button-style
 import { urlConfigs } from "@/routing/url-configs";
 import { ItemType } from "@/types/item/item.type";
 
-import ItemList from "../items/list/item-list";
+import ItemList from "../donated-items/list/donated-item-list";
 import Heading from "@/common/components/heading";
 import { Button } from "@mui/material";
 
@@ -29,7 +29,7 @@ interface ItemsSectionProps {
                 <Button 
                     variant="text" 
                     LinkComponent={Link} 
-                    href={urlConfigs.Items[locale]}
+                    href={urlConfigs.DonatedItems[locale]}
                     sx={linkButton}
                     >
                         {t('items-section.see-all')}

@@ -8,7 +8,7 @@ export const navRoutes: Route[] = [
     },
     {
         key: 'items',
-        path: urlConfigs.Items,
+        path: urlConfigs.DonatedItems,
     },
     {
         key: 'about',

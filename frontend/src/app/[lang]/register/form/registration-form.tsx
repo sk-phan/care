@@ -45,9 +45,9 @@ const RegistrationForm = () => {
                 notify({ message: 'Registration is successfully saved!' });
     
                 await revalidateHomePath(urlConfigs.Home[locale]);
-                await revalidateHomePath(urlConfigs.Items[locale]);
+                await revalidateHomePath(urlConfigs.DonatedItems[locale]);
     
-                router.push(urlConfigs.Items[locale]);
+                router.push(urlConfigs.DonatedItems[locale]);
             }
     
             if (status === 'error') {

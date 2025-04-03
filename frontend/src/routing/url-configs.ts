@@ -19,9 +19,9 @@ export const urlConfigs = {
         en: '/en/register',
         enable: true
     },
-    Items: {
-        en: '/en/items',
-        fi: '/fi/items',
+    DonatedItems: {
+        en: '/en/donated-items',
+        fi: '/fi/donated-items',
         enable: true
     },
     Item: {

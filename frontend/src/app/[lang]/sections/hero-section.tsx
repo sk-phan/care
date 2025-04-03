@@ -39,7 +39,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                     </p>
                     <Button
                     LinkComponent={Link}
-                    href={urlConfigs.Items[lang]}
+                    href={urlConfigs.DonatedItems[lang]}
                     variant="text"
                     className="
                     flex

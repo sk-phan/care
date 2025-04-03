@@ -1,21 +1,22 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
+
 import { ItemType } from "@/types/item/item.type";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
-import { Pagination } from "@mui/material";
 import { Metadata } from "@/types/api/api.type";
-import { usePathname, useRouter } from "next/navigation";
 
-import ItemList from "./list/item-list";
+import { Pagination } from "@mui/material";
+import DonatedItemList from "./list/donated-item-list";
 
-interface ItemsPage {
+type DonatedItems = {
     lang: LocaleType;
     items: ItemType[];
     metadata: Metadata;
 }
 
-const ItemsPage = ({ lang, items, metadata } : ItemsPage) => {
+const DonatedItems = ({ lang, items, metadata } : DonatedItems) => {
     const { t } = useTranslation(lang);
     const pathname = usePathname();
     const searchParams = window.location.search;
@@ -30,7 +31,7 @@ const ItemsPage = ({ lang, items, metadata } : ItemsPage) => {
     };
 
     return (
-        <div>
+        <div className="min-h-screen">
             <h2
                 className="
                 text-5xl 
@@ -41,7 +42,7 @@ const ItemsPage = ({ lang, items, metadata } : ItemsPage) => {
             >
                 {t('Items')}
             </h2>
-            <ItemList items={items}/>
+            <DonatedItemList items={items}/>
             <div className="flex items-center justify-center mt-4">
                 <Pagination 
                     count={totalPages} 
@@ -54,4 +55,4 @@ const ItemsPage = ({ lang, items, metadata } : ItemsPage) => {
     )
 }
 
-export default ItemsPage;
+export default DonatedItems;

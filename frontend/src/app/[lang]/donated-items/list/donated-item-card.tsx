@@ -12,7 +12,7 @@ import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 import Image from "next/image";
 
-const ItemCard = ({ item } : { item: ItemType }) => {
+const DonatedItemCard = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.Item;
     const { locale } = useLocale();
     const { t } = useTranslation(locale);
@@ -44,4 +44,4 @@ const ItemCard = ({ item } : { item: ItemType }) => {
     )
 }
 
-export default ItemCard;
+export default DonatedItemCard;

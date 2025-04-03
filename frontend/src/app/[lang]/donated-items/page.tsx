@@ -3,7 +3,8 @@ import { BASE_URL } from "@/common/api/api-base";
 import { EntitiesResponse } from "@/types/api/api.type";
 import { ItemType } from "@/types/item/item.type";
 import { CircularProgress } from "@mui/material";
-import ItemsPage from "./items-page";
+
+import DonatedItems from "./donated-items";
 
 const LIMIT = 9;
 
@@ -31,13 +32,11 @@ export default async function Items({
     }
 
     return (
-        <div className="min-h-screen">
-            <ItemsPage
-                lang={lang}
-                items={entities}
-                metadata={metadata}
-            />
-        </div>
+        <DonatedItems
+            lang={lang}
+            items={entities}
+            metadata={metadata}
+        />
     );
 };
 

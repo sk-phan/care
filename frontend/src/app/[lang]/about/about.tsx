@@ -5,7 +5,7 @@ import kidGivingGiftsImage from "../../../../public/images/kids-giving-gifts.png
 import useCommonStyleClasses from "@/common/hooks/styles/use-common-style-classes";
 import HowItWorksSection from "./sections/how-it-works-section";
 
-const AboutPage = () => {
+const About = () => {
     const { pageHeader, pageDescription, coverImage } = useCommonStyleClasses();
 
     return (
@@ -32,4 +32,4 @@ const AboutPage = () => {
     )
 };
 
-export default AboutPage;
+export default About;

@@ -39,7 +39,7 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
     useEffect(() => {
         if (status === 'success') {
             notify({ message: t('item-contact-form.success') });
-            router.push(urlConfigs.Items[locale]);
+            router.push(urlConfigs.DonatedItems[locale]);
         }
         if (status === 'error') {
             notify({ message: t('item-contact-form.error'), severity: 'error' });
