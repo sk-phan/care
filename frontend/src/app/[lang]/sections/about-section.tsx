@@ -37,7 +37,7 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                         <Button
                             variant="contained"
                             LinkComponent={Link}
-                            href={urlConfigs.Register[lang]}
+                            href={urlConfigs.donatedItems.create[lang]}
                         >
                             {t("nav-bar.list-an-item")}
                         </Button>

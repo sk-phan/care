@@ -59,7 +59,7 @@ const NavBar = () => {
                         variant="contained"
                         className="hidden md:inline-block"
                         LinkComponent={Link}
-                        href={urlConfigs.Register[locale]}
+                        href={urlConfigs.donatedItems.create[locale]}
                     >
                         {t("nav-bar.list-an-item")}
                     </Button>

@@ -3,7 +3,7 @@ import React, { useId } from "react";
 import { useFormContext } from "react-hook-form";
 
 import { ItemType } from "@/types/item/item.type";
-import ItemCard from "../../donated-items/list/donated-item-card";
+import ItemCard from "../../list/donated-item-card";
 
 const RegistrationFormPreview = () => {
     const { watch } = useFormContext();

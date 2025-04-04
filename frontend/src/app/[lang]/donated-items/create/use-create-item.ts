@@ -3,7 +3,7 @@ import { ItemCreateParams } from "@/types/item/item.type";
 
 import { ItemsApi } from "@/common/api/items/items-api";
 
-const useCreateItemRegistration = () => {
+const useCreateItem = () => {
     const mutation = useMutation({
         mutationFn: (itemCreateParams: ItemCreateParams) => {
             return ItemsApi.create(itemCreateParams);
@@ -13,4 +13,4 @@ const useCreateItemRegistration = () => {
     return mutation;
 };
 
-export default useCreateItemRegistration;
+export default useCreateItem;

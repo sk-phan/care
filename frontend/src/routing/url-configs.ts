@@ -1,30 +1,30 @@
 export const urlConfigs = {
-    Home: {
+    home: {
         fi: '/fi',
         en: '/en',
         enable: true
     },
-    About: {
+    about: {
         fi: '/fi/about',
         en: '/en/about',
         enable: true
     },
-    Contact: {
+    contact: {
         fi: '/fi/contact',
         en: '/en/contact',
         enable: false
     },
-    Register: {
-        fi:'/fi/register',
-        en: '/en/register',
-        enable: true
-    },
-    DonatedItems: {
+    donatedItems: {
         en: '/en/donated-items',
         fi: '/fi/donated-items',
+        create: {
+            en: '/en/donated-items/create',
+            fi: '/fi/donated-items/create',
+            enable: true
+        },
         enable: true
     },
-    Item: {
+    item: {
         en: '/en/item',
         fi: '/fi/item',
         enable: true

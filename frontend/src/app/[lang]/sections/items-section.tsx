@@ -29,7 +29,7 @@ interface ItemsSectionProps {
                 <Button 
                     variant="text" 
                     LinkComponent={Link} 
-                    href={urlConfigs.DonatedItems[locale]}
+                    href={urlConfigs.donatedItems[locale]}
                     sx={linkButton}
                     >
                         {t('items-section.see-all')}

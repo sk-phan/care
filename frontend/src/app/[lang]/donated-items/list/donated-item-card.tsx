@@ -13,7 +13,7 @@ import useLocale from "@/app/i18n/use-locale";
 import Image from "next/image";
 
 const DonatedItemCard = ({ item } : { item: ItemType }) => {
-    const itemPath = urlConfigs.Item;
+    const itemPath = urlConfigs.item;
     const { locale } = useLocale();
     const { t } = useTranslation(locale);
 

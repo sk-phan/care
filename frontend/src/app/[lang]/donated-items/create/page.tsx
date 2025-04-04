@@ -1,13 +1,9 @@
-"use client";
-
 import RegistrationForm from "./form/registration-form";
 
-const RegistrationPage = () => {
+export default async function Register() {
     return (
-        <div className="mt-12">
+        <div className="mt-12 min-h-screen">
             <RegistrationForm />
         </div>
     )
 };
-
-export default RegistrationPage;

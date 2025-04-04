@@ -12,7 +12,7 @@ import { useNotify } from "@/common/hooks/notification/use-notify";
 import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 
-import useCreateItemRegistration from "../data/use-create-item-registation";
+import useCreateItem from "../use-create-item";
 import { ItemCreateParams } from "@/types/item/item.type";
 import { urlConfigs } from "@/routing/url-configs";
 import RegistrationFormPreview from "./registration-form-preview";
@@ -22,7 +22,7 @@ import revalidateHomePath from "@/common/api/server-actions/revalidate-path";
 const RegistrationForm = () => {
     const { locale } = useLocale();
     const { t } = useTranslation(locale);
-    const { mutate, status, error } = useCreateItemRegistration();
+    const { mutate, status, error } = useCreateItem();
     const notify = useNotify();
     const router = useRouter();
 
@@ -44,10 +44,10 @@ const RegistrationForm = () => {
             if (status === 'success') {
                 notify({ message: 'Registration is successfully saved!' });
     
-                await revalidateHomePath(urlConfigs.Home[locale]);
-                await revalidateHomePath(urlConfigs.DonatedItems[locale]);
+                await revalidateHomePath(urlConfigs.home[locale]);
+                await revalidateHomePath(urlConfigs.donatedItems[locale]);
     
-                router.push(urlConfigs.DonatedItems[locale]);
+                router.push(urlConfigs.donatedItems[locale]);
             }
     
             if (status === 'error') {
