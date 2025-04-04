@@ -1,10 +1,6 @@
-import About from "./about";
+import About from "@/features/about-page/about";
 
 export default async function AboutPage() {
 
-    return (
-        <div className="min-h-screen">
-            <About />
-        </div>
-    );
+    return <About />;
 }

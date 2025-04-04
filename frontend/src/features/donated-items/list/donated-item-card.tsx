@@ -2,18 +2,18 @@
 import Link from "next/link";
 import _ from 'lodash';
 
-import { urlConfigs } from "@/routing/url-configs";
-import { ItemType } from "@/types/item/item.type";
+import { urlConfigs } from "@/common/routing/url-configs";
+import { ItemType } from "@/common/types/item/item.type";
 
 import Badge from "@/common/components/c-badge";
 
-import "@/styles/Item.css";
+import "@/common/styles/Item.css";
 import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 import Image from "next/image";
 
 const DonatedItemCard = ({ item } : { item: ItemType }) => {
-    const itemPath = urlConfigs.item;
+    const itemPath = urlConfigs.donatedItems;
     const { locale } = useLocale();
     const { t } = useTranslation(locale);
 

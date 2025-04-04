@@ -3,12 +3,11 @@ import { useEffect } from "react";
 import _ from 'lodash';
 import Image from "next/image";
 
-import { ItemType } from "@/types/item/item.type";
+import { ItemType } from "@/common/types/item/item.type";
 
-import ItemContactFormSection from "./forms/item-contact-form-section";
-
-import "@/styles/ItemPage.css";
+import "@/common/styles/ItemPage.css";
 import { Chip } from "@mui/material";
+import ItemContactFormSection from "./forms/item-contact-form-section";
 
 const ItemPage = ({
     item

@@ -13,8 +13,8 @@ import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 
 import useCreateItem from "../use-create-item";
-import { ItemCreateParams } from "@/types/item/item.type";
-import { urlConfigs } from "@/routing/url-configs";
+import { ItemCreateParams } from "@/common/types/item/item.type";
+import { urlConfigs } from "@/common/routing/url-configs";
 import RegistrationFormPreview from "./registration-form-preview";
 import Heading from "@/common/components/heading";
 import revalidateHomePath from "@/common/api/server-actions/revalidate-path";

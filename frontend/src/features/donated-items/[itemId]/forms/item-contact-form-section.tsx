@@ -5,9 +5,8 @@ import Image from "next/image";
 import useLocale from "@/app/i18n/use-locale";
 import { useTranslation } from "@/app/i18n";
 
+import "@/common/styles/items/ItemContactForm.css";
 import ItemContactForm from "./item-contact-form";
-
-import "@/styles/items/ItemContactForm.css";
 
 const ItemContactFormSection = ({
     donorName,

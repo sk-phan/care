@@ -5,12 +5,12 @@ import { useTranslation } from "@/app/i18n";
 
 import useLocale from "@/app/i18n/use-locale";
 import useCommonButtonStyles from "@/common/hooks/styles/use-common-button-styles";
-import { urlConfigs } from "@/routing/url-configs";
-import { ItemType } from "@/types/item/item.type";
+import { urlConfigs } from "@/common/routing/url-configs";
+import { ItemType } from "@/common/types/item/item.type";
 
-import ItemList from "../donated-items/list/donated-item-list";
 import Heading from "@/common/components/heading";
 import { Button } from "@mui/material";
+import DonatedItemList from "@/features/donated-items/list/donated-item-list";
 
 interface ItemsSectionProps {
     items: ItemType[];
@@ -35,7 +35,7 @@ interface ItemsSectionProps {
                         {t('items-section.see-all')}
                 </Button>
             </div>
-            <ItemList items={items} />
+            <DonatedItemList items={items} />
         </section>
     )
 }
