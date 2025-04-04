@@ -24,9 +24,4 @@ export const urlConfigs = {
         },
         enable: true
     },
-    item: {
-        en: '/en/item',
-        fi: '/fi/item',
-        enable: true
-    }
 }

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import kidGivingGiftsImage from "../../../../public/images/kids-giving-gifts.png";
+import kidGivingGiftsImage from "../../../public/images/kids-giving-gifts.png";
 
 import useCommonStyleClasses from "@/common/hooks/styles/use-common-style-classes";
 import HowItWorksSection from "./sections/how-it-works-section";
@@ -9,7 +9,7 @@ const About = () => {
     const { pageHeader, pageDescription, coverImage } = useCommonStyleClasses();
 
     return (
-        <div>
+        <div className="min-h-screen">
             <div>
                 <div className="flex md:flex-row flex-col items-center md:gap-48 gap-4">
                     <h1 className={pageHeader}>Making every child&apos;s day a little brighter</h1>

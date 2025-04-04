@@ -7,7 +7,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
-import { urlConfigs } from "@/routing/url-configs";
+import { urlConfigs } from "@/common/routing/url-configs";
 
 import NavBarItems from "./nav-bar-item";
 import { Button } from "@mui/material";

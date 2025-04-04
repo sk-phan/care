@@ -5,20 +5,20 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import { useNotify } from "@/common/hooks/notification/use-notify";
-import useCreatePickupRequest from "../data/use-create-pickup-request";
+import useCreatePickupRequest from "../use-create-pickup-request";
 
 import TextInput from "@/common/components/text-input";
-import { ItemContactFormData } from "./item-contact-form.type";
 import TextArea from "@/common/components/text-area";
 
-import { urlConfigs } from "@/routing/url-configs";
+import { urlConfigs } from "@/common/routing/url-configs";
 import useLocale from "@/app/i18n/use-locale";
 import { useTranslation } from "@/app/i18n";
 
 import { Button } from "@mui/material";
 import { emailPattern } from "@/utils/form-validations";
 
-import "@/styles/items/ItemContactForm.css";
+import "@/common/styles/items/ItemContactForm.css";
+import { ItemContactFormData } from "./item-contact-form.type";
 
 const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: string }) => {
     const router = useRouter();

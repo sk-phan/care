@@ -1,4 +1,4 @@
-import RegistrationForm from "./form/registration-form";
+import RegistrationForm from "@/features/donated-items/create/form/registration-form";
 
 export default async function Register() {
     return (

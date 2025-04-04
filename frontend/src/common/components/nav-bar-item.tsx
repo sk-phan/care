@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import Link from 'next/link';
 
-import {navRoutes} from '@/routing/routes';
+import {navRoutes} from '@/common/routing/routes';
 import useLocale from '@/app/i18n/use-locale';
 import { useTranslation } from '@/app/i18n';
 

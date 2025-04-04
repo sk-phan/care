@@ -6,13 +6,13 @@ import Link from "next/link";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
 import useCommonStyleClasses from "@/common/hooks/styles/use-common-style-classes";
-import { urlConfigs } from "@/routing/url-configs";
+import { urlConfigs } from "@/common/routing/url-configs";
 
 import heroImage from '../../../../public/images/hero-image.png';
-import '@/styles/HeroSection.css';
+import '@/common/styles/HeroSection.css';
 import { useEffect } from "react";
 
-interface HeroSectionProps {
+type HeroSectionProps = {
     lang: LocaleType;
 }
 

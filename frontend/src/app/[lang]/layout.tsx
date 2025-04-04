@@ -9,12 +9,12 @@ import { Outfit as FontSans } from "next/font/google";
 import { Providers } from './providers';
 import { LocaleType } from '../i18n/locales/locales.type';
 
-import { cn } from "@/stores/utils";
+import { cn } from "@/common/stores/utils";
 import NavBar from "@/common/components/nav-bar";
 import FooterSection from '@/common/components/footer-section';
 
-import "../../styles/common/globals.css";
-import "../../styles/common/formStyles.css";
+import "../../common/styles/common/globals.css";
+import "../../common/styles/common/formStyles.css";
 import { Suspense } from 'react';
 
 const fontSans = FontSans({

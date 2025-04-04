@@ -2,10 +2,10 @@
 
 import { usePathname, useRouter } from "next/navigation";
 
-import { ItemType } from "@/types/item/item.type";
+import { ItemType } from "@/common/types/item/item.type";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
-import { Metadata } from "@/types/api/api.type";
+import { Metadata } from "@/common/types/api/api.type";
 
 import { Pagination } from "@mui/material";
 import DonatedItemList from "./list/donated-item-list";
