@@ -15,7 +15,7 @@ import useLocale from "@/app/i18n/use-locale";
 import { useTranslation } from "@/app/i18n";
 
 import { Button } from "@mui/material";
-import { emailPattern } from "@/utils/form-validations";
+import { isValidEmail } from "@/utils/form-validations/form-validations.utils";
 
 import "@/common/styles/items/ItemContactForm.css";
 import { ItemContactFormData } from "./item-contact-form.type";
@@ -75,10 +75,9 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                             control={control} 
                             rules={{
                                 required: t('form.required'),
-                                pattern: {
-                                    value: emailPattern,
-                                    message: t('form.invalid-email'), 
-                                },
+                                validate: {
+                                    emailValidation: isValidEmail || t('form.invalid-email')
+                                }
                             }} 
                             placeholder="Email"
                             error={!!errors.email}

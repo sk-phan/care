@@ -7,7 +7,7 @@ import SelectField from "@/common/components/select-field";
 import TextInput from "@/common/components/text-input";
 import useLocale from "@/app/i18n/use-locale";
 import { useTranslation } from "@/app/i18n";
-import { emailPattern } from "@/utils/form-validations";
+import { emailPattern } from "@/utils/form-validations/form-validations.utils";
 
 const RegistrationFormFields = () => {
     const { control, formState: {errors} } = useFormContext();
