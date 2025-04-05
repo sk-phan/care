@@ -27,13 +27,14 @@ export const metadata: Metadata = {
   description: "We are a community-driven platform that connects people who want to share gently used clothes, books, and more with those in need",
 };
 
-export default async function RootLayout({
-  children,
-  params
-}: Readonly<{
+interface Props {
   children: ReactNode;
-  params: { lang?: LocaleType };
-}>) {
+  params: Promise<{ lang?: LocaleType }>;
+}
+
+export default async function RootLayout(props: Props) {
+  const params = await props.params;
+  const { children } = props;
   const lang = params.lang && languages.includes(params.lang) ? params.lang : 'en';
 
   return (

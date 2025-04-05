@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63" fill="none">
-<path d="M49.9375 29.6562H13.0625V61H49.9375V29.6562Z" stroke="black" stroke-width="3" strokeLinecap="round" stroke-linejoin="round"/>
-<path d="M13.0625 29.6562L2 18.5938" stroke="black" stroke-width="3" strokeLinecap="round" strokeLinejoin="round"/>
-<path d="M49.9375 29.6562L61 18.5938" stroke="black" stroke-width="3" strokeLinecap="round" strokeLinejoin="round"/>
-<path d="M31.5 39.6678C32.4034 37.9347 34.3209 36.7916 36.4781 37.0682C38.9487 37.3816 40.7188 39.5757 40.7188 42.0647C40.7188 44.7382 39.6494 47.301 37.7687 49.2001L31.5 55.4688L25.2313 49.2001C23.3322 47.301 22.2812 44.7382 22.2812 42.0647C22.2812 39.4466 24.2725 37.1788 26.8906 37.0313C28.9003 36.9207 30.6519 38.0269 31.5 39.6678Z" stroke="black" stroke-width="3" strokeLinecap="round" stroke-linejoin="round"/>
-<path d="M24.125 2H16.75L7.53125 11.2188L16.75 20.4375V29.6562H46.25V20.4375L55.4688 11.2188L46.25 2H38.875C38.875 6.07469 35.5747 9.375 31.5 9.375C27.4253 9.375 24.125 6.07469 24.125 2Z" stroke="black" stroke-width="3" strokeLinecap="round" stroke-linejoin="round"/>
+<path d="M49.9375 29.6562H13.0625V61H49.9375V29.6562Z" stroke="black" strokeWidth="3" strokeLinecap="round" stroke-linejoin="round"/>
+<path d="M13.0625 29.6562L2 18.5938" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M49.9375 29.6562L61 18.5938" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M31.5 39.6678C32.4034 37.9347 34.3209 36.7916 36.4781 37.0682C38.9487 37.3816 40.7188 39.5757 40.7188 42.0647C40.7188 44.7382 39.6494 47.301 37.7687 49.2001L31.5 55.4688L25.2313 49.2001C23.3322 47.301 22.2812 44.7382 22.2812 42.0647C22.2812 39.4466 24.2725 37.1788 26.8906 37.0313C28.9003 36.9207 30.6519 38.0269 31.5 39.6678Z" stroke="black" strokeWidth="3" strokeLinecap="round" stroke-linejoin="round"/>
+<path d="M24.125 2H16.75L7.53125 11.2188L16.75 20.4375V29.6562H46.25V20.4375L55.4688 11.2188L46.25 2H38.875C38.875 6.07469 35.5747 9.375 31.5 9.375C27.4253 9.375 24.125 6.07469 24.125 2Z" stroke="black" strokeWidth="3" strokeLinecap="round" stroke-linejoin="round"/>
 </svg>

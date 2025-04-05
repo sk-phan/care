@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import {navRoutes} from '@/common/routing/routes';
 import useLocale from '@/app/i18n/use-locale';
 import { useTranslation } from '@/app/i18n';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const NavBarItems = () => {
     const { locale } = useLocale();

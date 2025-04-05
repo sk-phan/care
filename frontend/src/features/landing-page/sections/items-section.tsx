@@ -10,7 +10,7 @@ import { ItemType } from "@/common/types/item/item.type";
 import Heading from "@/common/components/heading";
 import { Button } from "@mui/material";
 import DonatedItemList from "@/features/donated-items/list/donated-item-list";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 interface ItemsSectionProps {
     items: ItemType[];
