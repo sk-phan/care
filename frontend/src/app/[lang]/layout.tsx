@@ -15,7 +15,7 @@ import FooterSection from '@/common/components/footer-section';
 
 import "../../common/styles/common/globals.css";
 import "../../common/styles/common/formStyles.css";
-import { Suspense } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -31,7 +31,7 @@ export default async function RootLayout({
   children,
   params
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
   params: { lang?: LocaleType };
 }>) {
   const lang = params.lang && languages.includes(params.lang) ? params.lang : 'en';

@@ -12,10 +12,12 @@ import { urlConfigs } from "@/common/routing/url-configs";
 import NavBarItems from "./nav-bar-item";
 import { Button } from "@mui/material";
 import LanguageSelection from "./language-selection";
+import { useRouter } from "next/router";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     
+    const router = useRouter();
     const pathname = usePathname();
     const { locale } = useLocale();
     const { t } = useTranslation(locale);
@@ -58,8 +60,7 @@ const NavBar = () => {
                     <Button
                         variant="contained"
                         className="hidden md:inline-block"
-                        LinkComponent={Link}
-                        href={urlConfigs.donatedItems.create[locale]}
+                        onClick={() => router.push(urlConfigs.donatedItems.create[locale])}
                     >
                         {t("nav-bar.list-an-item")}
                     </Button>

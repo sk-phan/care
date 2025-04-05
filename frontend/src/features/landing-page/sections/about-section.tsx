@@ -8,11 +8,11 @@ import globalHeartIcon from "../../../../public/icons/global-heart.svg";
 
 import { useTranslation } from "@/app/i18n";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
-import Link from "next/link";
 import { urlConfigs } from "@/common/routing/url-configs";
 
 import { Button } from "@mui/material";
 import Heading from "@/common/components/heading";
+import { useRouter } from "next/router";
 
 interface WelcomeProps {
     lang: LocaleType;
@@ -20,6 +20,7 @@ interface WelcomeProps {
 
 const AboutSection = ({ lang } : WelcomeProps) => {
     const { t } = useTranslation(lang);
+    const router = useRouter();
 
     return (
         <section className="mt-12 md:mt-16">
@@ -36,7 +37,7 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                     <div className="hidden md:inline-block">
                         <Button
                             variant="contained"
-                            LinkComponent={Link}
+                            onClick={() => router.push(urlConfigs.donatedItems[lang])}
                             href={urlConfigs.donatedItems.create[lang]}
                         >
                             {t("nav-bar.list-an-item")}

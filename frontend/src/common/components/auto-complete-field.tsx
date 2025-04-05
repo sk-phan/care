@@ -59,6 +59,11 @@ const AutoCompleteField = <
                 renderInput={(params) => (
                     <TextField
                     {...params}
+                    InputLabelProps={{
+                        ...params.InputLabelProps,
+                        // 🔐 fix: remove problematic props
+                        contentEditable: undefined,
+                      }}
                     label={label}
                     error={!!fieldState.error}
                     helperText={fieldState.error?.message}
