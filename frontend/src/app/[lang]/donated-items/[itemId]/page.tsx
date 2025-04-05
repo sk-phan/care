@@ -1,6 +1,6 @@
 import { BASE_URL } from "@/common/api/api-base";
 import { ItemType } from "@/common/types/item/item.type";
-import ItemPage from "@/features/donated-items/[itemId]/item-page";
+import ItemPage from "@/features/donated-items/item/item-page";
 
 export default async function Item({ params }: { params: { itemId: string }}) {
     const itemId =  params.itemId;

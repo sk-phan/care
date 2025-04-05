@@ -31,7 +31,7 @@
     },
     "noImplicitAny": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
   },
   "include": [
     "next-env.d.ts",

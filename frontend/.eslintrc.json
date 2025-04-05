@@ -7,8 +7,8 @@
       }
     ]
   },
-  "extends": ["next", "prettier","next/core-web-vitals"],
-  "plugins": ["prettier", "unicorn"],
+  "extends": ["next", "next/core-web-vitals"],
+  "plugins": ["unicorn"],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
     "requireConfigFile": false
