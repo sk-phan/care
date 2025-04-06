@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES2020", // ✅ Explicit modern target (prevents auto-injection of ES2017)
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2020", 
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "jsx": "preserve",
     "skipLibCheck": true,
@@ -19,19 +23,31 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "shared/*": ["../shared/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "shared/*": [
+        "../shared/*"
+      ],
+      "react": [ "./node_modules/@types/react" ]
     },
     "noImplicitAny": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/**/*",
+    "src/**/*"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ],
+  "types": [
+    "node",
+    "jest",
+    "@testing-library/jest-dom"
+  ]
 }

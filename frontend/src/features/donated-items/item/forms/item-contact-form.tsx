@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useNotify } from "@/common/hooks/notification/use-notify";
 import useCreatePickupRequest from "../use-create-pickup-request";
 
-import TextInput from "@/common/components/text-input";
+import TextInput from "@/common/components/text-input/text-input";
 import TextArea from "@/common/components/text-area";
 
 import { urlConfigs } from "@/common/routing/url-configs";
