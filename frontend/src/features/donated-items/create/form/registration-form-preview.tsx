@@ -1,4 +1,4 @@
-import Heading from "@/common/components/heading";
+import Heading from "@/common/components/heading/heading";
 import React, { useId } from "react";
 import { useFormContext } from "react-hook-form";
 
@@ -29,7 +29,7 @@ const RegistrationFormPreview = () => {
     return (
         <div>
             <Heading 
-                title="Preview"
+                heading="Preview"
                 level={5}
                 color="text-white"
             />

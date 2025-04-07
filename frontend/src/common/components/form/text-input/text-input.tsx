@@ -1,6 +1,6 @@
 import { TextField } from '@mui/material';
 import { Controller,FieldValues } from 'react-hook-form';
-import { TextInputProps } from './text-input.type';
+import { InputProps } from '@/common/types/form/form-field.type';
 
 const TextInput = <T extends FieldValues>({
     rules,
@@ -8,7 +8,7 @@ const TextInput = <T extends FieldValues>({
     control,
     placeholder,
     ...props 
-}: TextInputProps<T>) => {
+}: InputProps<T>) => {
     
     return (
         <Controller

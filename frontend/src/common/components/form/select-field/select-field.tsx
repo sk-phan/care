@@ -1,19 +1,6 @@
+import { InputProps } from '@/common/types/form/form-field.type';
 import { BaseSelectProps, FormControl, FormHelperText, InputLabel, MenuItem, Select } from '@mui/material';
-import { Controller, Control, FieldValues, Path } from 'react-hook-form';
-
-type SelectProps<T extends FieldValues> = BaseSelectProps & {
-    rules?: { 
-        required?: boolean | string;
-        minLength?: { value: number; message: string };
-        maxLength?: { value: number; message: string };
-        pattern?: { value: RegExp; message: string };
-        validate?: { [key: string]: (value: any) => boolean | string };
-    };
-    name: Path<T>; 
-    control: Control<T>; 
-    placeholder?: string;
-    options: { label: string; value: string }[];
-};
+import { Controller, FieldValues } from 'react-hook-form';
 
 const SelectField = <T extends FieldValues>({
     rules,
@@ -21,31 +8,32 @@ const SelectField = <T extends FieldValues>({
     control,
     placeholder,
     options,
+    label,
     ...props 
-}: SelectProps<T>) => {
+}: InputProps<T> & BaseSelectProps & {
+    options: { label: string; value: string }[];
+}) => {
     
     return (
-        <>
         <Controller
             name={name} 
             control={control}
             rules={rules}
             render={({ field, fieldState }) => (
                 <FormControl error={!!fieldState.error}>      
-                    <InputLabel id="demo-simple-select-disabled-label">{props.label}</InputLabel>  
+                    <InputLabel data-testid="select-field-label" id="select-field">{label}</InputLabel>
                     <Select
-                    labelId="demo-simple-select-label"
+                    data-testid="select-field"
+                    labelId="select-field"
                     value={field.value}
-                    label="Age"
+                    label={label}
                     onChange={field.onChange}
                     {...props}
                     >
                         { options.map(option => {
                             return (
-                                <MenuItem 
-                                    key={option.value}
-                                    value={option.value}>
-                                        {option.label}
+                                <MenuItem data-testid="select-field-option" key={option.value} value={option.value}>
+                                    {option.label}
                                 </MenuItem>
                             )
                         })}
@@ -54,7 +42,6 @@ const SelectField = <T extends FieldValues>({
                 </FormControl>
             )}
         />
-        </>
     );
 };
 

@@ -7,9 +7,9 @@ export type FormRules = {
     maxLength?: { value: number; message: string };
     pattern?: { value: RegExp; message: string };
     validate?: { [key: string]: (value: any) => boolean | string };
-};
+}
 
-export type TextInputProps<T extends FieldValues> = Omit<TextFieldProps, 'name'> & {
+export type InputProps<T extends FieldValues> = Omit<TextFieldProps, 'name'> & {
     rules?: FormRules;
     name: Path<T>; 
     control: Control<T>; 

@@ -49,8 +49,8 @@ export default async function RootLayout(props: Props) {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-8xl">
             <Suspense fallback={<div>Loading...</div>}>
               <NavBar />
-              {children}
             </Suspense>
+            {children}
           </div>
         </Providers>
         <FooterSection />

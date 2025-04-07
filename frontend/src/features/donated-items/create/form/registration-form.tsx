@@ -16,7 +16,7 @@ import useCreateItem from "../use-create-item";
 import { ItemCreateParams } from "@/common/types/item/item.type";
 import { urlConfigs } from "@/common/routing/url-configs";
 import RegistrationFormPreview from "./registration-form-preview";
-import Heading from "@/common/components/heading";
+import Heading from "@/common/components/heading/heading";
 import revalidateHomePath from "@/common/api/server-actions/revalidate-path";
 
 const RegistrationForm = () => {
@@ -64,7 +64,7 @@ const RegistrationForm = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="md:w-1/2">
                     <Heading 
                         level={2}
-                        title={t('registration-form.title')}
+                        heading={t('registration-form.title')}
                         subHeading={t('registration-form.subtitle')}
                     />
                     <RegistrationFormFields />

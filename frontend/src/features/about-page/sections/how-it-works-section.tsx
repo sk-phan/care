@@ -3,7 +3,7 @@
 import { CiViewList } from "react-icons/ci";
 import { PiHandshakeThin, PiGiftThin } from "react-icons/pi";
 
-import Heading from "@/common/components/heading";
+import Heading from "@/common/components/heading/heading";
 
 const steps = [
     {
@@ -26,7 +26,7 @@ const steps = [
 const HowItWorksSection = () => {
     return (
         <div className="flex flex-col items-center mt-12">
-            <Heading level={2} title="How it works" />
+            <Heading level={2} heading="How it works" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mt-4">
                 {steps.map((step, index) => (
                     <div
@@ -36,7 +36,7 @@ const HowItWorksSection = () => {
                         <div className="mb-4">{step.icon}</div>
                         <Heading 
                             level={3} 
-                            title={step.title} 
+                            heading={step.title} 
                             subHeading={step.description}
                         />
                     </div>

@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import TextInput from './text-input';
-import { FormRules } from './text-input.type';
+import { FormRules } from '@/common/types/form/form-field.type';
 
 const TextInputWrapper = ({ label, rules } : { label?: string; rules?: FormRules }) => {
     const { control } = useForm({ mode: 'all', defaultValues: { venueSlug: '' } });

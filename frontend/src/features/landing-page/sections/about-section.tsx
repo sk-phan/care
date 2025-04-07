@@ -11,7 +11,7 @@ import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { urlConfigs } from "@/common/routing/url-configs";
 
 import { Button } from "@mui/material";
-import Heading from "@/common/components/heading";
+import Heading from "@/common/components/heading/heading";
 import { useRouter } from "next/navigation";
 
 interface WelcomeProps {
@@ -26,7 +26,7 @@ const AboutSection = ({ lang } : WelcomeProps) => {
         <section className="mt-12 md:mt-16">
             <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 md:mr-16">
-                    <Heading level={2} title={t("about.about-us")}/>
+                    <Heading level={2} heading={t("about.about-us")}/>
                     <p 
                     className="
                         text-gray-500
