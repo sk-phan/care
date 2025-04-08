@@ -14,7 +14,7 @@ import NavBar from "@/common/components/navigation-bar/nav-bar";
 import Footer from '@/common/components/footer/footer';
 
 import "../../common/styles/globals.css";
-import "../../common/styles/form/formStyles.css";
+import "../../common/styles/form/form-styles.css";
 import { ReactNode, Suspense } from 'react';
 
 const fontSans = FontSans({

@@ -24,7 +24,7 @@ const ItemContactFormSection = ({
         <div className="mt-6 bg-gray-100 p-6 rounded-3xl">
             <div className="flex items-center mb-6">
                 <Image 
-                className="object-cover rounded-full avatar mr-4"
+                className="object-cover rounded-full w-[76px] h-[76px] mr-4"
                 src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="placeholder image"
                 width={100}

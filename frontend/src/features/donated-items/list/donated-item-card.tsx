@@ -2,7 +2,7 @@
 import Link from "next/link";
 import _ from 'lodash';
 
-import { urlConfigs } from "@/common/routing/url-configs";
+import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemType } from "@/common/types/item/item.type";
 
 import { useTranslation } from "@/app/i18n";

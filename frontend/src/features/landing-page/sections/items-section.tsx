@@ -4,7 +4,7 @@ import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 
 import useCommonButtonStyles from "@/common/hooks/styles/use-common-button-styles";
-import { urlConfigs } from "@/common/routing/url-configs";
+import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemType } from "@/common/types/item/item.type";
 
 import Heading from "@/common/components/heading/heading";

@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 
-import {navRoutes} from '@/common/routing/routes';
+import {navRoutes} from '@/common/routes/route-configs';
 import useLocale from '@/app/i18n/use-locale';
 import { useTranslation } from '@/app/i18n';
 import { useRouter } from 'next/navigation';

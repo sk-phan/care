@@ -10,7 +10,7 @@ import useCreatePickupRequest from "../use-create-pickup-request";
 import TextInput from "@/common/components/form/text-input";
 import TextArea from "@/common/components/form/text-area";
 
-import { urlConfigs } from "@/common/routing/url-configs";
+import { urlConfigs } from "@/common/routes/url-configs";
 import useLocale from "@/app/i18n/use-locale";
 import { useTranslation } from "@/app/i18n";
 

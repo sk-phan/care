@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
 import { useTranslation } from "@/app/i18n";
 import useCommonStyleClasses from "@/common/hooks/styles/use-common-style-classes";
-import { urlConfigs } from "@/common/routing/url-configs";
+import { urlConfigs } from "@/common/routes/url-configs";
 
 import heroImage from '../../../../public/images/hero-image.png';
 import Heading from "@/common/components/heading";

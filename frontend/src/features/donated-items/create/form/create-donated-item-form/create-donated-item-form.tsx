@@ -9,7 +9,7 @@ import { registrationFormDefaultValues } from "../create-donated-item-form.utils
 import { useNotify } from "@/common/hooks/notification/use-notify";
 import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
-import { urlConfigs } from "@/common/routing/url-configs";
+import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemCreateParams } from "@/common/types/item/item.type";
 import revalidateHomePath from "@/common/api/server-actions/revalidate-path";
 import useCreateDonatedItem from "../../use-create-donated-item";
