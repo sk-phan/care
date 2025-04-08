@@ -10,6 +10,7 @@ const jestConfig = {
     '^.+\\.(ts|tsx)$': 'babel-jest',
   },
   moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1",
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '^next/dist/server/web/spec-extension/request.js$': '<rootDir>/__mocks__/next-request.js',
   },

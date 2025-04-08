@@ -10,11 +10,11 @@ import { Providers } from './providers';
 import { LocaleType } from '../i18n/locales/locales.type';
 
 import { cn } from "@/common/stores/utils";
-import NavBar from "@/common/components/nav-bar";
-import FooterSection from '@/common/components/footer-section';
+import NavBar from "@/common/components/navigation-bar/nav-bar";
+import Footer from '@/common/components/footer/footer';
 
-import "../../common/styles/common/globals.css";
-import "../../common/styles/common/formStyles.css";
+import "../../common/styles/globals.css";
+import "../../common/styles/form/formStyles.css";
 import { ReactNode, Suspense } from 'react';
 
 const fontSans = FontSans({
@@ -53,7 +53,7 @@ export default async function RootLayout(props: Props) {
             {children}
           </div>
         </Providers>
-        <FooterSection />
+        <Footer />
       </body>
     </html>
   );

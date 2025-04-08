@@ -9,7 +9,7 @@ import useCommonStyleClasses from "@/common/hooks/styles/use-common-style-classe
 import { urlConfigs } from "@/common/routing/url-configs";
 
 import heroImage from '../../../../public/images/hero-image.png';
-import '@/common/styles/HeroSection.css';
+import Heading from "@/common/components/heading";
 
 type HeroSectionProps = {
     lang: LocaleType;
@@ -17,16 +17,15 @@ type HeroSectionProps = {
 
 const HeroSection = ({ lang }: HeroSectionProps) => {
     const { t } = useTranslation(lang);
-    const { pageHeader, pageDescription } = useCommonStyleClasses();
+    const { pageDescription } = useCommonStyleClasses();
     const router = useRouter();
 
     return (
         <section>
             <div className="flex md:flex-row flex-col md:gap-48 gap-4">
-                <h1 className={pageHeader}>
-                { t('hero-section.title')}
-                </h1>
-
+                <div className="md:max-w-[70ch]">
+                    <Heading heading={t('hero-section.title')} />
+                </div>
                 <div>
                     <p 
                     className={`
@@ -56,9 +55,10 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
             height={1000}
             src={heroImage.src} 
             className="
-            hero-image
             md:mt-12
             mt-6
+            w-full h-[300px] object-cover rounded-[30px] 
+            md:h-[600px] md:object-[50%_0%]
             "
             />
         </section>

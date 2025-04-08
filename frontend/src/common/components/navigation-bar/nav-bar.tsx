@@ -11,7 +11,7 @@ import { urlConfigs } from "@/common/routing/url-configs";
 
 import NavBarItems from "./nav-bar-item";
 import { Button } from "@mui/material";
-import LanguageSelection from "./language-selection";
+import LanguageSelection from "../language-selection";
 import { useRouter } from "next/navigation";
 
 const NavBar = () => {

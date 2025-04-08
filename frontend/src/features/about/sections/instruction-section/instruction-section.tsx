@@ -5,7 +5,7 @@ import { PiHandshakeThin, PiGiftThin } from "react-icons/pi";
 
 import Heading from "@/common/components/heading/heading";
 
-const steps = [
+export const steps = [
     {
         title: "List or find items",
         description: "Browse or list items to share with children in need.",
@@ -23,9 +23,9 @@ const steps = [
     },
 ];
 
-const HowItWorksSection = () => {
+const InstructionSection = () => {
     return (
-        <div className="flex flex-col items-center mt-12">
+        <div className="flex flex-col items-center mt-12" data-testid="instruction-section">
             <Heading level={2} heading="How it works" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mt-4">
                 {steps.map((step, index) => (
@@ -46,4 +46,4 @@ const HowItWorksSection = () => {
     );
 };
 
-export default HowItWorksSection;
+export default InstructionSection;

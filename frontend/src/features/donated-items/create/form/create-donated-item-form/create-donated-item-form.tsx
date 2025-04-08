@@ -5,24 +5,23 @@ import { useRouter } from "next/navigation";
 import { Button } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 
-import RegistrationFormFields from "./registration-form-fields";
-import { registrationFormDefaultValues } from "./registration-form.utils";
-
+import { registrationFormDefaultValues } from "../create-donated-item-form.utils";
 import { useNotify } from "@/common/hooks/notification/use-notify";
 import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
-
-import useCreateItem from "../use-create-item";
-import { ItemCreateParams } from "@/common/types/item/item.type";
 import { urlConfigs } from "@/common/routing/url-configs";
-import RegistrationFormPreview from "./registration-form-preview";
-import Heading from "@/common/components/heading/heading";
+import { ItemCreateParams } from "@/common/types/item/item.type";
 import revalidateHomePath from "@/common/api/server-actions/revalidate-path";
+import useCreateDonatedItem from "../../use-create-donated-item";
 
-const RegistrationForm = () => {
+import CreateDonatedItemPreview from "../create-donated-item-preview";
+import CreateDonatedItemFormFields from "../create-donated-item-form-fields";
+import Heading from "@/common/components/heading/heading";
+
+const CreateDonatedItemForm = () => {
     const { locale } = useLocale();
     const { t } = useTranslation(locale);
-    const { mutate, status, error } = useCreateItem();
+    const { execute, loadingState, error } = useCreateDonatedItem();
     const notify = useNotify();
     const router = useRouter();
 
@@ -36,12 +35,12 @@ const RegistrationForm = () => {
     } = method;
 
     const onSubmit = (data: ItemCreateParams) => {
-        mutate(data);
+        execute(data);
     };
 
     useEffect(() => {
         const handleRevalidation = async () => {
-            if (status === 'success') {
+            if (loadingState === 'success') {
                 notify({ message: 'Registration is successfully saved!' });
     
                 await revalidateHomePath(urlConfigs.home[locale]);
@@ -50,14 +49,14 @@ const RegistrationForm = () => {
                 router.push(urlConfigs.donatedItems[locale]);
             }
     
-            if (status === 'error') {
+            if (loadingState === 'error') {
                 notify({ message: 'Failed to save. Please try again!', severity: 'error' });
             }
         };
     
         handleRevalidation();
-    }, [status, notify, error, router, locale]);
-  
+    }, [loadingState, notify, error, router, locale]);
+
     return (
         <FormProvider {...method}>
             <div className="flex flex-col md:flex-row justify-between gap-12 h-full">
@@ -67,7 +66,7 @@ const RegistrationForm = () => {
                         heading={t('registration-form.title')}
                         subHeading={t('registration-form.subtitle')}
                     />
-                    <RegistrationFormFields />
+                    <CreateDonatedItemFormFields />
                     <div className="flex gap-4 justify-end">
                         <Button 
                             variant="outlined"
@@ -78,18 +77,18 @@ const RegistrationForm = () => {
                         <Button 
                         type="submit"
                         variant="contained"
-                        disabled={isSubmitting || !isValid || isValidating || status === 'pending'} 
+                        disabled={isSubmitting || !isValid || isValidating || loadingState === 'pending'} 
                         >
                             {t("common.send")}
                         </Button>
                     </div>
                 </form>
                 <div className="hidden md:flex md:w-1/2 rounded-lg bg-primary items-center justify-center">
-                    <RegistrationFormPreview />
+                    <CreateDonatedItemPreview />
                 </div>
             </div>
         </FormProvider>
     )
 };
 
-export default RegistrationForm;
+export default CreateDonatedItemForm;

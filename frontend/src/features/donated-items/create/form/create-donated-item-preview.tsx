@@ -5,7 +5,7 @@ import { useFormContext } from "react-hook-form";
 import { ItemType } from "@/common/types/item/item.type";
 import ItemCard from "../../list/donated-item-card";
 
-const RegistrationFormPreview = () => {
+const CreateDonatedItemPreview = () => {
     const { watch } = useFormContext();
     const randomId = useId();
 
@@ -40,4 +40,4 @@ const RegistrationFormPreview = () => {
     )
 };
 
-export default RegistrationFormPreview;
+export default CreateDonatedItemPreview;

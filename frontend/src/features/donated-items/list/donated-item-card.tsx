@@ -5,7 +5,6 @@ import _ from 'lodash';
 import { urlConfigs } from "@/common/routing/url-configs";
 import { ItemType } from "@/common/types/item/item.type";
 
-import "@/common/styles/Item.css";
 import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 import Image from "next/image";

@@ -21,10 +21,10 @@ const SelectField = <T extends FieldValues>({
             rules={rules}
             render={({ field, fieldState }) => (
                 <FormControl error={!!fieldState.error}>      
-                    <InputLabel data-testid="select-field-label" id="select-field">{label}</InputLabel>
+                    <InputLabel data-testid="select-field-label" id={name}>{label}</InputLabel>
                     <Select
                     data-testid="select-field"
-                    labelId="select-field"
+                    labelId={name}
                     value={field.value}
                     label={label}
                     onChange={field.onChange}

@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import { ItemType } from "@/common/types/item/item.type";
 
-import "@/common/styles/ItemPage.css";
 import { Chip } from "@mui/material";
 import ItemContactFormSection from "./forms/item-contact-form-section";
 
@@ -35,7 +34,7 @@ const ItemPage = ({
             height={100}
             unoptimized
             priority
-            className="rounded-xl w-full md:w-1/2 object-cover item-image"
+            className="rounded-xl w-full md:w-1/2 object-cover h-[300px]"
             />
             <div className="mt-6 md:mt-0 md:ml-8 md:w-1/2 h-fit" id="item-info">
                 <div className="flex items-center gap-2 mt-4 mb-2">

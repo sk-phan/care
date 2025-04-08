@@ -9,13 +9,13 @@ import useLocale from "@/app/i18n/use-locale";
 import { useTranslation } from "@/app/i18n";
 import { emailPattern } from "@/utils/form-validations/form-validations.utils";
 
-const RegistrationFormFields = () => {
+const CreateDonatedItemFormFields = () => {
     const { control, formState: {errors} } = useFormContext();
     const { locale } = useLocale();
     const { t } = useTranslation(locale);
 
     return (
-        <div className="flex flex-col gap-5 form-fields-margin-bottom">
+        <div data-testid="create-donated-item-form-fields" className="flex flex-col gap-5 form-fields-margin-bottom">
             <TextInput 
                 control={control}
                 name="name"
@@ -45,9 +45,7 @@ const RegistrationFormFields = () => {
                 name="title"
                 label={t('form.title')}   
                 required
-                rules={{
-                    required: t('form.required'),
-                }}
+                rules={{ required: t('form.required') }}
                 error={!!errors.title}
             />
             <SelectField 
@@ -55,9 +53,7 @@ const RegistrationFormFields = () => {
                 control={control}
                 name="city"
                 label={t("form.city")}
-                rules={{
-                    required: t('form.required'),
-                }}
+                rules={{ required: t('form.required') }}
             />
             <SelectField 
                 control={control}
@@ -83,4 +79,4 @@ const RegistrationFormFields = () => {
     )
 };
 
-export default RegistrationFormFields;
+export default CreateDonatedItemFormFields;
