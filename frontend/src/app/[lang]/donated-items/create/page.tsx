@@ -1,4 +1,4 @@
-import CreateDonatedItemForm from "@/features/donated-items/create/form/create-donated-item-form/create-donated-item-form";
+import CreateDonatedItemForm from "@/features/donated-items/create/form/create-donated-item-form";
 
 export default async function Register() {
     return (

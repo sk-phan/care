@@ -5,17 +5,17 @@ import { useRouter } from "next/navigation";
 import { Button } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 
-import { registrationFormDefaultValues } from "../create-donated-item-form.utils";
+import { registrationFormDefaultValues } from "./create-donated-item-form.utils";
 import { useNotify } from "@/common/hooks/notification/use-notify";
 import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemCreateParams } from "@/common/types/item/item.type";
 import revalidateHomePath from "@/common/api/server-actions/revalidate-path";
-import useCreateDonatedItem from "../../use-create-donated-item";
+import useCreateDonatedItem from "../use-create-donated-item";
 
-import CreateDonatedItemPreview from "../create-donated-item-preview";
-import CreateDonatedItemFormFields from "../create-donated-item-form-fields";
+import CreateDonatedItemPreview from "./create-donated-item-preview";
+import CreateDonatedItemFormFields from "./create-donated-item-form-fields";
 import Heading from "@/common/components/heading/heading";
 
 const CreateDonatedItemForm = () => {
