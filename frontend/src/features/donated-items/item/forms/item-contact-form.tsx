@@ -17,7 +17,6 @@ import { useTranslation } from "@/app/i18n";
 import { Button } from "@mui/material";
 import { isValidEmail } from "@/utils/form-validations/form-validations.utils";
 
-import "@/common/styles/items/ItemContactForm.css";
 import { ItemContactFormData } from "./item-contact-form.type";
 
 const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: string }) => {
