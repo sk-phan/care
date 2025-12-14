@@ -8,7 +8,7 @@ import { ItemType } from "@/common/types/item/item.type";
 import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 import Image from "next/image";
-import { Badge } from "@mui/material";
+import { Chip } from "@mui/material";
 
 const DonatedItemCard = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.donatedItems;
@@ -18,11 +18,11 @@ const DonatedItemCard = ({ item } : { item: ItemType }) => {
     return (
         <Link href={`${itemPath.en}/${item.id}`} className="hover:opacity-85 cursor-pointer">
             <div className="relative pb-2">
-                <Badge
-                className="absolute top-4 left-4 font-medium"
-                >
-                    {t(`item-card.${item.status}`)}
-                </Badge>
+                <Chip
+                className="absolute top-4 left-4 font-medium bg-white"
+                label={t(`item-card.${item.status}`)}
+                color="secondary"
+                />
                 <Image 
                 className="rounded-xl object-cover" 
                 width={0}
