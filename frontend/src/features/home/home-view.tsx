@@ -1,4 +1,3 @@
-"use client";
 import { ItemType } from "@/common/types/item/item.type";
 import HeroSection from "./sections/hero-section";
 import { useHomeViewVM } from "./use-home-view-vm";
@@ -12,7 +11,7 @@ const HomeView = ({ items }: { items: ItemType[] }) => {
         <main className="flex min-h-screen flex-col items-center justify-between">
             <HeroSection donatedItemsPath={donatedItemsPath}/>
             <AboutSection createDonatedItemPath={createDonatedItemPath}/>
-            <ItemsSection items={items}/>
+            <ItemsSection items={items} donatedItemsPath={donatedItemsPath}/>
         </main>
     )
 }
