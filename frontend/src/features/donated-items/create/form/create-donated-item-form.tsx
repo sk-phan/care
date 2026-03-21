@@ -7,7 +7,6 @@ import { FormProvider, useForm } from "react-hook-form";
 
 import { registrationFormDefaultValues } from "./create-donated-item-form.utils";
 import { useNotify } from "@/common/hooks/notification/use-notify";
-import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemCreateParams } from "@/common/types/item/item.type";
@@ -17,10 +16,12 @@ import useCreateDonatedItem from "../use-create-donated-item";
 import CreateDonatedItemPreview from "./create-donated-item-preview";
 import CreateDonatedItemFormFields from "./create-donated-item-form-fields";
 import Heading from "@/common/components/heading/heading";
+import { useTranslations } from "next-intl";
 
 const CreateDonatedItemForm = () => {
     const { locale } = useLocale();
-    const { t } = useTranslation(locale);
+    const tDonatedItems = useTranslations("donated-items.registration-form");
+    const tCommon = useTranslations("common.common");
     const { execute, loadingState, error } = useCreateDonatedItem();
     const notify = useNotify();
     const router = useRouter();
@@ -41,7 +42,7 @@ const CreateDonatedItemForm = () => {
     useEffect(() => {
         const handleRevalidation = async () => {
             if (loadingState === 'success') {
-                notify({ message: 'Registration is successfully saved!' });
+                notify({ message: tDonatedItems("success") });
     
                 await handleRevalidatePath(urlConfigs.home[locale]);
                 await handleRevalidatePath(urlConfigs.donatedItems[locale]);
@@ -50,12 +51,12 @@ const CreateDonatedItemForm = () => {
             }
     
             if (loadingState === 'error') {
-                notify({ message: 'Failed to save. Please try again!', severity: 'error' });
+                notify({ message: tDonatedItems("error"), severity: 'error' });
             }
         };
     
         handleRevalidation();
-    }, [loadingState, notify, error, router, locale]);
+    }, [loadingState, notify, error, router, locale, tDonatedItems]);
 
     return (
         <FormProvider {...method}>
@@ -63,8 +64,8 @@ const CreateDonatedItemForm = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="md:w-1/2">
                     <Heading 
                         level={2}
-                        heading={t('registration-form.title')}
-                        subHeading={t('registration-form.subtitle')}
+                        heading={tDonatedItems("title")}
+                        subHeading={tDonatedItems("subtitle")}
                     />
                     <CreateDonatedItemFormFields />
                     <div className="flex gap-4 justify-end">
@@ -72,14 +73,14 @@ const CreateDonatedItemForm = () => {
                             variant="outlined"
                             onClick={router.back}
                         >
-                            {t("common.cancel")}
+                            {tCommon("cancel")}
                         </Button>
                         <Button 
                         type="submit"
                         variant="contained"
                         disabled={isSubmitting || !isValid || isValidating || loadingState === 'pending'} 
                         >
-                            {t("common.send")}
+                            {tCommon("send")}
                         </Button>
                     </div>
                 </form>

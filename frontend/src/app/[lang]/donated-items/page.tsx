@@ -15,7 +15,7 @@ interface Props {
 }
 
 export default async function Items(props: Props) {
-    const params = await props.params;
+    await props.params;
     const searchParams = await props.searchParams;
     const currentPage = Number(searchParams?.page) || 1;
 
@@ -23,7 +23,6 @@ export default async function Items(props: Props) {
     const data: EntitiesResponse<ItemType> = await response.json();
 
     const { entities, metadata } = data;
-    const lang = params.lang;
 
     if (!entities) {
         return (
@@ -35,7 +34,7 @@ export default async function Items(props: Props) {
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <DonatedItems lang={lang} items={entities} metadata={metadata} />
+            <DonatedItems items={entities} metadata={metadata} />
         </Suspense>
     );
 };

@@ -20,19 +20,19 @@ interface ItemsSectionProps {
     const { linkButton } = useCommonButtonStyles();
 
     const { locale } = useLocale();
-    const t = useTranslations('ItemsSection');
+    const t = useTranslations("home.items-section");
     const router = useRouter();
 
     return (
         <section className="w-full mt-12 md:mt-16">
             <div className="flex justify-between items-center">
-                <Heading level={2} heading={t("items-section.available-items")}/>
+                <Heading level={2} heading={t("available-items")}/>
                 <Button 
                     variant="text" 
                     onClick={() => router.push(urlConfigs.donatedItems[locale])}
                     sx={linkButton}
                     >
-                        {t('items-section.see-all')}
+                        {t("see-all")}
                 </Button>
             </div>
             <DonatedItemList items={items} />

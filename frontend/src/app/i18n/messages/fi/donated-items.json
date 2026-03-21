@@ -1,0 +1,20 @@
+{
+  "item-card": {
+    "available": "Saatavilla",
+    "reserved": "Varattu"
+  },
+  "registration-form": {
+    "title": "Lisää ilmoitus",
+    "subtitle": "Jaa käyttämättömät tavarasi ja anna niille uusi tarkoitus! Ilmoituksesi pysyy aktiivisena 30 päivää.",
+    "success": "Ilmoitus tallennettiin onnistuneesti!",
+    "error": "Tallennus epäonnistui. Yritä uudelleen!"
+  },
+  "item-contact-form": {
+    "success": "Pyyntö lähetettiin onnistuneesti!",
+    "error": "Lähetys epäonnistui. Yritä uudelleen!",
+    "message-placeholder": "Viestisi lahjoittajalle..."
+  },
+  "list": {
+    "title": "Tavarat"
+  }
+}

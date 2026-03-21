@@ -12,17 +12,18 @@ import TextArea from "@/common/components/form/text-area";
 
 import { urlConfigs } from "@/common/routes/url-configs";
 import useLocale from "@/app/i18n/use-locale";
-import { useTranslation } from "@/app/i18n";
 
 import { Button } from "@mui/material";
 import { isValidEmail } from "@/utils/form-validations/form-validations.utils";
 
 import { ItemContactFormData } from "./item-contact-form.type";
+import { useTranslations } from "next-intl";
 
 const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: string }) => {
     const router = useRouter();
     const { locale } = useLocale();
-    const { t } = useTranslation(locale);
+    const tCommon = useTranslations("common");
+    const tContactForm = useTranslations("donated-items.item-contact-form");
 
     const method = useForm<ItemContactFormData>();
     const { control, handleSubmit, formState: { errors }} = method;
@@ -37,13 +38,13 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
 
     useEffect(() => {
         if (status === 'success') {
-            notify({ message: t('item-contact-form.success') });
+            notify({ message: tContactForm("success") });
             router.push(urlConfigs.donatedItems[locale]);
         }
         if (status === 'error') {
-            notify({ message: t('item-contact-form.error'), severity: 'error' });
+            notify({ message: tContactForm("error"), severity: 'error' });
         }
-    }, [notify, status, router, locale, t]);
+    }, [notify, status, router, locale, tContactForm]);
 
     return (
         <FormProvider {...method}>
@@ -54,9 +55,9 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                             fullWidth
                             name="name" 
                             control={control} 
-                            label={t('form.name')}
+                            label={tCommon("form.name")}
                             rules={{
-                                required: t('form.required'),
+                                required: tCommon("form.required"),
                             }}
                             error={!!errors.name}
                             sx={{
@@ -70,12 +71,12 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                         <TextInput 
                             fullWidth
                             name="email" 
-                            label={t('form.email')}   
+                            label={tCommon("form.email")}   
                             control={control} 
                             rules={{
-                                required: t('form.required'),
+                                required: tCommon("form.required"),
                                 validate: {
-                                    emailValidation: isValidEmail || t('form.invalid-email')
+                                    emailValidation: isValidEmail || tCommon("form.invalid-email")
                                 }
                             }} 
                             placeholder="Email"
@@ -93,7 +94,7 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                         name="message" 
                         control={control} 
                         rows={10}
-                        placeholder={t('item-contact-form.message-placeholder')}
+                        placeholder={tContactForm("message-placeholder")}
                     />
                 </div>
                 <div className="mt-4">
@@ -102,7 +103,7 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
                         type="submit"
                         variant="contained"
                     >   
-                        {t('common.send')}
+                        {tCommon("common.send")}
                     </Button>
                 </div>
             </form>

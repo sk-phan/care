@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 import { urlConfigs } from "@/common/routes/url-configs";
 
@@ -13,6 +12,7 @@ import NavBarItems from "./nav-bar-item";
 import { Button } from "@mui/material";
 import LanguageSelection from "../language-selection";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ const NavBar = () => {
     const router = useRouter();
     const pathname = usePathname();
     const { locale } = useLocale();
-    const { t } = useTranslation(locale);
+    const t = useTranslations("common.nav-bar");
 
     const isAtRegisterPage = pathname.includes('register');
 
@@ -62,7 +62,7 @@ const NavBar = () => {
                         className="hidden md:inline-block"
                         onClick={() => router.push(urlConfigs.donatedItems.create[locale])}
                     >
-                        {t("nav-bar.list-an-item")}
+                        {t("list-an-item")}
                     </Button>
                 </div>
             </div>

@@ -6,7 +6,6 @@ import donateDollIcon from "../../../../public/icons/donate-doll.svg";
 import donateBoxIcon from "../../../../public/icons/donate-box.svg";
 import globalHeartIcon from "../../../../public/icons/global-heart.svg";
 
-import { useTranslation } from "@/app/i18n";
 import { LocaleType } from "@/app/i18n/messages/locales.type";
 import { urlConfigs } from "@/common/routes/url-configs";
 
@@ -20,20 +19,21 @@ interface WelcomeProps {
 }
 
 const AboutSection = ({ lang } : WelcomeProps) => {
-    const t = useTranslations('AboutSection');
+    const tHome = useTranslations("home.about");
+    const tCommon = useTranslations("common.nav-bar");
     const router = useRouter();
 
     return (
         <section className="mt-12 md:mt-16">
             <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 md:mr-16">
-                    <Heading level={2} heading={t("about.about-us")}/>
+                    <Heading level={2} heading={tHome("about-us")}/>
                     <p 
                     className="
                         text-gray-500
                         md:mb-8
                     "> 
-                    {t("about.message")}
+                    {tHome("message")}
                     </p>
                     <div className="hidden md:inline-block">
                         <Button
@@ -41,7 +41,7 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                             onClick={() => router.push(urlConfigs.donatedItems[lang])}
                             href={urlConfigs.donatedItems.create[lang]}
                         >
-                            {t("nav-bar.list-an-item")}
+                            {tCommon("list-an-item")}
                         </Button>
                     </div>
                 </div>
@@ -54,9 +54,9 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                         height={100}
                         alt="donate box icon"/>
                         <div>
-                            <h3 className="text-2xl mb-2">{t('about.first-feature-title')}</h3>
+                            <h3 className="text-2xl mb-2">{tHome("first-feature-title")}</h3>
                             <p className="text-gray-800">
-                                {t('about.first-feature-subtitle')}
+                                {tHome("first-feature-subtitle")}
                             </p>
                         </div>
                     </div>
@@ -68,9 +68,9 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                         height={100}
                         alt="heart icon"/>
                         <div>
-                            <h3 className="text-2xl mb-2">{t('about.second-feature-title')}</h3>
+                            <h3 className="text-2xl mb-2">{tHome("second-feature-title")}</h3>
                             <p className="text-gray-800">
-                                {t('about.second-feature-subtitle')}
+                                {tHome("second-feature-subtitle")}
                             </p>
                         </div>
                     </div>
@@ -82,9 +82,9 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                         width={100}
                         alt="donate doll icon"/>
                         <div>
-                            <h3 className="text-2xl mb-2">{t('about.third-feature-title')}</h3>
+                            <h3 className="text-2xl mb-2">{tHome("third-feature-title")}</h3>
                             <p className="text-gray-800">
-                                {t('about.third-feature-subtitle')}
+                                {tHome("third-feature-subtitle")}
                             </p>
                         </div>
                     </div>

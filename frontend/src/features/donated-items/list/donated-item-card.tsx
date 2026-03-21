@@ -5,22 +5,22 @@ import _ from 'lodash';
 import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemType } from "@/common/types/item/item.type";
 
-import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 import Image from "next/image";
 import { Chip } from "@mui/material";
+import { useTranslations } from "next-intl";
 
 const DonatedItemCard = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.donatedItems;
     const { locale } = useLocale();
-    const { t } = useTranslation(locale);
+    const t = useTranslations("donated-items.item-card");
 
     return (
-        <Link href={`${itemPath.en}/${item.id}`} className="hover:opacity-85 cursor-pointer">
+        <Link href={`${itemPath[locale]}/${item.id}`} className="hover:opacity-85 cursor-pointer">
             <div className="relative pb-2">
                 <Chip
                 className="absolute top-4 left-4 font-medium bg-white"
-                label={t(`item-card.${item.status}`)}
+                label={t(item.status)}
                 color="secondary"
                 />
                 <Image 

@@ -1,0 +1,24 @@
+{
+  "nav-bar": {
+    "list-an-item": "List an item",
+    "home": "Home",
+    "items": "Items",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "common": {
+    "send": "Send",
+    "cancel": "Cancel"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "title": "Title",
+    "category": "Category",
+    "condition": "Condition",
+    "description": "Description",
+    "city": "City",
+    "required": "This field is required",
+    "invalid-email": "Invalid email address"
+  }
+}

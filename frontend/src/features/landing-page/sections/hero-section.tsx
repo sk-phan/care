@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import { LocaleType } from "@/app/i18n/messages/locales.type";
-import { useTranslation } from "@/app/i18n";
 import useCommonStyleClasses from "@/common/hooks/styles/use-common-style-classes";
 import { urlConfigs } from "@/common/routes/url-configs";
 
@@ -17,7 +16,7 @@ type HeroSectionProps = {
 }
 
 const HeroSection = ({ lang }: HeroSectionProps) => {
-    const t = useTranslations('HeroSection');
+    const t = useTranslations("home.hero-section");
     const { pageDescription } = useCommonStyleClasses();
     const router = useRouter();
 
@@ -25,7 +24,7 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
         <section>
             <div className="flex md:flex-row flex-col md:gap-48 gap-4">
                 <div className="md:max-w-[70ch]">
-                    <Heading heading={t('hero-section.title')} />
+                    <Heading heading={t("title")} />
                 </div>
                 <div>
                     <p 
@@ -34,14 +33,14 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                         md:w-56
                         md:pt-12
                     `}>
-                        {t('hero-section.subtitle')}
+                        {t("subtitle")}
                     </p>
                     <Button
                         onClick={() => router.push(urlConfigs.donatedItems[lang])}
                         variant="text"
                         className="flex justify-start gap-1 mt-4 p-0 font-semibold text-gray-900"
                     >
-                        {t('hero-section.view-all-items')}
+                        {t("view-all-items")}
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         <path d="M8.75 12H15.25M15.25 12L12.75 9.5M15.25 12L12.75 14.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
