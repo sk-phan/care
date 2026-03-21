@@ -10,6 +10,9 @@
     "send": "Send",
     "cancel": "Cancel"
   },
+  "footer": {
+    "all-rights-reserved": "All rights reserved"
+  },
   "form": {
     "name": "Name",
     "email": "Email",

@@ -10,6 +10,9 @@
     "send": "Lähetä",
     "cancel": "Peruuta"
   },
+  "footer": {
+    "all-rights-reserved": "Kaikki oikeudet pidätetään"
+  },
   "form": {
     "name": "Nimi",
     "email": "Sähköposti",
