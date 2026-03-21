@@ -1,11 +1,11 @@
 
 import { BASE_URL } from '@/common/api/api-base';
 
-// import { ItemType } from '@/common/types/item/item.type';
+import { ItemType } from '@/common/types/item/item.type';
 import { LocaleType } from '../i18n/locales/locales.type';
-// import HeroSection from '@/features/landing-page/sections/hero-section';
-// import AboutSection from '@/features/landing-page/sections/about-section';
-// import ItemsSection from '@/features/landing-page/sections/items-section';
+import HeroSection from '@/features/landing-page/sections/hero-section';
+import AboutSection from '@/features/landing-page/sections/about-section';
+import ItemsSection from '@/features/landing-page/sections/items-section';
 
 const PAGE = 1;
 const LIMIT = 6;
@@ -16,33 +16,20 @@ interface Props {
 
 export default async function Home(props: Props) {
   const params = await props.params;
-  // const lang = params.lang;
+  const lang = params.lang;
 
   const response = await fetch(BASE_URL + `/items?page=${PAGE}&limit=${LIMIT}`, {
     cache: 'force-cache'
   });
+  const data = await response.json();
 
-  if (!response.ok) {
-    const body = await response.text();
-    console.error("Items fetch failed", {
-      status: response.status,
-      statusText: response.statusText,
-      body,
-      url: response.url,
-    });
-    throw new Error(`Items fetch failed: ${response.status} ${response.statusText} | ${body}`);
-  }
-
-  // const data = await response.json();
-
-  // const items: ItemType[] = data.entities || [];
+  const items: ItemType[] = data.entities || [];
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      {params.lang}
-      {/* <HeroSection lang={lang}/>
+      <HeroSection lang={lang}/>
       <AboutSection lang={lang}/>
-      <ItemsSection items={items}/> */}
+      <ItemsSection items={items}/>
     </main>
   )
 }
