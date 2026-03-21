@@ -3,7 +3,7 @@
 import useLocale from "@/app/i18n/use-locale";
 
 import useCommonButtonStyles from "@/common/hooks/styles/use-common-button-styles";
-import { urlConfigs } from "@/common/routes/url-configs";
+import { getLocalizedPath, urlConfigs } from "@/common/routes/url-configs";
 import { ItemType } from "@/common/types/item/item.type";
 
 import Heading from "@/common/components/heading/heading";
@@ -29,7 +29,7 @@ interface ItemsSectionProps {
                 <Heading level={2} heading={t("available-items")}/>
                 <Button 
                     variant="text" 
-                    onClick={() => router.push(urlConfigs.donatedItems[locale])}
+                    onClick={() => router.push(getLocalizedPath(locale, urlConfigs.donatedItems.path))}
                     sx={linkButton}
                     >
                         {t("see-all")}

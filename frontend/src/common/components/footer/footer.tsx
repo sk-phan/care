@@ -21,8 +21,8 @@ const Footer = () => {
     const { locale } = useLocale();
 
     const navLinks = [
-        { href: urlConfigs.about[locale], label: tNav("about") },
-        { href: urlConfigs.contact[locale], label: tNav("contact") },
+        { href: `${locale}/${urlConfigs.about.path}`, label: tNav("about") },
+        { href: `${locale}/${urlConfigs.contact.path}`, label: tNav("contact") },
     ];
 
     return (

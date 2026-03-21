@@ -2,22 +2,12 @@
 import { BASE_URL } from '@/common/api/api-base';
 
 import { ItemType } from '@/common/types/item/item.type';
-import { LocaleType } from '../i18n/messages/locales.type';
-import HeroSection from '@/features/landing-page/sections/hero-section';
-import AboutSection from '@/features/landing-page/sections/about-section';
-import ItemsSection from '@/features/landing-page/sections/items-section';
+import HomeView from '@/features/home/home-view';
 
 const PAGE = 1;
 const LIMIT = 6;
 
-interface Props {
-  params: Promise<{ lang: LocaleType }>;
-}
-
-export default async function Home(props: Props) {
-  const params = await props.params;
-  const lang = params.lang;
-
+export default async function Home() {
   const response = await fetch(BASE_URL + `/items?page=${PAGE}&limit=${LIMIT}`, {
     cache: 'force-cache'
   });
@@ -25,11 +15,5 @@ export default async function Home(props: Props) {
 
   const items: ItemType[] = data.entities || [];
 
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <HeroSection lang={lang}/>
-      <AboutSection lang={lang}/>
-      <ItemsSection items={items}/>
-    </main>
-  )
+  return <HomeView items={items} />
 }

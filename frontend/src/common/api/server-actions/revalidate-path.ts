@@ -2,6 +2,9 @@
 
 import { revalidatePath } from 'next/cache'
 
-export default async function hadnleRevalidatePath(path: string) {
-    revalidatePath(path);
+const locales = ['fi', 'en'];
+export default async function handleRevalidatePath(path: string) {
+    for (const locale of locales) {
+        revalidatePath(`${locale}/${path}`);
+    }
 }

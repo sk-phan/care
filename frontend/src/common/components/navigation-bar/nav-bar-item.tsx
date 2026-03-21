@@ -4,6 +4,7 @@ import {navRoutes} from '@/common/routes/route-configs';
 import useLocale from '@/app/i18n/use-locale';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { getLocalizedPath } from '@/common/routes/url-configs';
 
 const NavBarItems = () => {
     const { locale } = useLocale();
@@ -17,8 +18,8 @@ const NavBarItems = () => {
                     <li key={item.key}>
                         <Button 
                             variant='text'
-                            onClick={() => router.push(item.path[locale])}
-                            href={item.path[locale]}
+                            onClick={() => router.push(getLocalizedPath(locale, item.path))}
+                            href={getLocalizedPath(locale, item.path)}
                             className='text-gray-800'
                         >
                             {t(item.key)}

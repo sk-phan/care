@@ -10,7 +10,7 @@ import useCreatePickupRequest from "../use-create-pickup-request";
 import TextInput from "@/common/components/form/text-input";
 import TextArea from "@/common/components/form/text-area";
 
-import { urlConfigs } from "@/common/routes/url-configs";
+import { getLocalizedPath, urlConfigs } from "@/common/routes/url-configs";
 import useLocale from "@/app/i18n/use-locale";
 
 import { Button } from "@mui/material";
@@ -39,7 +39,7 @@ const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: 
     useEffect(() => {
         if (status === 'success') {
             notify({ message: tContactForm("success") });
-            router.push(urlConfigs.donatedItems[locale]);
+            router.push(getLocalizedPath(locale, urlConfigs.donatedItems.path));
         }
         if (status === 'error') {
             notify({ message: tContactForm("error"), severity: 'error' });

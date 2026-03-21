@@ -60,7 +60,7 @@ const NavBar = () => {
                     <Button
                         variant="contained"
                         className="hidden md:inline-block"
-                        onClick={() => router.push(urlConfigs.donatedItems.create[locale])}
+                        onClick={() => router.push(`${locale}/${urlConfigs.donatedItems.create.path}`)}
                     >
                         {t("list-an-item")}
                     </Button>

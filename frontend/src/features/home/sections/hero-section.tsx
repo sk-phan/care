@@ -1,24 +1,21 @@
 "use client";
 import { Button } from "@mui/material";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
-import { LocaleType } from "@/app/i18n/messages/locales.type";
 import useCommonStyleClasses from "@/common/hooks/styles/use-common-style-classes";
-import { urlConfigs } from "@/common/routes/url-configs";
 
 import heroImage from '../../../../public/images/hero-image.png';
 import Heading from "@/common/components/heading";
-import { useTranslations } from "next-intl";
+import {  useTranslations } from "next-intl";
+import Link from "next/link";
 
 type HeroSectionProps = {
-    lang: LocaleType;
+    donatedItemsPath: string;
 }
 
-const HeroSection = ({ lang }: HeroSectionProps) => {
+const HeroSection = ({ donatedItemsPath }: HeroSectionProps) => {
     const t = useTranslations("home.hero-section");
     const { pageDescription } = useCommonStyleClasses();
-    const router = useRouter();
 
     return (
         <section>
@@ -36,9 +33,10 @@ const HeroSection = ({ lang }: HeroSectionProps) => {
                         {t("subtitle")}
                     </p>
                     <Button
-                        onClick={() => router.push(urlConfigs.donatedItems[lang])}
                         variant="text"
                         className="flex justify-start gap-1 mt-4 p-0 font-semibold text-gray-900"
+                        href={donatedItemsPath}
+                        LinkComponent={Link}
                     >
                         {t("view-all-items")}
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

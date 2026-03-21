@@ -6,22 +6,19 @@ import donateDollIcon from "../../../../public/icons/donate-doll.svg";
 import donateBoxIcon from "../../../../public/icons/donate-box.svg";
 import globalHeartIcon from "../../../../public/icons/global-heart.svg";
 
-import { LocaleType } from "@/app/i18n/messages/locales.type";
-import { urlConfigs } from "@/common/routes/url-configs";
 
 import { Button } from "@mui/material";
 import Heading from "@/common/components/heading/heading";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
-interface WelcomeProps {
-    lang: LocaleType;
+type WelcomeProps = {
+    createDonatedItemPath: string;
 }
 
-const AboutSection = ({ lang } : WelcomeProps) => {
+const AboutSection = ({ createDonatedItemPath } : WelcomeProps) => {
     const tHome = useTranslations("home.about");
     const tCommon = useTranslations("common.nav-bar");
-    const router = useRouter();
 
     return (
         <section className="mt-12 md:mt-16">
@@ -38,8 +35,8 @@ const AboutSection = ({ lang } : WelcomeProps) => {
                     <div className="hidden md:inline-block">
                         <Button
                             variant="contained"
-                            onClick={() => router.push(urlConfigs.donatedItems[lang])}
-                            href={urlConfigs.donatedItems.create[lang]}
+                            LinkComponent={Link}
+                            href={createDonatedItemPath}
                         >
                             {tCommon("list-an-item")}
                         </Button>
