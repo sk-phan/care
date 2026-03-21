@@ -24,9 +24,15 @@ export default async function Home(props: Props) {
 
   if (!response.ok) {
     const body = await response.text();
+    console.error("Items fetch failed", {
+      status: response.status,
+      statusText: response.statusText,
+      body,
+      url: response.url,
+    });
     throw new Error(`Items fetch failed: ${response.status} ${response.statusText} | ${body}`);
   }
-  
+
   const data = await response.json();
 
   const items: ItemType[] = data.entities || [];
