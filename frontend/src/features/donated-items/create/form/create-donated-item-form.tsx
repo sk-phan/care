@@ -11,7 +11,7 @@ import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemCreateParams } from "@/common/types/item/item.type";
-import revalidateHomePath from "@/common/api/server-actions/revalidate-path";
+import handleRevalidatePath from "@/common/api/server-actions/revalidate-path";
 import useCreateDonatedItem from "../use-create-donated-item";
 
 import CreateDonatedItemPreview from "./create-donated-item-preview";
@@ -43,8 +43,8 @@ const CreateDonatedItemForm = () => {
             if (loadingState === 'success') {
                 notify({ message: 'Registration is successfully saved!' });
     
-                await revalidateHomePath(urlConfigs.home[locale]);
-                await revalidateHomePath(urlConfigs.donatedItems[locale]);
+                await handleRevalidatePath(urlConfigs.home[locale]);
+                await handleRevalidatePath(urlConfigs.donatedItems[locale]);
     
                 router.push(urlConfigs.donatedItems[locale]);
             }
