@@ -2,10 +2,8 @@
 
 import Image from "next/image";
 
-import useLocale from "@/app/i18n/use-locale";
-import { useTranslation } from "@/app/i18n";
-
 import ItemContactForm from "./item-contact-form";
+import { useTranslations } from "next-intl";
 
 const ItemContactFormSection = ({
     donorName,
@@ -16,8 +14,7 @@ const ItemContactFormSection = ({
     donorEmail: string;
     itemId: string;
 }) => {
-    const { locale } = useLocale();
-    const { t } = useTranslation(locale)
+    const t = useTranslations("common.form");
 
     return (
         <div className="mt-6 bg-gray-100 p-6 rounded-3xl">
@@ -33,7 +30,7 @@ const ItemContactFormSection = ({
                     <span className="font-medium block">{donorName}</span>
                     <div className="flex flex-col gap-4 xl:flex-row">
                         <span className="xl:mr-6 font-semibold">
-                            <span className="text-gray-500 mr-2">{t('form.email')}:</span>
+                            <span className="text-gray-500 mr-2">{t("email")}:</span>
                             <a href={`mailto:${donorEmail}`} className="underline">{donorEmail}</a>
                         </span>
                     </div>

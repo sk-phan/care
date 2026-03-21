@@ -1,0 +1,27 @@
+{
+  "item-card": {
+    "available": "Saatavilla",
+    "reserved": "Varattu",
+    "condition": {
+      "new": "Uusi",
+      "like-new": "Lähes uusi",
+      "very-good": "Erittäin hyvä",
+      "good": "Hyvä",
+      "acceptable": "Tyydyttävä"
+    }
+  },
+  "registration-form": {
+    "title": "Lisää ilmoitus",
+    "subtitle": "Jaa käyttämättömät tavarasi ja anna niille uusi tarkoitus! Ilmoituksesi pysyy aktiivisena 30 päivää.",
+    "success": "Ilmoitus tallennettiin onnistuneesti!",
+    "error": "Tallennus epäonnistui. Yritä uudelleen!"
+  },
+  "item-contact-form": {
+    "success": "Pyyntö lähetettiin onnistuneesti!",
+    "error": "Lähetys epäonnistui. Yritä uudelleen!",
+    "message-placeholder": "Viestisi lahjoittajalle..."
+  },
+  "list": {
+    "title": "Tavarat"
+  }
+}

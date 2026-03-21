@@ -4,6 +4,7 @@ import { CiViewList } from "react-icons/ci";
 import { PiHandshakeThin, PiGiftThin } from "react-icons/pi";
 
 import Heading from "@/common/components/heading/heading";
+import { useTranslations } from "next-intl";
 
 export const steps = [
     {
@@ -24,9 +25,11 @@ export const steps = [
 ];
 
 const InstructionSection = () => {
+    const t = useTranslations("home.instruction-section");
+
     return (
         <div className="flex flex-col items-center mt-12" data-testid="instruction-section">
-            <Heading level={2} heading="How it works" />
+            <Heading level={2} heading={t("title")} />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mt-4">
                 {steps.map((step, index) => (
                     <div
@@ -36,8 +39,8 @@ const InstructionSection = () => {
                         <div className="mb-4">{step.icon}</div>
                         <Heading 
                             level={3} 
-                            heading={step.title} 
-                            subHeading={step.description}
+                            heading={t(`step${index + 1}-title`)} 
+                            subHeading={t(`step${index + 1}-description`)}
                         />
                     </div>
                 ))}

@@ -2,12 +2,12 @@ import { Button } from '@mui/material';
 
 import {navRoutes} from '@/common/routes/route-configs';
 import useLocale from '@/app/i18n/use-locale';
-import { useTranslation } from '@/app/i18n';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 const NavBarItems = () => {
     const { locale } = useLocale();
-    const { t } = useTranslation(locale);
+    const t = useTranslations('common.nav-bar');
     const router = useRouter();
 
     return (
@@ -21,7 +21,7 @@ const NavBarItems = () => {
                             href={item.path[locale]}
                             className='text-gray-800'
                         >
-                            {t(`nav-bar.${item.key}`)}
+                            {t(item.key)}
                         </Button>
                     </li>
                 )

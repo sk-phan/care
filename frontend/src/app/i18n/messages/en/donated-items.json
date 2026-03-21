@@ -1,0 +1,27 @@
+{
+  "item-card": {
+    "available": "Available",
+    "reserved": "Reserved",
+    "condition": {
+      "new": "New",
+      "like-new": "Like-new",
+      "very-good": "Very good",
+      "good": "Good",
+      "acceptable": "Acceptable"
+    }
+  },
+  "registration-form": {
+    "title": "List your item",
+    "subtitle": "Share your unused items and give them a new purpose! Your listing will remain active for 30 days.",
+    "success": "Registration is successfully saved!",
+    "error": "Failed to save. Please try again!"
+  },
+  "item-contact-form": {
+    "success": "Request is successfully sent!",
+    "error": "Failed to send. Please try again!",
+    "message-placeholder": "Your message to donor..."
+  },
+  "list": {
+    "title": "Items"
+  }
+}

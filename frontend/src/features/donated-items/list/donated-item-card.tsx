@@ -1,26 +1,25 @@
 "use client";
 import Link from "next/link";
-import _ from 'lodash';
 
 import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemType } from "@/common/types/item/item.type";
 
-import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 import Image from "next/image";
 import { Chip } from "@mui/material";
+import { useTranslations } from "next-intl";
 
 const DonatedItemCard = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.donatedItems;
     const { locale } = useLocale();
-    const { t } = useTranslation(locale);
-
+    const t = useTranslations("donated-items.item-card");
+   
     return (
-        <Link href={`${itemPath.en}/${item.id}`} className="hover:opacity-85 cursor-pointer">
+        <Link href={`${itemPath[locale]}/${item.id}`} className="hover:opacity-85 cursor-pointer">
             <div className="relative pb-2">
                 <Chip
                 className="absolute top-4 left-4 font-medium bg-white"
-                label={t(`item-card.${item.status}`)}
+                label={t(item.status)}
                 color="secondary"
                 />
                 <Image 
@@ -35,7 +34,7 @@ const DonatedItemCard = ({ item } : { item: ItemType }) => {
             </div>
             <div className="flex flex-col">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
-                <span className="text-gray-500 font-medium">{_.capitalize(item.condition)}</span>
+                <span className="text-gray-500 font-medium">{t(`condition.${item.condition}`)}</span>
                 <span className="text-gray-500 font-medium">{item.city}, {item.country}</span>
             </div>
         </Link>

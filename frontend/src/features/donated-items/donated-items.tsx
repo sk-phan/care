@@ -3,21 +3,19 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { ItemType } from "@/common/types/item/item.type";
-import { LocaleType } from "@/app/i18n/locales/locales.type";
-import { useTranslation } from "@/app/i18n";
 import { Metadata } from "@/common/types/api/api.type";
 
 import { Pagination } from "@mui/material";
 import DonatedItemList from "./list/donated-item-list";
+import { useTranslations } from "next-intl";
 
 type DonatedItems = {
-    lang: LocaleType;
     items: ItemType[];
     metadata: Metadata;
 }
 
-const DonatedItems = ({ lang, items, metadata } : DonatedItems) => {
-    const { t } = useTranslation(lang);
+const DonatedItems = ({ items, metadata } : DonatedItems) => {
+    const t = useTranslations("donated-items.list");
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const { replace } = useRouter();
@@ -40,7 +38,7 @@ const DonatedItems = ({ lang, items, metadata } : DonatedItems) => {
                 mb-8
                 "
             >
-                {t('Items')}
+                {t("title")}
             </h2>
             <DonatedItemList items={items}/>
             <div className="flex items-center justify-center mt-4">

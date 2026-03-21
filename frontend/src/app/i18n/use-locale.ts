@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation"
-import { LocaleType } from "./locales/locales.type";
+import { LocaleType } from "./messages/locales.type";
 
 const useLocale = () : { locale: LocaleType }  => {
     const pathname = usePathname();

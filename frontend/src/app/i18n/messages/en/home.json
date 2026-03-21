@@ -1,0 +1,34 @@
+{
+  "hero-section": {
+    "view-all-items": "View all items",
+    "title": "Your Unused Items Can Make a Difference",
+    "subtitle": "Turn Your Unused Items into Valuable Resources for Others — Join a Community of Givers Making a Difference"
+  },
+  "about": {
+    "about-us": "About us",
+    "message": "We are a community-driven platform that connects people who want to share gently used clothes, books, and more with those in need. By listing items you no longer need, you can help others, reduce waste, and support a more sustainable future. Join us in building a supportive community where everyone has access to essential resources. Let's make a difference, one item at a time.",
+    "first-feature-title": "Connecting Kindness with Need",
+    "first-feature-subtitle": "Your unused items can support individuals and families, offering help to those in need and providing essential resources.",
+    "second-feature-title": "Promoting Sustainable Living",
+    "second-feature-subtitle": "By keeping items in circulation, you contribute to environmental conservation and help build a greener future for everyone.",
+    "third-feature-title": "Building a Caring Community",
+    "third-feature-subtitle": "Explore the benefits of sharing what you no longer need. Join us in building a community where resources are shared and valued."
+  },
+  "items-section": {
+    "available-items": "Available items",
+    "see-all": "See all"
+  },
+  "about-page": {
+    "title": "Making every child's day a little brighter",
+    "description": "At Care, we believe that every child deserves to smile. Our mission is to connect kind-hearted individuals with children in need, ensuring they have access to toys, books, and clothes that can brighten their days and open new opportunities."
+  },
+  "instruction-section": {
+    "title": "How it works",
+    "step1-title": "List or find items",
+    "step1-description": "Browse or list items to share with children in need.",
+    "step2-title": "Arrange pickup",
+    "step2-description": "Donors and recipients communicate directly to arrange the handoff.",
+    "step3-title": "Bring joy to children!",
+    "step3-description": "See the smiles your generosity creates."
+  }
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { LocaleType } from "@/app/i18n/locales/locales.type";
+import { LocaleType } from "@/app/i18n/messages/locales.type";
 import { Button, Menu, MenuItem } from "@mui/material";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { MouseEvent, useState } from "react";
