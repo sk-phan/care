@@ -21,6 +21,12 @@ export default async function Home(props: Props) {
   const response = await fetch(BASE_URL + `/items?page=${PAGE}&limit=${LIMIT}`, {
     cache: 'force-cache'
   });
+
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`Items fetch failed: ${response.status} ${response.statusText} | ${body}`);
+  }
+  
   const data = await response.json();
 
   const items: ItemType[] = data.entities || [];
