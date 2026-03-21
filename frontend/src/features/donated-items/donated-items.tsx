@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { ItemType } from "@/common/types/item/item.type";
 import { LocaleType } from "@/app/i18n/locales/locales.type";
@@ -19,7 +19,7 @@ type DonatedItems = {
 const DonatedItems = ({ lang, items, metadata } : DonatedItems) => {
     const { t } = useTranslation(lang);
     const pathname = usePathname();
-    const searchParams = window.location.search;
+    const searchParams = useSearchParams();
     const { replace } = useRouter();
 
     const { page, totalPages } = metadata;
