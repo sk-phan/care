@@ -39,9 +39,9 @@ export default async function Home(props: Props) {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <HeroSection lang={lang}/>
+      {/* <HeroSection lang={lang}/>
       <AboutSection lang={lang}/>
-      <ItemsSection items={items}/>
+      <ItemsSection items={items}/> */}
     </main>
   )
 }
