@@ -17,5 +17,18 @@
   "items-section": {
     "available-items": "Available items",
     "see-all": "See all"
+  },
+  "about-page": {
+    "title": "Making every child's day a little brighter",
+    "description": "At Care, we believe that every child deserves to smile. Our mission is to connect kind-hearted individuals with children in need, ensuring they have access to toys, books, and clothes that can brighten their days and open new opportunities."
+  },
+  "instruction-section": {
+    "title": "How it works",
+    "step1-title": "List or find items",
+    "step1-description": "Browse or list items to share with children in need.",
+    "step2-title": "Arrange pickup",
+    "step2-description": "Donors and recipients communicate directly to arrange the handoff.",
+    "step3-title": "Bring joy to children!",
+    "step3-description": "See the smiles your generosity creates."
   }
 }

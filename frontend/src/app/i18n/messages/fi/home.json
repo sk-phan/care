@@ -17,5 +17,18 @@
   "items-section": {
     "available-items": "Saatavilla olevat tavarat",
     "see-all": "Näytä kaikki"
+  },
+  "about-page": {
+    "title": "Teemme jokaisen lapsen päivästä hieman valoisamman",
+    "description": "Care on yhteisölähtöinen alusta, joka yhdistää hyväntahtoiset ihmiset apua tarvitseviin lapsiin. Tavoitteenamme on varmistaa, että lapset saavat käyttöönsä leluja, kirjoja ja vaatteita, jotka tuovat iloa ja avaavat uusia mahdollisuuksia."
+  },
+  "instruction-section": {
+    "title": "Miten se toimii",
+    "step1-title": "Listaa tai etsi tavaroita",
+    "step1-description": "Selaa tai listaa tavaroita jaettavaksi apua tarvitseville lapsille.",
+    "step2-title": "Sovi nouto",
+    "step2-description": "Lahjoittajat ja vastaanottajat sopivat luovutuksesta suoraan keskenään.",
+    "step3-title": "Tuo iloa lapsille!",
+    "step3-description": "Näe, millaisia hymyjä anteliaisuutesi synnyttää."
   }
 }
