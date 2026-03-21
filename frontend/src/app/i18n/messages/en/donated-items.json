@@ -1,7 +1,14 @@
 {
   "item-card": {
     "available": "Available",
-    "reserved": "Reserved"
+    "reserved": "Reserved",
+    "condition": {
+      "new": "New",
+      "like-new": "Like-new",
+      "very-good": "Very good",
+      "good": "Good",
+      "acceptable": "Acceptable"
+    }
   },
   "registration-form": {
     "title": "List your item",

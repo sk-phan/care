@@ -1,7 +1,14 @@
 {
   "item-card": {
     "available": "Saatavilla",
-    "reserved": "Varattu"
+    "reserved": "Varattu",
+    "condition": {
+      "new": "Uusi",
+      "like-new": "Lähes uusi",
+      "very-good": "Erittäin hyvä",
+      "good": "Hyvä",
+      "acceptable": "Tyydyttävä"
+    }
   },
   "registration-form": {
     "title": "Lisää ilmoitus",

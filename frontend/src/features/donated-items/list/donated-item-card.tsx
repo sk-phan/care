@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import _ from 'lodash';
 
 import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemType } from "@/common/types/item/item.type";
@@ -14,7 +13,7 @@ const DonatedItemCard = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.donatedItems;
     const { locale } = useLocale();
     const t = useTranslations("donated-items.item-card");
-
+   
     return (
         <Link href={`${itemPath[locale]}/${item.id}`} className="hover:opacity-85 cursor-pointer">
             <div className="relative pb-2">
@@ -35,7 +34,7 @@ const DonatedItemCard = ({ item } : { item: ItemType }) => {
             </div>
             <div className="flex flex-col">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
-                <span className="text-gray-500 font-medium">{_.capitalize(item.condition)}</span>
+                <span className="text-gray-500 font-medium">{t(`condition.${item.condition}`)}</span>
                 <span className="text-gray-500 font-medium">{item.city}, {item.country}</span>
             </div>
         </Link>
