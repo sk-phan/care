@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslation } from "@/app/i18n";
 import useLocale from "@/app/i18n/use-locale";
 
 import useCommonButtonStyles from "@/common/hooks/styles/use-common-button-styles";
@@ -11,6 +10,7 @@ import Heading from "@/common/components/heading/heading";
 import { Button } from "@mui/material";
 import DonatedItemList from "@/features/donated-items/list/donated-item-list";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 interface ItemsSectionProps {
     items: ItemType[];
@@ -20,7 +20,7 @@ interface ItemsSectionProps {
     const { linkButton } = useCommonButtonStyles();
 
     const { locale } = useLocale();
-    const { t }= useTranslation(locale);
+    const t = useTranslations('ItemsSection');
     const router = useRouter();
 
     return (

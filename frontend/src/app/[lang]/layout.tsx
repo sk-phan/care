@@ -7,7 +7,7 @@ export async function generateStaticParams() {
 import type { Metadata } from "next";
 import { Outfit as FontSans } from "next/font/google";
 import { Providers } from './providers';
-import { LocaleType } from '../i18n/locales/locales.type';
+import { LocaleType } from '../i18n/messages/locales.type';
 
 import { cn } from "@/common/stores/utils";
 import NavBar from "@/common/components/navigation-bar/nav-bar";
@@ -16,6 +16,7 @@ import Footer from '@/common/components/footer/footer';
 import "../../common/styles/globals.css";
 import "../../common/styles/form/form-styles.css";
 import { ReactNode, Suspense } from 'react';
+import { NextIntlClientProvider } from 'next-intl';
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -45,15 +46,17 @@ export default async function RootLayout(props: Props) {
           fontSans.variable
         )}
       >
-        <Providers>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-8xl">
-            <Suspense fallback={<div>Loading...</div>}>
-              <NavBar />
-            </Suspense>
-            {children}
-          </div>
-        </Providers>
-        <Footer />
+        <NextIntlClientProvider>
+          <Providers>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-8xl">
+              <Suspense fallback={<div>Loading...</div>}>
+                <NavBar />
+              </Suspense>
+              {children}
+            </div>
+          </Providers>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

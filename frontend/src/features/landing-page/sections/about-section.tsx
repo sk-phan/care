@@ -7,19 +7,20 @@ import donateBoxIcon from "../../../../public/icons/donate-box.svg";
 import globalHeartIcon from "../../../../public/icons/global-heart.svg";
 
 import { useTranslation } from "@/app/i18n";
-import { LocaleType } from "@/app/i18n/locales/locales.type";
+import { LocaleType } from "@/app/i18n/messages/locales.type";
 import { urlConfigs } from "@/common/routes/url-configs";
 
 import { Button } from "@mui/material";
 import Heading from "@/common/components/heading/heading";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 interface WelcomeProps {
     lang: LocaleType;
 }
 
 const AboutSection = ({ lang } : WelcomeProps) => {
-    const { t } = useTranslation(lang);
+    const t = useTranslations('AboutSection');
     const router = useRouter();
 
     return (

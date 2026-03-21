@@ -3,7 +3,7 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { ItemType } from "@/common/types/item/item.type";
-import { LocaleType } from "@/app/i18n/locales/locales.type";
+import { LocaleType } from "@/app/i18n/messages/locales.type";
 import { useTranslation } from "@/app/i18n";
 import { Metadata } from "@/common/types/api/api.type";
 

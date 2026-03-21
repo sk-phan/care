@@ -2,7 +2,7 @@
 import { BASE_URL } from '@/common/api/api-base';
 
 import { ItemType } from '@/common/types/item/item.type';
-import { LocaleType } from '../i18n/locales/locales.type';
+import { LocaleType } from '../i18n/messages/locales.type';
 import HeroSection from '@/features/landing-page/sections/hero-section';
 import AboutSection from '@/features/landing-page/sections/about-section';
 import ItemsSection from '@/features/landing-page/sections/items-section';

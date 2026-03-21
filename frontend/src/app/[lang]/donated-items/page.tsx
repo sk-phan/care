@@ -1,4 +1,4 @@
-import { LocaleType } from "@/app/i18n/locales/locales.type";
+import { LocaleType } from "@/app/i18n/messages/locales.type";
 import { BASE_URL } from "@/common/api/api-base";
 import { EntitiesResponse } from "@/common/types/api/api.type";
 import { ItemType } from "@/common/types/item/item.type";
