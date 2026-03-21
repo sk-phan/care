@@ -18,7 +18,9 @@ export default async function Home(props: Props) {
   const params = await props.params;
   const lang = params.lang;
 
-  const response = await fetch(BASE_URL + `/items?page=${PAGE}&limit=${LIMIT}`);
+  const response = await fetch(BASE_URL + `/items?page=${PAGE}&limit=${LIMIT}`, {
+    cache: 'force-cache'
+  });
   const data = await response.json();
 
   const items: ItemType[] = data.entities || [];

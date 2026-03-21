@@ -6,7 +6,7 @@ describe('About', () => {
         render(<About />);
         const pageTestId = screen.getByTestId('about-page');
         const heading = screen.getByRole('heading', { level: 1});
-        const howItWorksSection = screen.getByTestId('how-it-works-section');;
+        const howItWorksSection = screen.getByTestId('instruction-section');;
 
         expect(pageTestId).toBeInTheDocument();
         expect(heading).toBeInTheDocument();

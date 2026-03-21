@@ -5,18 +5,18 @@ import { ItemType } from "@/common/types/item/item.type";
 import { CircularProgress } from "@mui/material";
 
 import DonatedItems from "@/features/donated-items/donated-items";
+import { Suspense } from "react";
 
 const LIMIT = 9;
 
 interface Props {
-    params: Promise<{ lang: LocaleType }>;
+    params: Promise<{ lang: LocaleType}>;
     searchParams: Promise< { page?: string }>;
 }
 
 export default async function Items(props: Props) {
     const params = await props.params;
     const searchParams = await props.searchParams;
-
     const currentPage = Number(searchParams?.page) || 1;
 
     const response = await fetch(`${BASE_URL}/items?page=${currentPage}&limit=${LIMIT}`);
@@ -34,11 +34,9 @@ export default async function Items(props: Props) {
     }
 
     return (
-        <DonatedItems
-            lang={lang}
-            items={entities}
-            metadata={metadata}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+            <DonatedItems lang={lang} items={entities} metadata={metadata} />
+        </Suspense>
     );
 };
 

@@ -3,6 +3,7 @@ import Item from "../../models/ItemModel";
 import { BadRequestError } from "../../errors/BadRequestError";
 import { IItem } from "../../models/ItemModel";
 import useEntityWrapper from "../../utils/useEntityWrapper";
+import useEntitiesWrapper from "../../utils/useEntitiesWrapper";
 
 export const createItem = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -29,9 +30,9 @@ export const createItem = async (req: Request, res: Response, next: NextFunction
     }
 };
 
-export const getAllItems = async (_req: Request, res: Response, _next: NextFunction) => {
-    return res.status(200);
-};
+export const getAllItems = async (req: Request, res: Response, next: NextFunction) => {
+    return useEntitiesWrapper(Item, req, res).catch(next);
+  };
 
 export const getItemById = async (req: Request, res: Response, next: NextFunction) => {
     try {
