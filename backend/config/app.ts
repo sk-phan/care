@@ -28,6 +28,9 @@ app.use(cors());
 app.use(express.static('build'));
 app.use(express.json());
 
+app.get('/api/health', (_req, res) => {
+  res.status(200).json({ message: 'hello' });
+});
 app.use('/api/users', userRoutes);
 app.use('/api/items', itemRoutes);
 app.use('/api/pickupRequest', pickupRequestRoutes);
