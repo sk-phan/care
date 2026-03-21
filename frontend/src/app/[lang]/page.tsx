@@ -1,7 +1,7 @@
 
 import { BASE_URL } from '@/common/api/api-base';
 
-import { ItemType } from '@/common/types/item/item.type';
+// import { ItemType } from '@/common/types/item/item.type';
 import { LocaleType } from '../i18n/locales/locales.type';
 // import HeroSection from '@/features/landing-page/sections/hero-section';
 // import AboutSection from '@/features/landing-page/sections/about-section';
@@ -15,7 +15,7 @@ interface Props {
 }
 
 export default async function Home(props: Props) {
-  // const params = await props.params;
+  const params = await props.params;
   // const lang = params.lang;
 
   const response = await fetch(BASE_URL + `/items?page=${PAGE}&limit=${LIMIT}`, {
@@ -39,6 +39,7 @@ export default async function Home(props: Props) {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
+      {params.lang}
       {/* <HeroSection lang={lang}/>
       <AboutSection lang={lang}/>
       <ItemsSection items={items}/> */}
