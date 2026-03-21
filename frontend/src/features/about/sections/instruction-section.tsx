@@ -6,15 +6,26 @@ import { PiHandshakeThin, PiGiftThin } from "react-icons/pi";
 import Heading from "@/common/components/heading/heading";
 import { useTranslations } from "next-intl";
 
-const stepIcons = [
-    <CiViewList key="step1" size={52} className="text-primary" />,
-    <PiHandshakeThin key="step2" size={52} className="text-primary" />,
-    <PiGiftThin key="step3" size={52} className="text-primary" />,
+export const steps = [
+    {
+        title: "List or find items",
+        description: "Browse or list items to share with children in need.",
+        icon: <CiViewList size={52} className="text-primary" />,
+    },
+    {
+        title: "Arrange pickup",
+        description: "Donors and recipients communicate directly to arrange the handoff.",
+        icon: <PiHandshakeThin size={52} className="text-primary" />,
+    },
+    {
+        title: "Bring joy to children!",
+        description: "See the smiles your generosity creates.",
+        icon: <PiGiftThin size={52} className="text-primary" />,
+    },
 ];
 
 const InstructionSection = () => {
     const t = useTranslations("home.instruction-section");
-    const steps = ["step1", "step2", "step3"];
 
     return (
         <div className="flex flex-col items-center mt-12" data-testid="instruction-section">
@@ -25,11 +36,11 @@ const InstructionSection = () => {
                         key={index}
                         className="bg-gray-100 px-6 py-8 rounded-xl flex flex-col items-center text-center"
                     >
-                        <div className="mb-4">{stepIcons[index]}</div>
+                        <div className="mb-4">{step.icon}</div>
                         <Heading 
                             level={3} 
-                            heading={t(`${step}-title`)} 
-                            subHeading={t(`${step}-description`)}
+                            heading={t(`step${index + 1}-title`)} 
+                            subHeading={t(`step${index + 1}-description`)}
                         />
                     </div>
                 ))}
