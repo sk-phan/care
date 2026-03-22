@@ -10,7 +10,7 @@ const HomeView = ({ items }: { items: ItemType[] }) => {
     const { createDonatedItemPath, donatedItemsPath } = useHomeViewVM();
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between">
+        <main className="flex min-h-screen flex-col justify-between">
             <HeroSection donatedItemsPath={donatedItemsPath}/>
             <AboutSection createDonatedItemPath={createDonatedItemPath}/>
             <ItemsSection items={items} donatedItemsPath={donatedItemsPath}/>

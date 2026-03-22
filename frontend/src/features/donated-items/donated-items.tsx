@@ -1,13 +1,12 @@
 "use client";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
 import { ItemType } from "@/common/types/item/item.type";
 import { Metadata } from "@/common/types/api/api.type";
 
 import { Pagination } from "@mui/material";
 import DonatedItemList from "./list/donated-item-list";
 import { useTranslations } from "next-intl";
+import { useDonatedItemsVM } from "./useDonatedItemsVM";
 
 type DonatedItems = {
     items: ItemType[];
@@ -16,17 +15,7 @@ type DonatedItems = {
 
 const DonatedItems = ({ items, metadata } : DonatedItems) => {
     const t = useTranslations("donated-items.list");
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
-    const { replace } = useRouter();
-
-    const { page, totalPages } = metadata;
-
-    const onChangePagination = (pageNumber: number) => {
-        const params = new URLSearchParams(searchParams);
-        params.set('page', pageNumber.toString());
-        replace(`${pathname}?${params.toString()}`);
-    };
+    const { onChangePagination, page, totalPages } = useDonatedItemsVM({ metadata });
 
     return (
         <div className="min-h-screen">
