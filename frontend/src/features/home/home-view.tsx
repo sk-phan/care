@@ -1,3 +1,5 @@
+"use client";
+
 import { ItemType } from "@/common/types/item/item.type";
 import HeroSection from "./sections/hero-section";
 import { useHomeViewVM } from "./use-home-view-vm";
