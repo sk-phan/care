@@ -8,7 +8,7 @@ import TextInput from "@/common/components/form/text-input";
 import { emailPattern } from "@/utils/form-validations/form-validations.utils";
 import { useTranslations } from "next-intl";
 
-const CreateDonatedItemFormFields = () => {
+const CreateDonatedItemViewFields = () => {
     const { control, formState: {errors} } = useFormContext();
     const t = useTranslations("common.form");
 
@@ -77,4 +77,4 @@ const CreateDonatedItemFormFields = () => {
     )
 };
 
-export default CreateDonatedItemFormFields;
+export default CreateDonatedItemViewFields;

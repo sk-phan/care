@@ -9,9 +9,10 @@ import Link from "next/link";
 interface ItemsSectionProps {
     items: ItemType[];
     donatedItemsPath: string;
+    getSelectedItemPath: (itemId: string) => string;
 }
 
- const ItemsSection = ({ items, donatedItemsPath } : ItemsSectionProps) => {
+ const ItemsSection = ({ items, donatedItemsPath, getSelectedItemPath } : ItemsSectionProps) => {
     const t = useTranslations("home.items-section");
 
     return (
@@ -26,7 +27,7 @@ interface ItemsSectionProps {
                         {t("see-all")}
                 </Button>
             </div>
-            <DonatedItemList items={items} />
+            <DonatedItemList items={items} getSelectedItemPath={getSelectedItemPath} />
         </section>
     )
 }

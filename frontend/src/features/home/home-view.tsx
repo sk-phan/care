@@ -7,13 +7,13 @@ import ItemsSection from "./sections/items-section";
 import AboutSection from "./sections/about-section";
 
 const HomeView = ({ items }: { items: ItemType[] }) => {
-    const { createDonatedItemPath, donatedItemsPath } = useHomeViewVM();
+    const { createDonatedItemPath, donatedItemsPath, getSelectedItemPath } = useHomeViewVM();
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between">
+        <main className="flex min-h-screen flex-col justify-between">
             <HeroSection donatedItemsPath={donatedItemsPath}/>
             <AboutSection createDonatedItemPath={createDonatedItemPath}/>
-            <ItemsSection items={items} donatedItemsPath={donatedItemsPath}/>
+            <ItemsSection items={items} donatedItemsPath={donatedItemsPath} getSelectedItemPath={getSelectedItemPath}/>
         </main>
     )
 }

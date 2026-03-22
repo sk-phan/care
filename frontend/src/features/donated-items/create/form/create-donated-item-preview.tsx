@@ -1,30 +1,11 @@
 import Heading from "@/common/components/heading/heading";
-import React, { useId } from "react";
-import { useFormContext } from "react-hook-form";
+import React from "react";
 
-import { ItemType } from "@/common/types/item/item.type";
 import ItemCard from "../../list/donated-item-card";
+import { useCreateDonatedItemPreviewVM } from "../hooks/use-create-donated-item-preview-vm";
 
-const CreateDonatedItemPreview = () => {
-    const { watch } = useFormContext();
-    const randomId = useId();
-
-    const mapFormValuesToPreviewItem = (): ItemType => {
-        return {
-            id: randomId,
-            title: watch('title'),
-            description: '',
-            condition: watch('condition'),
-            status: "available",
-            category: watch('category'),
-            city: watch('city'),
-            country: 'Finland',
-            name: "",
-            email: "",
-            createdAt: new Date(),
-            image: undefined
-        }
-    }
+const CreateDonatedItemPreview = ({ getSelectedItemPath }: { getSelectedItemPath: (itemId: string) => string }) => {
+    const { previewItem } = useCreateDonatedItemPreviewVM();
 
     return (
         <div>
@@ -34,7 +15,7 @@ const CreateDonatedItemPreview = () => {
                 color="text-white"
             />
             <div className="bg-white w-96 rounded-md p-4">
-                <ItemCard item={mapFormValuesToPreviewItem()}/>
+                <ItemCard item={previewItem} getSelectedItemPath={getSelectedItemPath}/>
             </div>
         </div>
     )
