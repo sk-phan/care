@@ -6,7 +6,7 @@ import { ItemType } from "@/common/types/item/item.type";
 
 import { Chip } from "@mui/material";
 import ItemContactFormSection from "./forms/item-contact-form-section";
-import { useItemDetailViewVM } from './use-item-detail-view-vM';
+import { useItemDetailViewVM } from './use-item-detail-view-vm';
 
 const ItemDetailView = ({
     item
