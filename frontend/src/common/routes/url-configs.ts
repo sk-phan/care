@@ -24,6 +24,5 @@ export const urlConfigs = {
 }
 
 export const getLocalizedPath = (locale: Locale, path: string) => {
-    const normalizedPath = path.replace(/^\/+/, "");
-    return normalizedPath ? `/${locale}/${normalizedPath}` : `/${locale}`;
+    return `/${locale}` + `${path}`;
 }
