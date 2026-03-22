@@ -2,9 +2,9 @@ import { LocaleType } from "@/app/i18n/messages/locales.type";
 import { BASE_URL } from "@/common/api/api-base";
 import { EntitiesResponse } from "@/common/types/api/api.type";
 import { ItemType } from "@/common/types/item/item.type";
+import DonatedItemsView from "@/features/donated-items/donated-items-view";
 import { CircularProgress } from "@mui/material";
 
-import DonatedItems from "@/features/donated-items/donated-items";
 import { Suspense } from "react";
 
 const LIMIT = 9;
@@ -34,7 +34,7 @@ export default async function Items(props: Props) {
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <DonatedItems items={entities} metadata={metadata} />
+            <DonatedItemsView items={entities} metadata={metadata} />
         </Suspense>
     );
 };

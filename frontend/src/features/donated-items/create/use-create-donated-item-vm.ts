@@ -19,7 +19,7 @@ export const useCreateDonatedItemVM = () => {
         notify({ message: tDonatedItems("success") });
         await handleRevalidatePath(urlConfigs.home.path);
         await handleRevalidatePath(urlConfigs.donatedItems.path);
-        router.push(`${locale}/${urlConfigs.donatedItems.path}`);
+        router.push(getLocalizedPath(locale, urlConfigs.donatedItems.path));
     }
 
     const handleErrorCreateDonatedItem = async () => {

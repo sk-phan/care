@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { useLocale, useTranslations } from "next-intl";
 
-import { urlConfigs } from "@/common/routes/url-configs";
+import { getLocalizedPath, urlConfigs } from "@/common/routes/url-configs";
 
 const SocialLinks = [
     { icon: FaFacebook, href: "#facebook" },
@@ -20,8 +20,8 @@ const Footer = () => {
     const locale = useLocale();
 
     const navLinks = [
-        { href: `${locale}/${urlConfigs.about.path}`, label: tNav("about") },
-        { href: `${locale}/${urlConfigs.contact.path}`, label: tNav("contact") },
+        { href: getLocalizedPath(locale, urlConfigs.about.path), label: tNav("about") },
+        { href: getLocalizedPath(locale, urlConfigs.contact.path), label: tNav("contact") },
     ];
 
     return (

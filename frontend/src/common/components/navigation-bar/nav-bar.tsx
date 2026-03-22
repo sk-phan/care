@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-import { urlConfigs } from "@/common/routes/url-configs";
+import { getLocalizedPath, urlConfigs } from "@/common/routes/url-configs";
 
 import NavBarItems from "./nav-bar-item";
 import { Button } from "@mui/material";
@@ -59,7 +59,7 @@ const NavBar = () => {
                     <Button
                         variant="contained"
                         className="hidden md:inline-block"
-                        onClick={() => router.push(`${locale}/${urlConfigs.donatedItems.create.path}`)}
+                        onClick={() => router.push(getLocalizedPath(locale, urlConfigs.donatedItems.create.path))}
                     >
                         {t("list-an-item")}
                     </Button>
