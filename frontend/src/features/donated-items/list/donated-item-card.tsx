@@ -1,20 +1,20 @@
-"use client";
 import Link from "next/link";
 
-import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemType } from "@/common/types/item/item.type";
 
 import Image from "next/image";
 import { Chip } from "@mui/material";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
-const DonatedItemCard = ({ item } : { item: ItemType }) => {
-    const itemPath = urlConfigs.donatedItems;
-    const locale = useLocale();
+type DonatedItemCardProps = {
+    item: ItemType;
+    getSelectedItemPath: (itemId: string) => string;
+}
+const DonatedItemCard = ({ item, getSelectedItemPath } : DonatedItemCardProps) => {
     const t = useTranslations("donated-items.item-card");
    
     return (
-        <Link href={`${locale}/${itemPath.path}/${item.id}`} className="hover:opacity-85 cursor-pointer">
+        <Link href={getSelectedItemPath(item.id)} className="hover:opacity-85 cursor-pointer">
             <div className="relative pb-2">
                 <Chip
                 className="absolute top-4 left-4 font-medium bg-white"

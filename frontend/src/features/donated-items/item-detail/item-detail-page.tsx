@@ -1,5 +1,4 @@
 "use client"
-import { useEffect } from "react";
 import _ from 'lodash';
 import Image from "next/image";
 
@@ -7,36 +6,30 @@ import { ItemType } from "@/common/types/item/item.type";
 
 import { Chip } from "@mui/material";
 import ItemContactFormSection from "./forms/item-contact-form-section";
+import { useItemDetailPageVM } from './useItemDetailPageVM';
 
-const ItemPage = ({
+const ItemDetailPage = ({
     item
  } : {
     item: ItemType
  }) => {
-    useEffect(() => {
-        const itemInfo = document.getElementById("item-info");
-        const itemImage = document.getElementById("item-image");
-
-        if (window.innerWidth >= 768) {
-            if (itemInfo && itemImage) {
-                itemImage.style.height = `${itemInfo.clientHeight}px`;
-            }
-        }
-    }, []);
+    const { control, handleSubmit, errors, onSubmit, method } = useItemDetailPageVM({
+        itemId: item.id,
+        donorEmail: item.email,
+    });
 
     return (
-        <div className="flex flex-col md:flex-row">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-stretch md:gap-8">
             <Image 
-            id="item-image"
             src={item.image ? item.image : "/images/item.png"} 
             alt="Item image"
             width={100}
             height={100}
             unoptimized
             priority
-            className="rounded-xl w-full md:w-1/2 object-cover h-[300px]"
+            className="h-[300px] w-full rounded-xl object-cover md:h-full"
             />
-            <div className="mt-6 md:mt-0 md:ml-8 md:w-1/2 h-fit" id="item-info">
+            <div className="mt-0 h-fit md:h-full">
                 <div className="flex items-center gap-2 mt-4 mb-2">
                     <h3 className="text-2xl md:text-4xl font-medium break-words">
                         {item.title}
@@ -57,12 +50,17 @@ const ItemPage = ({
                     {item.description}
                 </p>
                 <ItemContactFormSection
-                    donorName={item.name}
                     donorEmail={item.email}
-                    itemId={item.id}/>
+                    donorName={item.name}
+                    control={control}
+                    handleSubmit={handleSubmit}
+                    errors={errors}
+                    onSubmit={onSubmit}
+                    method={method}
+                    />
             </div>
         </div>
     )
 };
 
-export default ItemPage;
+export default ItemDetailPage;

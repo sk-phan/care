@@ -1,18 +1,26 @@
-"use client";
-
 import Image from "next/image";
 
 import ItemContactForm from "./item-contact-form";
 import { useTranslations } from "next-intl";
+import { ItemContactFormData } from "./item-contact-form.type";
+import { Control, FieldErrors, UseFormHandleSubmit, UseFormReturn } from "react-hook-form";
 
 const ItemContactFormSection = ({
-    donorName,
     donorEmail,
-    itemId
+    donorName,
+    control,
+    handleSubmit,
+    errors,
+    onSubmit,
+    method,
 } : {
-    donorName: string;
     donorEmail: string;
-    itemId: string;
+    donorName: string;
+    control: Control<ItemContactFormData>;
+    handleSubmit: UseFormHandleSubmit<ItemContactFormData>;
+    errors: FieldErrors<ItemContactFormData>;
+    onSubmit: (data: ItemContactFormData) => void;
+    method: UseFormReturn<ItemContactFormData>;
 }) => {
     const t = useTranslations("common.form");
 
@@ -36,7 +44,7 @@ const ItemContactFormSection = ({
                     </div>
                 </div>
             </div>
-            <ItemContactForm itemId={itemId} donorEmail={donorEmail}/>
+            <ItemContactForm control={control} handleSubmit={handleSubmit} errors={errors} onSubmit={onSubmit} method={method}/>
         </div>
     )
 }

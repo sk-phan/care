@@ -15,7 +15,7 @@ type DonatedItems = {
 
 const DonatedItems = ({ items, metadata } : DonatedItems) => {
     const t = useTranslations("donated-items.list");
-    const { onChangePagination, page, totalPages } = useDonatedItemsVM({ metadata });
+    const { onChangePagination, page, totalPages, getSelectedItemPath } = useDonatedItemsVM({ metadata });
 
     return (
         <div className="min-h-screen">
@@ -29,7 +29,7 @@ const DonatedItems = ({ items, metadata } : DonatedItems) => {
             >
                 {t("title")}
             </h2>
-            <DonatedItemList items={items}/>
+            <DonatedItemList items={items} getSelectedItemPath={getSelectedItemPath}/>
             <div className="flex items-center justify-center mt-4">
                 <Pagination 
                     count={totalPages} 
