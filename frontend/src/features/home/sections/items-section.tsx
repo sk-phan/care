@@ -1,27 +1,18 @@
-"use client";
-
-import useLocale from "@/app/i18n/use-locale";
-
-import useCommonButtonStyles from "@/common/hooks/styles/use-common-button-styles";
-import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemType } from "@/common/types/item/item.type";
 
 import Heading from "@/common/components/heading/heading";
 import { Button } from "@mui/material";
 import DonatedItemList from "@/features/donated-items/list/donated-item-list";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 interface ItemsSectionProps {
     items: ItemType[];
+    donatedItemsPath: string;
 }
 
- const ItemsSection = ({ items } : ItemsSectionProps) => {
-    const { linkButton } = useCommonButtonStyles();
-
-    const { locale } = useLocale();
+ const ItemsSection = ({ items, donatedItemsPath } : ItemsSectionProps) => {
     const t = useTranslations("home.items-section");
-    const router = useRouter();
 
     return (
         <section className="w-full mt-12 md:mt-16">
@@ -29,8 +20,8 @@ interface ItemsSectionProps {
                 <Heading level={2} heading={t("available-items")}/>
                 <Button 
                     variant="text" 
-                    onClick={() => router.push(urlConfigs.donatedItems[locale])}
-                    sx={linkButton}
+                    href={donatedItemsPath}
+                    LinkComponent={Link}
                     >
                         {t("see-all")}
                 </Button>

@@ -44,10 +44,10 @@ const CreateDonatedItemForm = () => {
             if (loadingState === 'success') {
                 notify({ message: tDonatedItems("success") });
     
-                await handleRevalidatePath(urlConfigs.home[locale]);
-                await handleRevalidatePath(urlConfigs.donatedItems[locale]);
+                await handleRevalidatePath(urlConfigs.home.path);
+                await handleRevalidatePath(urlConfigs.donatedItems.path);
     
-                router.push(urlConfigs.donatedItems[locale]);
+                router.push(`${locale}/${urlConfigs.donatedItems.path}`);
             }
     
             if (loadingState === 'error') {

@@ -15,7 +15,7 @@ const DonatedItemCard = ({ item } : { item: ItemType }) => {
     const t = useTranslations("donated-items.item-card");
    
     return (
-        <Link href={`${itemPath[locale]}/${item.id}`} className="hover:opacity-85 cursor-pointer">
+        <Link href={`${locale}/${itemPath.path}/${item.id}`} className="hover:opacity-85 cursor-pointer">
             <div className="relative pb-2">
                 <Chip
                 className="absolute top-4 left-4 font-medium bg-white"
