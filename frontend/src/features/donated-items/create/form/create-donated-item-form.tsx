@@ -7,7 +7,6 @@ import { FormProvider, useForm } from "react-hook-form";
 
 import { registrationFormDefaultValues } from "./create-donated-item-form.utils";
 import { useNotify } from "@/common/hooks/notification/use-notify";
-import useLocale from "@/app/i18n/use-locale";
 import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemCreateParams } from "@/common/types/item/item.type";
 import handleRevalidatePath from "@/common/api/server-actions/revalidate-path";
@@ -16,10 +15,10 @@ import useCreateDonatedItem from "../use-create-donated-item";
 import CreateDonatedItemPreview from "./create-donated-item-preview";
 import CreateDonatedItemFormFields from "./create-donated-item-form-fields";
 import Heading from "@/common/components/heading/heading";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const CreateDonatedItemForm = () => {
-    const { locale } = useLocale();
+    const locale = useLocale();
     const tDonatedItems = useTranslations("donated-items.registration-form");
     const tCommon = useTranslations("common.common");
     const { execute, loadingState, error } = useCreateDonatedItem();
