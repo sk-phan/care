@@ -10,13 +10,11 @@ import { getLocalizedPath, urlConfigs } from "@/common/routes/url-configs";
 import NavBarItems from "./nav-bar-item";
 import { Button } from "@mui/material";
 import LanguageSelection from "../language-selection";
-import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     
-    const router = useRouter();
     const pathname = usePathname();
     const locale = useLocale();
     const t = useTranslations("common.nav-bar");
@@ -58,8 +56,9 @@ const NavBar = () => {
                     <LanguageSelection />
                     <Button
                         variant="contained"
+                        component={Link}
+                        href={getLocalizedPath(locale, urlConfigs.donatedItems.create.path)}
                         className="hidden md:inline-block"
-                        onClick={() => router.push(getLocalizedPath(locale, urlConfigs.donatedItems.create.path))}
                     >
                         {t("list-an-item")}
                     </Button>
