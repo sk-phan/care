@@ -9,7 +9,7 @@ import { Suspense } from "react";
 
 const LIMIT = 9;
 
-interface Props {
+type Props = {
     params: Promise<{ lang: LocaleType}>;
     searchParams: Promise< { page?: string }>;
 }
@@ -20,20 +20,13 @@ export default async function Items(props: Props) {
     const currentPage = Number(searchParams?.page) || 1;
 
     const response = await fetch(`${BASE_URL}/items?page=${currentPage}&limit=${LIMIT}`);
+
     const data: EntitiesResponse<ItemType> = await response.json();
 
     const { entities, metadata } = data;
 
-    if (!entities) {
-        return (
-            <div className="min-h-screen flex justify-center items-center">
-                <CircularProgress color="primary" />
-            </div>
-        );
-    }
-
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<CircularProgress color="primary" />}>
             <DonatedItemsView items={entities} metadata={metadata} />
         </Suspense>
     );

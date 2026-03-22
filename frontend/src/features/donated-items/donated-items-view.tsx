@@ -7,15 +7,20 @@ import { Pagination } from "@mui/material";
 import DonatedItemList from "./list/donated-item-list";
 import { useTranslations } from "next-intl";
 import { useDonatedItemsVM } from "./use-donated-items-vm";
+import DonatedItemsEmptyState from "./donated-items-empty-state";
 
 type DonatedItemsProps = {
-    items: ItemType[];
+    items?: ItemType[];
     metadata: Metadata;
 }
 
 const DonatedItemsView = ({ items, metadata } : DonatedItemsProps) => {
     const t = useTranslations("donated-items.list");
     const { onChangePagination, page, totalPages, getSelectedItemPath } = useDonatedItemsVM({ metadata });
+
+    if (!items || items.length === 0) {
+        return <DonatedItemsEmptyState />;
+    }
 
     return (
         <div className="min-h-screen">
