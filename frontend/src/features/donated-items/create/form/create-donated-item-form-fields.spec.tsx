@@ -1,6 +1,6 @@
 import { ItemCreateParams } from "@/common/types/item/item.type";
 import { FormProvider, useForm } from "react-hook-form";
-import CreateDonatedItemFormFields from "./create-donated-item-form-fields";
+import CreateDonatedItemViewFields from "./create-donated-item-form-fields";
 import { render, screen } from "@testing-library/react";
 
 const FormWrapper = () => {
@@ -19,19 +19,12 @@ const FormWrapper = () => {
 
     return (
         <FormProvider  {...form}>
-            <CreateDonatedItemFormFields />
+            <CreateDonatedItemViewFields />
         </FormProvider>
     );
 };
 
-jest.mock('@/app/i18n/use-locale', () => ({
-    __esModule: true,
-    default: jest.fn(() => ({
-        locale: 'en',
-    })),
-}));
-
-describe('CreateDonatedItemFormFields', () => {
+describe('CreateDonatedItemViewFields', () => {
     test('Given the create donated item form fields, when it is rendered, then it should display the fields', () => {
         render(<FormWrapper />);
 

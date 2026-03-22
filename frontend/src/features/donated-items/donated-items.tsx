@@ -6,7 +6,7 @@ import { Metadata } from "@/common/types/api/api.type";
 import { Pagination } from "@mui/material";
 import DonatedItemList from "./list/donated-item-list";
 import { useTranslations } from "next-intl";
-import { useDonatedItemsVM } from "./useDonatedItemsVM";
+import { useDonatedItemsVM } from "./use-donated-items-vm";
 
 type DonatedItems = {
     items: ItemType[];

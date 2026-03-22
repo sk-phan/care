@@ -1,6 +1,6 @@
 import { BASE_URL } from "@/common/api/api-base";
 import { ItemType } from "@/common/types/item/item.type";
-import ItemDetailPage from "@/features/donated-items/item-detail/item-detail-page";
+import ItemDetailView from "@/features/donated-items/item-detail/item-detail-view";
 
 interface Props {
     params: Promise<{ itemId: string }>;
@@ -16,7 +16,7 @@ export default async function Item(props: Props) {
     const item: ItemType = data.entity;
 
     return (
-        <ItemDetailPage 
+        <ItemDetailView 
         item={item}/>
     )
 }

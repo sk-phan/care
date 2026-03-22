@@ -6,14 +6,14 @@ import { ItemType } from "@/common/types/item/item.type";
 
 import { Chip } from "@mui/material";
 import ItemContactFormSection from "./forms/item-contact-form-section";
-import { useItemDetailPageVM } from './useItemDetailPageVM';
+import { useItemDetailViewVM } from './use-item-detail-view-vM';
 
-const ItemDetailPage = ({
+const ItemDetailView = ({
     item
  } : {
     item: ItemType
  }) => {
-    const { control, handleSubmit, errors, handleSubmitPickupRequest, method } = useItemDetailPageVM({
+    const { control, handleSubmit, errors, handleSubmitPickupRequest, method } = useItemDetailViewVM({
         itemId: item.id,
         donorEmail: item.email,
     });
@@ -63,4 +63,4 @@ const ItemDetailPage = ({
     )
 };
 
-export default ItemDetailPage;
+export default ItemDetailView;

@@ -7,7 +7,7 @@ import { useNotify } from "@/common/hooks/notification/use-notify";
 import { getLocalizedPath, urlConfigs } from "@/common/routes/url-configs";
 import { useCallback } from "react";
 
-export const useItemDetailPageVM = ({
+export const useItemDetailViewVM = ({
     donorEmail,
     itemId,
 }: {
