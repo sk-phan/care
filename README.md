@@ -29,7 +29,7 @@ This project is a meaningful initiative to build a community-driven platform whi
   - Provides a consistent development experience across both frontend and backend.  
 
 ### Database  
-- A relational or NoSQL database (e.g., PostgreSQL, MongoDB, or Firebase) to manage user data and item listings.  
+- MongoDB to manage user data and item listings.  
 
 ---
 
