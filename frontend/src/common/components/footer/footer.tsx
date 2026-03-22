@@ -4,9 +4,8 @@ import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
-import useLocale from "@/app/i18n/use-locale";
 import { urlConfigs } from "@/common/routes/url-configs";
 
 const SocialLinks = [
@@ -18,7 +17,7 @@ const SocialLinks = [
 const Footer = () => {
     const tNav = useTranslations("common.nav-bar");
     const tFooter = useTranslations("common.footer");
-    const { locale } = useLocale();
+    const locale = useLocale();
 
     const navLinks = [
         { href: `${locale}/${urlConfigs.about.path}`, label: tNav("about") },

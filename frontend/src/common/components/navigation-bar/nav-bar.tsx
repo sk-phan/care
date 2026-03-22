@@ -5,21 +5,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-import useLocale from "@/app/i18n/use-locale";
 import { urlConfigs } from "@/common/routes/url-configs";
 
 import NavBarItems from "./nav-bar-item";
 import { Button } from "@mui/material";
 import LanguageSelection from "../language-selection";
 import { useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     
     const router = useRouter();
     const pathname = usePathname();
-    const { locale } = useLocale();
+    const locale = useLocale();
     const t = useTranslations("common.nav-bar");
 
     const isAtRegisterPage = pathname.includes('register');

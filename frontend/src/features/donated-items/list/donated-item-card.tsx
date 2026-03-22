@@ -4,14 +4,13 @@ import Link from "next/link";
 import { urlConfigs } from "@/common/routes/url-configs";
 import { ItemType } from "@/common/types/item/item.type";
 
-import useLocale from "@/app/i18n/use-locale";
 import Image from "next/image";
 import { Chip } from "@mui/material";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const DonatedItemCard = ({ item } : { item: ItemType }) => {
     const itemPath = urlConfigs.donatedItems;
-    const { locale } = useLocale();
+    const locale = useLocale();
     const t = useTranslations("donated-items.item-card");
    
     return (

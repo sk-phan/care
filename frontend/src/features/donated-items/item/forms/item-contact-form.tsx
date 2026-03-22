@@ -11,17 +11,16 @@ import TextInput from "@/common/components/form/text-input";
 import TextArea from "@/common/components/form/text-area";
 
 import { getLocalizedPath, urlConfigs } from "@/common/routes/url-configs";
-import useLocale from "@/app/i18n/use-locale";
 
 import { Button } from "@mui/material";
 import { isValidEmail } from "@/utils/form-validations/form-validations.utils";
 
 import { ItemContactFormData } from "./item-contact-form.type";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const ItemContactForm = ({ itemId, donorEmail } : { itemId: string, donorEmail: string }) => {
     const router = useRouter();
-    const { locale } = useLocale();
+    const locale = useLocale();
     const tCommon = useTranslations("common");
     const tContactForm = useTranslations("donated-items.item-contact-form");
 

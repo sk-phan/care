@@ -1,13 +1,12 @@
 import { Button } from '@mui/material';
 
 import {navRoutes} from '@/common/routes/route-configs';
-import useLocale from '@/app/i18n/use-locale';
 import { useRouter } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { getLocalizedPath } from '@/common/routes/url-configs';
 
 const NavBarItems = () => {
-    const { locale } = useLocale();
+    const locale = useLocale();
     const t = useTranslations('common.nav-bar');
     const router = useRouter();
 
