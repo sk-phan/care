@@ -13,7 +13,7 @@ const ItemDetailPage = ({
  } : {
     item: ItemType
  }) => {
-    const { control, handleSubmit, errors, onSubmit, method } = useItemDetailPageVM({
+    const { control, handleSubmit, errors, handleSubmitPickupRequest, method } = useItemDetailPageVM({
         itemId: item.id,
         donorEmail: item.email,
     });
@@ -55,7 +55,7 @@ const ItemDetailPage = ({
                     control={control}
                     handleSubmit={handleSubmit}
                     errors={errors}
-                    onSubmit={onSubmit}
+                    onSubmit={handleSubmitPickupRequest}
                     method={method}
                     />
             </div>
