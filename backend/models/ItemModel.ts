@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
-import { BaseItemType } from "../types/item.type";
+import { BaseItemType, ITEM_CONDITIONS } from "../types/item.type";
 
 export interface IItem extends Document, BaseItemType {};
 
@@ -17,7 +17,7 @@ const itemSchema: Schema<IItem> = new mongoose.Schema({
     },
     condition: {
         type: String,
-        enum: ["new", "like-new", "very-good", "good", "acceptable"],
+        enum: ITEM_CONDITIONS,
         default: "new"
     },
     status: {

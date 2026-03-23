@@ -1,4 +1,5 @@
-export type ItemConditionType = "new" | "like-new" | "very-good" | "good" | "acceptable";
+export const ITEM_CONDITIONS = ["new", "like-new", "very-good", "good", "acceptable"] as const;
+export type ItemConditionType = (typeof ITEM_CONDITIONS)[number];
 
 export type ItemCategoryType = "toy" | "book" | "clothing" | "other";
 
