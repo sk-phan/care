@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
-import { BaseItemType, ITEM_CONDITIONS } from "../types/item.type";
+import { BaseItemType, ITEM_CATEGORIES, ITEM_CONDITIONS, ITEM_STATUSES } from "../types/item.type";
 
 export interface IItem extends Document, BaseItemType {};
 
@@ -22,12 +22,12 @@ const itemSchema: Schema<IItem> = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ["available", "reserved"],
+        enum: ITEM_STATUSES,
         default: "available"
     },
     category: {
         type: String,
-        enum: ["toy", "book", "clothing", "other"],
+        enum: ITEM_CATEGORIES,
         required: true
     },
     image: {
