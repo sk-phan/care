@@ -1,35 +1,7 @@
-import { LocaleType } from "@/app/i18n/messages/locales.type";
-import { BASE_URL } from "@/common/api/api-base";
-import { EntitiesResponse } from "@/common/types/api/api.type";
-import { ItemType } from "@/common/types/item/item.type";
 import DonatedItemsView from "@/features/donated-items/donated-items-view";
-import { CircularProgress } from "@mui/material";
 
-import { Suspense } from "react";
-
-const LIMIT = 9;
-
-type Props = {
-    params: Promise<{ lang: LocaleType}>;
-    searchParams: Promise< { page?: string }>;
-}
-
-export default async function Items(props: Props) {
-    await props.params;
-    const searchParams = await props.searchParams;
-    const currentPage = Number(searchParams?.page) || 1;
-
-    const response = await fetch(`${BASE_URL}/items?page=${currentPage}&limit=${LIMIT}`);
-
-    const data: EntitiesResponse<ItemType> = await response.json();
-
-    const { entities, metadata } = data;
-
+export default function Items() {
     return (
-        <Suspense fallback={<CircularProgress color="primary" />}>
-            <DonatedItemsView items={entities} metadata={metadata} />
-        </Suspense>
+        <DonatedItemsView />
     );
-};
-
-export const dynamic = "force-dynamic";
+}

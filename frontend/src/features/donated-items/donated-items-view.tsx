@@ -1,22 +1,31 @@
 "use client";
 
-import { ItemType } from "@/common/types/item/item.type";
-import { Metadata } from "@/common/types/api/api.type";
-
 import { Pagination } from "@mui/material";
+import Loader from "@/common/components/loading/loader";
 import DonatedItemList from "./list/donated-item-list";
 import { useTranslations } from "next-intl";
 import { useDonatedItemsVM } from "./use-donated-items-vm";
 import DonatedItemsEmptyState from "./donated-items-empty-state";
 
-type DonatedItemsProps = {
-    items?: ItemType[];
-    metadata: Metadata;
-}
-
-const DonatedItemsView = ({ items, metadata } : DonatedItemsProps) => {
+const DonatedItemsView = () => {
     const t = useTranslations("donated-items.list");
-    const { onChangePagination, page, totalPages, getSelectedItemPath } = useDonatedItemsVM({ metadata });
+    const {
+        onChangePagination,
+        page,
+        totalPages,
+        getSelectedItemPath,
+        items,
+        isLoading,
+        isError,
+    } = useDonatedItemsVM();
+
+    if (isLoading) {
+        return <Loader />;
+    }
+
+    if (isError) {
+        return <div>Failed to load donated items.</div>;
+    }
 
     if (!items || items.length === 0) {
         return <DonatedItemsEmptyState />;
