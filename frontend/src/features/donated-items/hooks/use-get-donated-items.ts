@@ -17,6 +17,8 @@ const useGetDonatedItems = ({
                 page,
                 limit,
             }),
+        staleTime: 30_000,
+        gcTime: 1000 * 60 * 10,
     });
 };
 

@@ -8,17 +8,21 @@ import useCreateDonatedItem from "./hooks/use-create-donated-item";
 import { getLocalizedPath, urlConfigs } from "@/common/routes/url-configs";
 import { registrationFormDefaultValues } from "./form/create-donated-item-form.utils";
 import { useCallback } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 
 export const useCreateDonatedItemVM = () => {
     const locale = useLocale();
     const tDonatedItems = useTranslations("donated-items.registration-form");
     const notify = useNotify();
     const router = useRouter();
+    const queryClient = useQueryClient();
 
     const handleSuccessfullCreateDonatedItem = async () => {
         notify({ message: tDonatedItems("success") });
+        await queryClient.invalidateQueries({
+            queryKey: ["donated-items"],
+        });
         await handleRevalidatePath(urlConfigs.home.path);
-        await handleRevalidatePath(urlConfigs.donatedItems.path);
         router.push(getLocalizedPath(locale, urlConfigs.donatedItems.path));
     }
 
